@@ -68,45 +68,51 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
           <h5 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-primary-800)', borderBottom: '2px solid var(--color-cream-300)', paddingBottom: '0.4rem', marginTop: '1.5rem' }}>
             1. Physico-Chemical &amp; Organoleptic Parameters
           </h5>
-          <table className="spec-sheet-table">
-            <tbody>
-              <tr><th>Typical Refractometric Brix (&deg;Bx)</th><td><strong>{product.specs.typicalBrix}</strong></td></tr>
-              <tr><th>Stated Brix Range (&deg;Bx)</th><td>{product.specs.statedBrix}</td></tr>
-              <tr><th>Total Titratable Acidity</th><td>{product.specs.acidity}</td></tr>
-              <tr><th>pH Level</th><td>{product.specs.ph}</td></tr>
-              <tr><th>Bostwick Consistency</th><td>{product.specs.bostwick}</td></tr>
-              <tr><th>Natural Color &amp; Appearance</th><td>{product.specs.color}</td></tr>
-              <tr><th>Aroma &amp; Flavor Profile</th><td>{product.specs.flavor}</td></tr>
-              <tr><th>Ascorbic Acid (Vitamin C)</th><td>{product.specs.ascorbicAcid}</td></tr>
-              <tr><th>Genetic Status &amp; Additives</th><td>{product.specs.nonGmo}</td></tr>
-              <tr><th>Primary Industrial Applications</th><td>{product.specs.applications}</td></tr>
-            </tbody>
-          </table>
+          <div className="spec-table-responsive-wrapper">
+            <table className="spec-sheet-table">
+              <tbody>
+                <tr><th>Typical Refractometric Brix (&deg;Bx)</th><td><strong>{product.specs.typicalBrix}</strong></td></tr>
+                <tr><th>Stated Brix Range (&deg;Bx)</th><td>{product.specs.statedBrix}</td></tr>
+                <tr><th>Total Titratable Acidity</th><td>{product.specs.acidity}</td></tr>
+                <tr><th>pH Level</th><td>{product.specs.ph}</td></tr>
+                <tr><th>Bostwick Consistency</th><td>{product.specs.bostwick}</td></tr>
+                <tr><th>Natural Color &amp; Appearance</th><td>{product.specs.color}</td></tr>
+                <tr><th>Aroma &amp; Flavor Profile</th><td>{product.specs.flavor}</td></tr>
+                <tr><th>Ascorbic Acid (Vitamin C)</th><td>{product.specs.ascorbicAcid}</td></tr>
+                <tr><th>Genetic Status &amp; Additives</th><td>{product.specs.nonGmo}</td></tr>
+                <tr><th>Primary Industrial Applications</th><td>{product.specs.applications}</td></tr>
+              </tbody>
+            </table>
+          </div>
 
           <h5 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-primary-800)', borderBottom: '2px solid var(--color-cream-300)', paddingBottom: '0.4rem', marginTop: '2rem' }}>
             2. Microbiological Standard &amp; Commercial Sterility
           </h5>
-          <table className="spec-sheet-table">
-            <tbody>
-              <tr><th>Total Aerobic Count / TPC</th><td>{product.microbiological.tpc}</td></tr>
-              <tr><th>Yeast &amp; Mould Count</th><td>{product.microbiological.yeastMould}</td></tr>
-              <tr><th>Coliforms</th><td>{product.microbiological.coliforms}</td></tr>
-              <tr><th>Pathogens (Salmonella / E. Coli)</th><td>{product.microbiological.pathogens}</td></tr>
-            </tbody>
-          </table>
+          <div className="spec-table-responsive-wrapper">
+            <table className="spec-sheet-table">
+              <tbody>
+                <tr><th>Total Aerobic Count / TPC</th><td>{product.microbiological.tpc}</td></tr>
+                <tr><th>Yeast &amp; Mould Count</th><td>{product.microbiological.yeastMould}</td></tr>
+                <tr><th>Coliforms</th><td>{product.microbiological.coliforms}</td></tr>
+                <tr><th>Pathogens (Salmonella / E. Coli)</th><td>{product.microbiological.pathogens}</td></tr>
+              </tbody>
+            </table>
+          </div>
 
           <h5 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-primary-800)', borderBottom: '2px solid var(--color-cream-300)', paddingBottom: '0.4rem', marginTop: '2rem' }}>
             3. Packaging, Storage &amp; Export Logistics
           </h5>
-          <table className="spec-sheet-table">
-            <tbody>
-              <tr><th>Standard Export Packaging</th><td>{product.specs.packaging}</td></tr>
-              <tr><th>Storage Temperature</th><td>{product.specs.storageTemp}</td></tr>
-              <tr><th>Shelf Life</th><td>{product.specs.shelfLife}</td></tr>
-              <tr><th>Container Stuffing</th><td>80 Drums per 20ft FCL (16.80 Metric Tons Net)</td></tr>
-              <tr><th>Manufacturing Origin</th><td>R&amp;B Foods Plant, Shorkot, Punjab, Pakistan (BERTUZZI Italy Line)</td></tr>
-            </tbody>
-          </table>
+          <div className="spec-table-responsive-wrapper">
+            <table className="spec-sheet-table">
+              <tbody>
+                <tr><th>Standard Export Packaging</th><td>{product.specs.packaging}</td></tr>
+                <tr><th>Storage Temperature</th><td>{product.specs.storageTemp}</td></tr>
+                <tr><th>Shelf Life</th><td>{product.specs.shelfLife}</td></tr>
+                <tr><th>Container Stuffing</th><td>80 Drums per 20ft FCL (16.80 Metric Tons Net)</td></tr>
+                <tr><th>Manufacturing Origin</th><td>R&amp;B Foods Plant, Shorkot, Punjab, Pakistan (BERTUZZI Italy Line)</td></tr>
+              </tbody>
+            </table>
+          </div>
 
           <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'flex-end', gap: '1rem', flexWrap: 'wrap' }}>
             <button

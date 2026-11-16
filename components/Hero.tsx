@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const VISUAL_TABS = [
   {
     id: 'portfolio',
     label: 'Full Portfolio',
+    productName: 'Full Fruit Pulp Portfolio',
     image: '/images/banner-fruit-portfolio.jpg',
     badgeTop: '5 Puree Spectrum • 210 KG Aseptic Drums',
     badgeBottom: 'BERTUZZI Continuous Line (Milan, Italy)',
@@ -14,6 +15,7 @@ const VISUAL_TABS = [
   {
     id: 'mango',
     label: 'Mango Special',
+    productName: 'Pakistani Chaunsa & Desi Mango Pulp',
     image: '/images/banner-mango.jpg',
     badgeTop: 'Chaunsa 20°–26° • Desi 14°–18° Brix',
     badgeBottom: '100% Non-GMO • Single Strength Puree',
@@ -22,6 +24,7 @@ const VISUAL_TABS = [
   {
     id: 'guava',
     label: 'White Guava',
+    productName: 'Aseptic White Guava Puree & Pulp',
     image: '/images/banner-guava.jpg',
     badgeTop: '7°–13° Brix • Natural Vitamin C',
     badgeBottom: 'Creamy-White Texture • Zero Defect',
@@ -30,6 +33,7 @@ const VISUAL_TABS = [
   {
     id: 'peach',
     label: 'Summer Peach',
+    productName: 'Sun-Ripened Orchard Peach Pulp',
     image: '/images/banner-peach.jpg',
     badgeTop: '10°–14° Brix • Natural Carotenoids',
     badgeBottom: 'Fine Double-Refined Texture',
@@ -38,6 +42,7 @@ const VISUAL_TABS = [
   {
     id: 'strawberry',
     label: 'Strawberry',
+    productName: 'Fresh Field Strawberry Puree',
     image: '/images/banner-strawberry.jpg',
     badgeTop: '7°–10° Brix • Natural Ruby Pigment',
     badgeBottom: 'Preservative-Free • Undiluted',
@@ -46,6 +51,7 @@ const VISUAL_TABS = [
   {
     id: 'falsa',
     label: 'Exotic Falsa',
+    productName: 'Pakistani Grewia Asiatica (Falsa) Pulp',
     image: '/images/banner-falsa.jpg',
     badgeTop: '8°–12° Brix • Deep Royal Purple',
     badgeBottom: 'High Antioxidant Wild Berry',
@@ -57,6 +63,7 @@ export default function Hero() {
   const [activeTab, setActiveTab] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [counts, setCounts] = useState({ capacity: 0, drums: 0, micro: 0 });
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   // Automatic Hero Carousel Transition (Changes every 4.5 seconds; pauses on user hover)
   useEffect(() => {
@@ -66,6 +73,18 @@ export default function Hero() {
     }, 4500);
     return () => clearInterval(interval);
   }, [isPaused]);
+
+  // Auto-scroll the active tab into view horizontally on mobile
+  useEffect(() => {
+    const activeBtn = tabRefs.current[activeTab];
+    if (activeBtn) {
+      activeBtn.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }, [activeTab]);
 
   // Metric Counter Animation
   useEffect(() => {
@@ -189,6 +208,9 @@ export default function Hero() {
               {VISUAL_TABS.map((tab, idx) => (
                 <button
                   key={tab.id}
+                  ref={(el) => {
+                    tabRefs.current[idx] = el;
+                  }}
                   type="button"
                   onClick={() => {
                     setActiveTab(idx);
@@ -199,6 +221,16 @@ export default function Hero() {
                   {tab.label}
                 </button>
               ))}
+            </div>
+
+            {/* Prominent Active Product Name Banner */}
+            <div className="hero-product-banner">
+              <div className="hero-product-banner-header">
+                <span className="hero-product-pulse-dot" aria-hidden="true"></span>
+                <span className="hero-product-badge">SELECTED PRODUCT</span>
+              </div>
+              <h4 className="hero-product-title">{currentVisual.productName}</h4>
+              <p className="hero-product-subtitle">{currentVisual.tagline}</p>
             </div>
 
             {/* Active Visual Container */}

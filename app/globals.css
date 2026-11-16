@@ -881,11 +881,11 @@ ul, ol {
 }
 
 .hero-tab-pill {
-  padding: 0.35rem 0.65rem;
+  padding: 0.4rem 0.75rem;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
   background: #FFFFFF;
   color: var(--color-charcoal-700);
   cursor: pointer;
@@ -899,10 +899,63 @@ ul, ol {
 }
 
 .hero-tab-pill.is-active {
-  font-weight: 700;
+  font-weight: 800;
   border-color: var(--color-gold-500);
-  background: var(--color-gold-50);
-  color: var(--color-amber-800);
+  background: linear-gradient(135deg, var(--color-gold-50) 0%, var(--color-gold-100) 100%);
+  color: var(--color-amber-900);
+  box-shadow: 0 2px 8px rgba(229, 140, 5, 0.25);
+}
+
+/* Prominent Selected Product Name Banner in Hero */
+.hero-product-banner {
+  background: linear-gradient(135deg, rgba(7, 25, 17, 0.95) 0%, rgba(12, 40, 28, 0.97) 100%);
+  border: 1px solid rgba(229, 140, 5, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  margin-bottom: 0.65rem;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.hero-product-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.15rem;
+}
+
+.hero-product-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-gold-400);
+  box-shadow: 0 0 8px var(--color-gold-400);
+  animation: pulse-ring 2s infinite;
+}
+
+.hero-product-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-gold-400);
+  text-transform: uppercase;
+}
+
+.hero-product-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hero-product-subtitle {
+  font-size: 0.75rem;
+  color: var(--color-cream-200);
+  margin: 0.15rem 0 0 0;
+  opacity: 0.9;
+  line-height: 1.35;
 }
 
 /* Metric Counters with Live Increment Look */
@@ -1594,6 +1647,15 @@ ul, ol {
   font-weight: 700;
   color: var(--color-primary-900);
   width: 250px;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background-color: #FFFFFF;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.season-table tr:hover td:first-child {
+  background-color: #FAF8F5;
 }
 
 .season-table tr:hover td {
@@ -2302,10 +2364,17 @@ ul, ol {
   padding: clamp(1.5rem, 3vw, 2.25rem);
 }
 
+.spec-table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
 .spec-sheet-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .spec-sheet-table th, .spec-sheet-table td {
@@ -2521,6 +2590,32 @@ ul, ol {
     padding-bottom: 0.75rem;
     -webkit-overflow-scrolling: touch;
   }
+  .season-table {
+    min-width: 560px;
+  }
+  .season-table th:first-child,
+  .season-table td:first-child {
+    width: 135px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.76rem;
+  }
+  .season-table th, .season-table td {
+    padding: 0.6rem 0.25rem;
+    font-size: 0.72rem;
+  }
+  .table-scroll-hint {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-gold-700);
+    text-align: center;
+    padding: 0.45rem 0.65rem;
+    background: var(--color-gold-50);
+    border: 1px solid var(--color-gold-100);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
   .floating-whatsapp-wrap {
     bottom: 1.25rem;
     right: 1.25rem;
@@ -2532,6 +2627,61 @@ ul, ol {
 
 /* 5. Phablets & Mobile Landscape / Modern Phones (<= 640px) */
 @media (max-width: 640px) {
+  /* Technical Specs Modal 100% Mobile Card Overhaul */
+  .modal-overlay {
+    padding: 0.5rem;
+    align-items: center;
+  }
+  .modal-card {
+    max-height: 94vh;
+    border-radius: var(--radius-md);
+    width: 100%;
+  }
+  .modal-header {
+    padding: 1rem 1.15rem;
+  }
+  .modal-header h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .modal-body {
+    padding: 1rem 1.15rem;
+  }
+  .spec-sheet-table,
+  .spec-sheet-table tbody,
+  .spec-sheet-table tr,
+  .spec-sheet-table th,
+  .spec-sheet-table td {
+    display: block;
+    width: 100% !important;
+  }
+  .spec-sheet-table tr {
+    padding: 0.6rem 0.75rem;
+    background: var(--color-cream-50);
+    border: 1px solid var(--color-cream-200);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.45rem;
+  }
+  .spec-sheet-table th {
+    background: transparent;
+    padding: 0 0 0.2rem 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-gold-700);
+    border: none;
+    width: 100%;
+  }
+  .spec-sheet-table td {
+    padding: 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-primary-950);
+    border: none;
+    word-break: break-word;
+    width: 100%;
+  }
   .hero-cta-group {
     flex-direction: column;
     align-items: stretch;
