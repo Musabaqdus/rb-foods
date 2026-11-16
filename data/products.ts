@@ -47,29 +47,29 @@ export const RB_PRODUCTS: Product[] = [
     tagline: "Valued for its characteristic sweetness, rich aroma and full-bodied tropical flavour.",
     image: "/images/Mango 800x600.jpg",
     pulpImage: "/images/mango-pulp-machinery.jpg",
-    overview: "Chaunsa Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean Chaunsa mangoes. Valued for its characteristic sweetness, rich aroma and full-bodied tropical flavour. Suitable for beverages, nectars, desserts, ice cream, bakery fillings and other fruit-based formulations. Classified as a NON-GMO product.",
+    overview: "Chaunsa Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative free made from edible part of ripe, healthy, and clean Chaunsa mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
     specs: {
-      typicalBrix: "20° – 25° Brix",
-      statedBrix: "20° – 26° Brix (Stated range: 20° – 27° Brix)",
+      typicalBrix: "20° – 26° Brix",
+      statedBrix: "20° – 26° Brix",
       acidity: "0.60 – 0.85% (as citric acid)",
       ph: "3.80 – 4.20",
       bostwick: "Thick & viscous liquid of creamy texture",
       color: "Bright Yellow",
-      flavor: "Characteristic sweet Chaunsa mango taste",
+      flavor: "Characteristic of variety (Sweet mango taste)",
       consistency: "Thick & viscous liquid of creamy texture",
       ascorbicAcid: "Min. 200 PPM",
-      packaging: "210 kg aseptic bags in conical / PPL steel drums",
+      packaging: "Filled in 210 kg aseptic bags in conical / PPL steel drums",
       shelfLife: "18 months from date of production",
       storageTemp: "Recommended temperature (4°C – 8°C)",
       season: "June – August",
-      applications: "Juices, nectars, ice creams, toppings, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and mango lassi",
-      nonGmo: "100% Non-GMO, Preservative-Free, No Artificial Colors or Flavors"
+      applications: "Major use in juices and nectars, ice creams, topping, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and lassi",
+      nonGmo: "100% Fresh Chaunsa Mango, Citric Acid, Ascorbic Acid (minimal quantity to adjust pH). No preservatives, colors, or flavors. Non-GMO."
     },
     microbiological: {
-      tpc: "< 10 CFU / g (Total Aerobic Count)",
-      yeastMould: "Negative / g",
-      coliforms: "Negative / g",
-      pathogens: "Absent (Salmonella, E. coli, Listeria)"
+      tpc: "< 10 CFU / g",
+      yeastMould: "Negative",
+      coliforms: "-",
+      pathogens: "-"
     }
   },
   {
@@ -81,29 +81,29 @@ export const RB_PRODUCTS: Product[] = [
     tagline: "Characteristic robust flavour profile engineered for juices, fruit drinks and blends.",
     image: "/images/Mango Pulp 1.jpg",
     pulpImage: "/images/mango-pulp-fresh.jpg",
-    overview: "Desi Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean mangoes. Prepared from a blend of Desi mango varieties, creating a characteristic flavour profile for use in juices, fruit drinks and blended products. Classified as a NON-GMO product.",
+    overview: "Desi Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
     specs: {
       typicalBrix: "14° – 18° Brix",
-      statedBrix: "14° – 18° Brix (Stated range: 14° – 19° Brix)",
+      statedBrix: "14° – 18° Brix",
       acidity: "0.80 – 1.20% (as citric acid)",
       ph: "3.70 – 4.10",
       bostwick: "Thick & viscous liquid of creamy texture",
       color: "Bright Yellow",
-      flavor: "Characteristic sweet mango taste",
+      flavor: "Characteristic of variety (Sweet mango taste)",
       consistency: "Thick & viscous liquid of creamy texture",
       ascorbicAcid: "Min. 200 PPM",
-      packaging: "210 kg aseptic bags in conical / PPL steel drums",
+      packaging: "Filled in 210 kg aseptic bags in conical / PPL steel drums",
       shelfLife: "18 months from date of production",
       storageTemp: "Recommended temperature (4°C – 8°C)",
       season: "May – July",
-      applications: "Juices, nectars, ice creams, toppings, bakery products, jams, smaller consumer packs, mango shakes and lassi",
-      nonGmo: "100% Non-GMO, Preservative-Free, No Artificial Colors or Flavors"
+      applications: "Major use in juices and nectars, ice creams, topping, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and lassi",
+      nonGmo: "100% Fresh Mango, Citric Acid, Ascorbic Acid (minimal quantity to adjust pH). No preservatives, colors, or flavors. Non-GMO."
     },
     microbiological: {
-      tpc: "< 10 CFU / g (Total Aerobic Count)",
-      yeastMould: "Negative / g",
-      coliforms: "Negative / g",
-      pathogens: "Absent"
+      tpc: "< 10 CFU / g",
+      yeastMould: "Negative",
+      coliforms: "-",
+      pathogens: "-"
     }
   },
   {
@@ -115,29 +115,29 @@ export const RB_PRODUCTS: Product[] = [
     tagline: "Single-strength pulp offering naturally sweet and recognisable varietal profile.",
     image: "/images/Cutted Mango.jpg",
     pulpImage: "/images/Mango Pulp 2.jpg",
-    overview: "Dusehri Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean Dusehri mangoes. Offers a naturally sweet and recognisable varietal profile. It can be used on its own or as a component in blends, beverages and other food formulations. Classified as a NON-GMO product.",
+    overview: "Dusehri Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative free made from edible part of ripe, healthy, and clean Dusehri mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
     specs: {
       typicalBrix: "16° – 19° Brix",
-      statedBrix: "16° – 19° Brix (Stated range: 16° – 22° Brix)",
+      statedBrix: "16° – 19° Brix",
       acidity: "0.60 – 0.85% (as citric acid)",
       ph: "3.80 – 4.20",
       bostwick: "Thick & viscous liquid of creamy texture",
       color: "Ocher Yellow",
-      flavor: "Characteristic sweet mango taste",
+      flavor: "Characteristic of variety (Sweet mango taste)",
       consistency: "Thick & viscous liquid of creamy texture",
       ascorbicAcid: "Min. 200 PPM",
-      packaging: "210 kg aseptic bags in conical / PPL steel drums",
+      packaging: "Filled in 210 kg aseptic bags in conical / PPL steel drums",
       shelfLife: "18 months from date of production",
       storageTemp: "Recommended temperature (4°C – 8°C)",
       season: "June – July",
-      applications: "Juices, nectars, ice creams, toppings, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and lassi",
-      nonGmo: "100% Non-GMO, Preservative-Free, No Artificial Colors or Flavors"
+      applications: "Major use in juices and nectars, ice creams, topping, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and lassi",
+      nonGmo: "100% Fresh Dusehri Mango, Citric Acid, Ascorbic Acid (minimal quantity to adjust pH). No preservatives, colors, or flavors. Non-GMO."
     },
     microbiological: {
-      tpc: "< 10 CFU / g (Total Aerobic Count)",
-      yeastMould: "Negative / g",
-      coliforms: "Negative / g",
-      pathogens: "Absent"
+      tpc: "< 10 CFU / g",
+      yeastMould: "Negative",
+      coliforms: "-",
+      pathogens: "-"
     }
   },
   {
@@ -149,7 +149,7 @@ export const RB_PRODUCTS: Product[] = [
     tagline: "Recognised for its delicate aroma, sweet pulp, and distinctive light-yellow character.",
     image: "/images/Mango Pulp 2.jpg",
     pulpImage: "/images/pulp-jar.jpg",
-    overview: "Langra Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean Langra mangoes. Recognised for its green skin, delicate aroma and sweet pulp, providing a distinctive varietal ingredient for manufacturers. Classified as a NON-GMO product.",
+    overview: "Langra Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative free made from edible part of ripe, healthy, and clean Langra mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
     specs: {
       typicalBrix: "17° – 22° Brix",
       statedBrix: "17° – 22° Brix",
@@ -157,21 +157,21 @@ export const RB_PRODUCTS: Product[] = [
       ph: "3.80 – 4.20",
       bostwick: "Thick & viscous liquid of creamy texture",
       color: "Bright Yellow",
-      flavor: "Characteristic sweet Langra mango taste",
+      flavor: "Characteristic of variety (Sweet mango taste)",
       consistency: "Thick & viscous liquid of creamy texture",
       ascorbicAcid: "Min. 200 PPM",
-      packaging: "210 kg aseptic bags in conical / PPL steel drums",
+      packaging: "Filled in 210 kg aseptic bags in conical / PPL steel drums",
       shelfLife: "18 months from date of production",
       storageTemp: "Recommended temperature (4°C – 8°C)",
       season: "July – August",
-      applications: "Juices, nectars, ice creams, toppings, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and lassi",
-      nonGmo: "100% Non-GMO, Preservative-Free, No Artificial Colors or Flavors"
+      applications: "Major use in juices and nectars, ice creams, topping, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and lassi",
+      nonGmo: "100% Fresh Langra Mango, Citric Acid, Ascorbic Acid (minimal quantity to adjust pH). No preservatives, colors, or flavors. Non-GMO."
     },
     microbiological: {
-      tpc: "< 10 CFU / g (Total Aerobic Count)",
-      yeastMould: "Negative / g",
-      coliforms: "Negative / g",
-      pathogens: "Absent"
+      tpc: "< 10 CFU / g",
+      yeastMould: "Negative",
+      coliforms: "-",
+      pathogens: "-"
     }
   },
   {
@@ -183,7 +183,7 @@ export const RB_PRODUCTS: Product[] = [
     tagline: "Pleasant distinct aroma and thick, low-fibre pulp offering exceptional mango character.",
     image: "/images/Mango Pulp 3.jpg",
     pulpImage: "/images/mango-pulp-drums.jpg",
-    overview: "Ratool Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean Ratool mangoes. Known for its pleasant aroma and thick, low-fibre pulp, offering a distinctive mango character for beverage and food applications. Classified as a NON-GMO product.",
+    overview: "Ratool Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean Ratool mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
     specs: {
       typicalBrix: "18° – 24° Brix",
       statedBrix: "18° – 24° Brix",
@@ -191,21 +191,21 @@ export const RB_PRODUCTS: Product[] = [
       ph: "3.80 – 4.20",
       bostwick: "Thick & viscous liquid of creamy texture",
       color: "Bright Yellow",
-      flavor: "Characteristic sweet Anwar Ratool mango taste",
+      flavor: "Characteristic of variety (Sweet mango taste)",
       consistency: "Thick & viscous liquid of creamy texture",
       ascorbicAcid: "Min. 200 PPM",
-      packaging: "210 kg aseptic bags in conical / PPL steel drums",
+      packaging: "Filled in 210 kg aseptic bags in conical / PPL steel drums",
       shelfLife: "18 months from date of production",
       storageTemp: "Recommended temperature (4°C – 8°C)",
       season: "June – August",
-      applications: "Juices, nectars, ice creams, toppings, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and lassi",
-      nonGmo: "100% Non-GMO, Preservative-Free, No Artificial Colors or Flavors"
+      applications: "Major use in juices and nectars, ice creams, topping, bakery products, jams, consumer packs, milk cheese yogurt, mango shakes and lassi",
+      nonGmo: "100% Fresh Ratool Mango, Citric Acid, Ascorbic Acid (minimal quantity to adjust pH). No preservatives, colors, or flavors. Non-GMO."
     },
     microbiological: {
-      tpc: "< 10 CFU / g (Total Aerobic Count)",
-      yeastMould: "Negative / g",
-      coliforms: "Negative / g",
-      pathogens: "Absent"
+      tpc: "< 10 CFU / g",
+      yeastMould: "Negative",
+      coliforms: "-",
+      pathogens: "-"
     }
   },
   {

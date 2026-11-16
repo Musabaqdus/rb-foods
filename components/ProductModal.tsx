@@ -71,15 +71,17 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
           <div className="spec-table-responsive-wrapper">
             <table className="spec-sheet-table">
               <tbody>
-                <tr><th>Typical Refractometric Brix (&deg;Bx)</th><td><strong>{product.specs.typicalBrix}</strong></td></tr>
-                <tr><th>Stated Brix Range (&deg;Bx)</th><td>{product.specs.statedBrix}</td></tr>
+                <tr><th>Refractometric Brix (&deg;Bx)</th><td><strong>{product.specs.typicalBrix}</strong></td></tr>
+                {product.specs.statedBrix && product.specs.statedBrix !== product.specs.typicalBrix && (
+                  <tr><th>Stated Brix Range (&deg;Bx)</th><td>{product.specs.statedBrix}</td></tr>
+                )}
                 <tr><th>Total Titratable Acidity</th><td>{product.specs.acidity}</td></tr>
                 <tr><th>pH Level</th><td>{product.specs.ph}</td></tr>
-                <tr><th>Bostwick Consistency</th><td>{product.specs.bostwick}</td></tr>
+                <tr><th>Consistency &amp; Texture</th><td>{product.specs.consistency || product.specs.bostwick}</td></tr>
                 <tr><th>Natural Color &amp; Appearance</th><td>{product.specs.color}</td></tr>
                 <tr><th>Aroma &amp; Flavor Profile</th><td>{product.specs.flavor}</td></tr>
                 <tr><th>Ascorbic Acid (Vitamin C)</th><td>{product.specs.ascorbicAcid}</td></tr>
-                <tr><th>Genetic Status &amp; Additives</th><td>{product.specs.nonGmo}</td></tr>
+                <tr><th>Ingredients, Additives &amp; GMO Status</th><td>{product.specs.nonGmo}</td></tr>
                 <tr><th>Primary Industrial Applications</th><td>{product.specs.applications}</td></tr>
               </tbody>
             </table>
@@ -93,8 +95,12 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
               <tbody>
                 <tr><th>Total Aerobic Count / TPC</th><td>{product.microbiological.tpc}</td></tr>
                 <tr><th>Yeast &amp; Mould Count</th><td>{product.microbiological.yeastMould}</td></tr>
-                <tr><th>Coliforms</th><td>{product.microbiological.coliforms}</td></tr>
-                <tr><th>Pathogens (Salmonella / E. Coli)</th><td>{product.microbiological.pathogens}</td></tr>
+                {product.microbiological.coliforms && product.microbiological.coliforms !== '-' && (
+                  <tr><th>Coliforms</th><td>{product.microbiological.coliforms}</td></tr>
+                )}
+                {product.microbiological.pathogens && product.microbiological.pathogens !== '-' && (
+                  <tr><th>Pathogens (Salmonella / E. Coli)</th><td>{product.microbiological.pathogens}</td></tr>
+                )}
               </tbody>
             </table>
           </div>
