@@ -108,8 +108,8 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           >
             Request B2B Quote &amp; Samples
           </a>
-          <div style={{ fontSize: '0.75rem', color: 'var(--color-charcoal-600)', textAlign: 'center', marginTop: '0.5rem' }}>
-            Plant Hotline: <a href="tel:+923145264429" style={{ color: 'inherit' }}>0314 5264429</a><br />
+          <div style={{ fontSize: '0.75rem', color: 'var(--color-charcoal-600)', textAlign: 'center', marginTop: '0.5rem', lineHeight: 1.6 }}>
+            Plant Tel: <a href="tel:+923145264429" style={{ color: 'inherit' }}>0314 5264429</a> &bull; WhatsApp: <a href="https://wa.me/923343734786" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gold-700)', fontWeight: 600 }}>+92 334 3734786</a><br />
             Shorkot, Punjab, Pakistan
           </div>
         </div>

@@ -82,12 +82,7 @@ export const FULL_COVER_SLIDES = [
   }
 ];
 
-interface HeroFullCoverProps {
-  onSwitchLayout?: () => void;
-  isSplitAvailable?: boolean;
-}
-
-export default function HeroFullCover({ onSwitchLayout, isSplitAvailable = true }: HeroFullCoverProps) {
+export default function HeroFullCover() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [counts, setCounts] = useState({ capacity: 0, drums: 0, micro: 0 });
@@ -150,30 +145,6 @@ export default function HeroFullCover({ onSwitchLayout, isSplitAvailable = true 
 
       {/* Main Container */}
       <div className="container hero-fullcover-container">
-        {/* Top Bar with Layout Switcher (Lets User & Client Compare Both!) */}
-        {isSplitAvailable && onSwitchLayout && (
-          <div className="hero-layout-switch-bar">
-            <span className="hero-layout-switch-label">HERO VIEW:</span>
-            <div className="hero-layout-switch-pills">
-              <button
-                type="button"
-                className="hero-layout-pill is-active"
-                title="Current: Full-Bleed Panoramic Cover Hero"
-              >
-                🎬 Full Cover Hero
-              </button>
-              <button
-                type="button"
-                className="hero-layout-pill"
-                onClick={onSwitchLayout}
-                title="Switch to Split Showcase Hero"
-              >
-                🎴 Split Showcase Hero
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* Foreground Content Card (Left Aligned for Optimal English Reading & Contrast) */}
         <div className="hero-fullcover-content">
           {/* Pinned Provenance Pill */}

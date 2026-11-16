@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import TopProcurementBar from '../components/TopProcurementBar';
 import Navbar from '../components/Navbar';
 import MobileDrawer from '../components/MobileDrawer';
-import Hero from '../components/Hero';
 import HeroFullCover from '../components/HeroFullCover';
 import ClientMarquee from '../components/ClientMarquee';
 import ProductCatalog from '../components/ProductCatalog';
@@ -23,7 +22,6 @@ export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [rfqInitialProduct, setRfqInitialProduct] = useState<string>('Chaunsa Mango Puree (Aseptic & Frozen)');
-  const [heroLayout, setHeroLayout] = useState<'cover' | 'split'>('cover');
 
   const handleOpenSpec = (product: Product) => {
     setSelectedProduct(product);
@@ -48,11 +46,7 @@ export default function Home() {
       <MobileDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
 
       <main>
-        {heroLayout === 'cover' ? (
-          <HeroFullCover onSwitchLayout={() => setHeroLayout('split')} />
-        ) : (
-          <Hero onSwitchLayout={() => setHeroLayout('cover')} />
-        )}
+        <HeroFullCover />
         <ClientMarquee />
         <ProductCatalog
           onOpenSpec={handleOpenSpec}

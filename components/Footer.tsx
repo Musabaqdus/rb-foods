@@ -83,7 +83,7 @@ export default function Footer() {
               </svg>
               <div>
                 <strong>Plant Tel:</strong> <a href="tel:+923145264429" style={{ color: 'inherit', textDecoration: 'none' }}>0314 5264429</a><br />
-                <strong>Direct WhatsApp:</strong> <a href="https://wa.me/923145264429" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>+92 314 5264429</a>
+                <strong>Direct WhatsApp:</strong> <a href="https://wa.me/923343734786" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>+92 334 3734786</a>
               </div>
             </div>
           </div>
