@@ -719,7 +719,7 @@ ul, ol {
 .hero-section {
   position: relative;
   background-color: var(--color-cream-50);
-  padding: clamp(4.5rem, 6.5vw, 6.5rem) 0 4.5rem;
+  padding: clamp(1.5rem, 2.5vw, 2.75rem) 0 3.5rem;
   overflow: hidden;
   border-bottom: 1px solid rgba(15, 23, 19, 0.06);
 }

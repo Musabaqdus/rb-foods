@@ -55,7 +55,17 @@ const VISUAL_TABS = [
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const [counts, setCounts] = useState({ capacity: 0, drums: 0, micro: 0 });
+
+  // Automatic Hero Carousel Transition (Changes every 4.5 seconds; pauses on user hover)
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % VISUAL_TABS.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   // Metric Counter Animation
   useEffect(() => {
@@ -94,25 +104,25 @@ export default function Hero() {
         <div className="hero-grid" style={{ alignItems: 'center' }}>
           {/* Left Column: Core Value Proposition */}
           <div className="hero-content reveal is-visible">
-            <div className="provenance-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div className="provenance-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.85rem' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
               <span>BERTUZZI CONTINUOUS LINE &bull; SHORKOT, PUNJAB &bull; 100% NON-GMO</span>
             </div>
 
-            <h1 className="hero-title" style={{ marginTop: '0.5rem', lineHeight: 1.15 }}>
+            <h1 className="hero-title" style={{ marginTop: '0.25rem', lineHeight: 1.12, letterSpacing: '-0.025em' }}>
               Leading Manufacturers &amp; Exporters of{' '}
               <em style={{ color: 'var(--color-gold-500)', fontStyle: 'italic' }}>
                 Fruit &amp; Vegetable Pulps.
               </em>
             </h1>
 
-            <p className="hero-lead" style={{ marginTop: '1rem', fontSize: '1.05rem', lineHeight: 1.65 }}>
+            <p className="hero-lead" style={{ marginTop: '0.85rem', fontSize: '1.05rem', lineHeight: 1.65 }}>
               R&amp;B Foods (Pvt.) Ltd. operates Pakistan’s premier industrial aseptic processing facility in Shorkot, Punjab. Equipped with genuine <strong>BERTUZZI (Milan, Italy)</strong> continuous lines, delivering single-strength and concentrated fruit purees in 210kg aseptic steel drums to multinational beverage, dairy, and confectionery brands.
             </p>
 
-            <div className="hero-cta-group" style={{ marginTop: '1.75rem', display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+            <div className="hero-cta-group" style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
               <a
                 href="#rfq-calculator"
                 className="btn btn-gold"
@@ -120,8 +130,8 @@ export default function Hero() {
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M21 16V8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
                 </svg>
                 Request Commercial RFQ &amp; Samples
               </a>
@@ -135,7 +145,7 @@ export default function Hero() {
             </div>
 
             {/* Live Animated Metric Counters */}
-            <div className="hero-metrics-bar" style={{ marginTop: '2.25rem' }}>
+            <div className="hero-metrics-bar" style={{ marginTop: '2rem' }}>
               <div className="metric-item">
                 <span className="metric-val">
                   {counts.capacity.toLocaleString()}
@@ -169,15 +179,20 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: High-Definition Visual Showcase with Variety Tabs */}
-          <div className="hero-visual-card reveal reveal-scale is-visible" id="hero-card">
-            {/* Visual Selector Tabs */}
+          {/* Right Column: High-Definition Visual Showcase (Automatic Rotation + Interactive Tabs) */}
+          <div
+            className="hero-visual-card reveal reveal-scale is-visible"
+            id="hero-card"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Visual Selector Tabs with Live Active Indicator */}
             <div
               style={{
                 display: 'flex',
                 gap: '0.35rem',
                 overflowX: 'auto',
-                paddingBottom: '0.65rem',
+                paddingBottom: '0.6rem',
                 marginBottom: '0.5rem',
                 borderBottom: '1px solid rgba(0,0,0,0.06)'
               }}
@@ -186,7 +201,10 @@ export default function Hero() {
                 <button
                   key={tab.id}
                   type="button"
-                  onClick={() => setActiveTab(idx)}
+                  onClick={() => {
+                    setActiveTab(idx);
+                    setIsPaused(true);
+                  }}
                   style={{
                     padding: '0.35rem 0.65rem',
                     fontSize: '0.75rem',
@@ -197,7 +215,7 @@ export default function Hero() {
                     color: activeTab === idx ? 'var(--color-amber-800)' : 'var(--color-charcoal-700)',
                     cursor: 'pointer',
                     whiteSpace: 'nowrap',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.25s ease'
                   }}
                 >
                   {tab.label}
@@ -217,6 +235,7 @@ export default function Hero() {
               }}
             >
               <img
+                key={currentVisual.image}
                 src={currentVisual.image}
                 alt={currentVisual.tagline}
                 className="hero-primary-img"
@@ -224,7 +243,8 @@ export default function Hero() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  display: 'block'
+                  display: 'block',
+                  animation: 'fadeIn 0.4s ease'
                 }}
               />
 
@@ -237,7 +257,7 @@ export default function Hero() {
                 <span>{currentVisual.badgeTop}</span>
               </div>
 
-              {/* Floating Bottom Badge (Auto-sized, never stretched) */}
+              {/* Floating Bottom Badge */}
               <div className="hero-floating-badge-bottom">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12"></polyline>
@@ -283,7 +303,7 @@ export default function Hero() {
         {/* 5-Fruit Quick Spectrum Strip (Below Grid) */}
         <div
           style={{
-            marginTop: '3.5rem',
+            marginTop: '3rem',
             padding: '1.25rem 1.75rem',
             background: 'linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(254,243,199,0.55) 100%)',
             borderRadius: 'var(--radius-lg)',
@@ -308,7 +328,10 @@ export default function Hero() {
             }}
           >
             <div
-              onClick={() => setActiveTab(1)}
+              onClick={() => {
+                setActiveTab(1);
+                setIsPaused(true);
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -329,7 +352,10 @@ export default function Hero() {
             </div>
 
             <div
-              onClick={() => setActiveTab(2)}
+              onClick={() => {
+                setActiveTab(2);
+                setIsPaused(true);
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -350,7 +376,10 @@ export default function Hero() {
             </div>
 
             <div
-              onClick={() => setActiveTab(3)}
+              onClick={() => {
+                setActiveTab(3);
+                setIsPaused(true);
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -371,7 +400,10 @@ export default function Hero() {
             </div>
 
             <div
-              onClick={() => setActiveTab(4)}
+              onClick={() => {
+                setActiveTab(4);
+                setIsPaused(true);
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -392,7 +424,10 @@ export default function Hero() {
             </div>
 
             <div
-              onClick={() => setActiveTab(5)}
+              onClick={() => {
+                setActiveTab(5);
+                setIsPaused(true);
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
