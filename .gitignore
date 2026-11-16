@@ -8,11 +8,27 @@ $RECYCLE.BIN/
 # Temporary Microsoft Office lock files
 ~$*
 
-# Raw video / large binary dumps
+# Raw video large binary dumps
 *.bin
-*.ts
 *.mkv
+R&B Foods/*.ts
 
-# Node
+# Dependencies
 node_modules/
+/.pnp
+.pnp.js
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Next.js env files
+.env*.local
+next-env.d.ts
+
+# Logs
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
