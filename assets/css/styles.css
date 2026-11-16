@@ -207,7 +207,7 @@ ul, ol {
 }
 
 /* ==========================================================================
-   TOP PROCUREMENT BAR
+   TOP PROCUREMENT BAR (LIVE MOVING COMMODITY & HARVEST TICKER)
    ========================================================================== */
 .top-bar {
   background-color: var(--color-primary-950);
@@ -217,26 +217,94 @@ ul, ol {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   z-index: 101;
+  overflow: hidden;
 }
 
 .top-bar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-.harvest-status-pill {
+/* Continuous Live Moving Ticker from Right to Left */
+.ticker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ticker-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.45rem;
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #10B981;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ticker-track-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  white-space: nowrap;
+  animation: ticker-slide 32s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
   color: #FFFFFF;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ticker-item strong {
+  color: var(--color-gold-400);
+}
+
+.ticker-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.85rem;
+}
+
+@keyframes ticker-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .status-dot-pulse {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: #10B981;
   position: relative;
@@ -247,7 +315,8 @@ ul, ol {
 .top-bar-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  flex-shrink: 0;
 }
 
 .top-bar-link {
@@ -257,6 +326,7 @@ ul, ol {
   color: var(--color-cream-200);
   transition: var(--transition);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .top-bar-link:hover {
