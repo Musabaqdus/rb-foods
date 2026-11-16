@@ -1,5 +1,6 @@
 export interface ProductSpecs {
-  brix: string;
+  typicalBrix: string;
+  statedBrix: string;
   acidity: string;
   ph: string;
   bostwick: string;
@@ -23,7 +24,7 @@ export interface Product {
   id: string;
   name: string;
   botanical: string;
-  category: "mango" | "guava" | "citrus" | "temperate" | "vegetable";
+  category: "mango" | "guava" | "tomato" | "other";
   badge: string;
   tagline: string;
   image: string;
@@ -36,25 +37,26 @@ export interface Product {
 export const RB_PRODUCTS: Product[] = [
   {
     id: "chaunsa-mango",
-    name: "Chaunsa Mango Puree (Aseptic & Frozen)",
+    name: "Chaunsa Mango Pulp",
     botanical: "Mangifera indica L. (cv. Chaunsa)",
     category: "mango",
     badge: "Flagship Export",
-    tagline: "The world's most fragrant mango variety, harvested from the fertile heart of Southern Punjab.",
-    image: "/images/cutted-mango.jpg",
-    pulpImage: "/images/mango-pulp.jpg",
-    overview: "Chaunsa is globally celebrated for its unparalleled aroma, velvety fiberless consistency, and intense natural sweetness. Processed using BERTUZZI Italy cold de-stoning and HTST aseptic sterilization to preserve raw floral notes without artificial additives or preservatives.",
+    tagline: "Valued for its characteristic sweetness, rich aroma and full-bodied tropical flavour.",
+    image: "/images/mango-pulp-fresh.jpg",
+    pulpImage: "/images/mango-pulp-machinery.jpg",
+    overview: "Produced from mature Pakistani Chaunsa mangoes, this pulp is valued for its characteristic sweetness, rich aroma and full-bodied tropical flavour. Its distinctive sensory profile makes it suitable for beverages, nectars, desserts, ice cream, bakery fillings and other fruit-based formulations. The stated Brix range is 20–27 °Brix.",
     specs: {
-      brix: "14.0° – 16.0° min (Single Strength) | 28.0° – 30.0° (Concentrate)",
-      acidity: "0.40% – 0.70% (as citric acid anhydrous)",
+      typicalBrix: "20–25 °Brix",
+      statedBrix: "20–27 °Brix",
+      acidity: "0.45% – 0.75% (as citric acid anhydrous)",
       ph: "3.80 – 4.20",
       bostwick: "7.0 – 11.0 cm / 30 sec at 20°C",
       color: "Deep golden saffron-yellow (USDA Grade A equivalent)",
       flavor: "Intensely sweet, authentic Chaunsa muscat aroma, zero scorched notes",
       packaging: "215 kg net in multi-layer aseptic bag in steel drum / 20 kg Bag-in-Box",
       shelfLife: "24 months ambient (< 25°C) in unopened aseptic drums; 24 months frozen at -18°C",
-      season: "June – August (Forward contracts open in March)",
-      applications: "Premium Nectars, Juice Blends, Fruit Yogurts, Dairy Ice Creams, Baby Foods, Confectionery Jellies"
+      season: "June – August",
+      applications: "Beverages, nectars, desserts, ice cream, bakery fillings, and fruit-based formulations"
     },
     microbiological: {
       tpc: "< 10 CFU / g",
@@ -64,26 +66,57 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
   {
-    id: "sindhri-ratool-mango",
-    name: "Anwar Ratool & Sindhri Mango Puree",
-    botanical: "Mangifera indica L. (cv. Sindhri / Anwar Ratool)",
+    id: "desi-mango",
+    name: "Desi Mango Pulp",
+    botanical: "Mangifera indica L. (cv. Desi blend)",
+    category: "mango",
+    badge: "Beverage Blend Core",
+    tagline: "Characteristic robust flavour profile engineered for juices, fruit drinks and blends.",
+    image: "/images/mango-pulp.jpg",
+    pulpImage: "/images/mango-pulp-drums.jpg",
+    overview: "Desi Mango Pulp is prepared from a blend of Desi mango varieties, creating a characteristic flavour profile for use in juices, fruit drinks and blended products. Its versatility makes it a useful ingredient for manufacturers developing mango-based beverages and food products. The stated Brix range is 14–19 °Brix.",
+    specs: {
+      typicalBrix: "14–18 °Brix",
+      statedBrix: "14–19 °Brix",
+      acidity: "0.50% – 0.85% (as citric acid)",
+      ph: "3.70 – 4.10",
+      bostwick: "8.0 – 12.0 cm / 30 sec at 20°C",
+      color: "Rich golden yellow",
+      flavor: "Bold, tangy-sweet authentic mango profile",
+      packaging: "215 kg net in multi-layer aseptic bag in steel drum",
+      shelfLife: "24 months ambient in unopened aseptic packaging",
+      season: "May – July",
+      applications: "Juices, fruit drinks, blended beverages, and industrial nectar formulation"
+    },
+    microbiological: {
+      tpc: "< 10 CFU / g",
+      yeastMould: "< 10 CFU / g",
+      coliforms: "Negative / g",
+      pathogens: "Absent"
+    }
+  },
+  {
+    id: "anwar-ratool-mango",
+    name: "Anwar Ratool Mango Pulp",
+    botanical: "Mangifera indica L. (cv. Anwar Ratool)",
     category: "mango",
     badge: "Aromatic Puree",
-    tagline: "High-brix, bright canary-yellow mango puree with distinctive floral bouquet.",
+    tagline: "Pleasant distinct aroma and thick, low-fibre pulp offering exceptional varietal character.",
     image: "/images/mango-pulp-drums.jpg",
-    pulpImage: "/images/mango-pulp.jpg",
-    overview: "Sindhri and Anwar Ratool represent the earliest harvest of Pakistan's mango season. Characterized by high natural sugar-to-acid ratio and clean citrus-floral top notes, ideal for beverage formulations requiring bright natural coloration and lively taste profile.",
+    pulpImage: "/images/cutted-mango.jpg",
+    overview: "Anwar Ratool mango is known for its pleasant aroma and thick, low-fibre pulp. The resulting pulp offers a distinctive mango character for beverage and food applications. The fruit is typically available during the June–August season. The stated Brix range is 18–24 °Brix.",
     specs: {
-      brix: "15.0° – 17.5° (Single Strength)",
+      typicalBrix: "18–24 °Brix",
+      statedBrix: "18–24 °Brix",
       acidity: "0.35% – 0.65% (as citric acid)",
       ph: "3.90 – 4.30",
       bostwick: "8.0 – 12.0 cm / 30 sec at 20°C",
-      color: "Bright radiant yellow to deep yellow-amber",
-      flavor: "Rich aromatic honeyed floral mango flavor",
+      color: "Bright radiant yellow to golden amber",
+      flavor: "Rich aromatic honeyed floral mango bouquet",
       packaging: "215 kg Aseptic Bag in Steel Drum / 18 kg Frozen Pails",
-      shelfLife: "24 months aseptic; 24 months frozen (-18°C)",
-      season: "May – July",
-      applications: "RTD Beverages, Fruit Sauces, Gelato & Sorbets, Fruit Preparations for Bakery"
+      shelfLife: "24 months ambient aseptic; 24 months frozen (-18°C)",
+      season: "June – August",
+      applications: "Premium nectars, shakes, lassi, gelato, sorbets, and dairy-based desserts"
     },
     microbiological: {
       tpc: "< 10 CFU / g",
@@ -93,26 +126,87 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
   {
-    id: "pink-white-guava",
-    name: "Pink & White Guava Puree (Aseptic)",
-    botanical: "Psidium guajava L.",
+    id: "dussehri-mango",
+    name: "Dussehri Mango Pulp",
+    botanical: "Mangifera indica L. (cv. Dussehri)",
+    category: "mango",
+    badge: "Naturally Sweet",
+    tagline: "Naturally sweet and recognisable varietal profile from mature, naturally ripened fruit.",
+    image: "/images/pulp-in-can.jpg",
+    pulpImage: "/images/mango-pulp.jpg",
+    overview: "Prepared from mature, naturally ripened Pakistani Dussehri mangoes, this single-strength pulp offers a naturally sweet and recognisable varietal profile. It can be used on its own or as a component in blends, beverages and other food formulations. The stated Brix range is 16–22 °Brix.",
+    specs: {
+      typicalBrix: "16–22 °Brix",
+      statedBrix: "16–22 °Brix",
+      acidity: "0.40% – 0.65% (as citric acid)",
+      ph: "3.80 – 4.20",
+      bostwick: "7.5 – 11.0 cm / 30 sec at 20°C",
+      color: "Deep warm yellow",
+      flavor: "Delicate, sweet, lingering varietal Dussehri taste",
+      packaging: "215 kg net in Aseptic Drum / 20 kg Bag-in-Box",
+      shelfLife: "24 months ambient in unopened aseptic packaging",
+      season: "June – July",
+      applications: "Single-strength juices, components in blends, dessert fillings, and preserves"
+    },
+    microbiological: {
+      tpc: "< 10 CFU / g",
+      yeastMould: "< 10 CFU / g",
+      coliforms: "Negative / g",
+      pathogens: "Absent"
+    }
+  },
+  {
+    id: "langra-mango",
+    name: "Langra Mango Pulp",
+    botanical: "Mangifera indica L. (cv. Langra)",
+    category: "mango",
+    badge: "Unique Varietal",
+    tagline: "Delicate aroma, sweet pulp, and characteristic light-yellow pulp profile.",
+    image: "/images/pulp-jar.jpg",
+    pulpImage: "/images/cutted-mango.jpg",
+    overview: "Langra mangoes are recognised for their green skin, delicate aroma and sweet pulp. Langra Mango Pulp provides a varietal ingredient for manufacturers seeking a distinctive mango flavour and light-yellow pulp character. The stated Brix range is 17–22 °Brix.",
+    specs: {
+      typicalBrix: "17–22 °Brix",
+      statedBrix: "17–22 °Brix",
+      acidity: "0.45% – 0.70% (as citric acid)",
+      ph: "3.85 – 4.25",
+      bostwick: "8.0 – 12.0 cm / 30 sec at 20°C",
+      color: "Light creamy yellow to soft golden",
+      flavor: "Fresh, vibrant, delicate sweet aromatic profile",
+      packaging: "215 kg net in Aseptic Drum",
+      shelfLife: "24 months ambient in unopened aseptic packaging",
+      season: "July – August",
+      applications: "Distinctive varietal beverages, confectionery, ice cream, and bakery preparations"
+    },
+    microbiological: {
+      tpc: "< 10 CFU / g",
+      yeastMould: "< 10 CFU / g",
+      coliforms: "Negative / g",
+      pathogens: "Absent"
+    }
+  },
+  {
+    id: "white-guava",
+    name: "White Guava Pulp",
+    botanical: "Psidium guajava L. (White)",
     category: "guava",
-    badge: "High Pectin",
-    tagline: "Creamy, nutrient-rich tropical puree boasting natural pectin and high ascorbic acid.",
+    badge: "Natural Vitamin C",
+    tagline: "Creamy-white sterilised puree with sweet flavour and natural vitamin C.",
     image: "/images/guava-pulp.jpg",
     pulpImage: "/images/fresh-guava.jpg",
-    overview: "Harvested from prime orchards in Punjab, our guava puree is refined through double-stage micro-sieves to eliminate grit (stone cells) while preserving the fruit's luxuriant creamy viscosity and intoxicating tropical perfume.",
+    overview: "White Guava Pulp is produced from mature, clean and ripe white guavas. The creamy-white puree is sterilised and packed in aseptic bags. Its sweet flavour and naturally occurring vitamin C make it suitable for juices, fruit drinks and strained-fruit applications. The stated Brix range is 7–13 °Brix.",
     specs: {
-      brix: "8.5° – 10.5° (Single Strength)",
+      typicalBrix: "7–13 °Brix",
+      statedBrix: "7–13 °Brix",
       acidity: "0.45% – 0.75% (as citric acid)",
       ph: "3.80 – 4.20",
-      bostwick: "5.0 – 9.0 cm / 30 sec at 20°C (High natural pectin viscosity)",
-      color: "White / Ivory (White Guava) or Soft Salmon-Pink (Pink Guava)",
+      bostwick: "5.0 – 9.0 cm / 30 sec at 20°C (Natural pectin viscosity)",
+      color: "Creamy white to light ivory",
       flavor: "Characteristic sweet tropical guava fragrance, zero astringency",
       packaging: "215 kg net in Aseptic Drum / 20 kg Bag-in-Box",
       shelfLife: "24 months ambient in unopened aseptic packaging",
-      season: "September – January (Biannual harvest)",
-      applications: "Guava Nectars, Tropical Fruit Blends, Smoothie Bases, Jams & Marmalades"
+      season: "September – January",
+      applications: "Juices, fruit drinks, nectars, strained-fruit applications, jams, and dairy desserts"
     },
     microbiological: {
       tpc: "< 10 CFU / g",
@@ -122,55 +216,27 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
   {
-    id: "kinnow-mandarin",
-    name: "Pakistani Kinnow Mandarin Puree & Concentrate",
-    botanical: "Citrus nobilis x Citrus deliciosa",
-    category: "citrus",
-    badge: "Citrus Specialty",
-    tagline: "World-famous Indus basin mandarin citrus with superior juice yield and aromatic peel oils.",
-    image: "/images/orange-slice.jpg",
-    pulpImage: "/images/kinnow-pulp.jpg",
-    overview: "Pakistan's Kinnow is globally renowned for its exceptional sweetness, intense orange pigmentation, and complex aroma. Processed with specialized FMC/Bertuzzi citrus extraction that gently separates the bitter limonoids while retaining fresh natural citrus oils.",
+    id: "tomato-paste",
+    name: "Tomato Paste",
+    botanical: "Solanum lycopersicum",
+    category: "tomato",
+    badge: "Industrial Base",
+    tagline: "Concentrated tomato ingredient engineered for sauces, ketchup, soups and food manufacturing.",
+    image: "/images/tomato-paste-fresh.jpg",
+    pulpImage: "/images/tomato-splash-banner.jpg",
+    overview: "R&B Foods also includes tomato paste in its product portfolio. Tomato paste is a concentrated tomato ingredient used by food manufacturers in products such as sauces, ketchup, soups and other tomato-based preparations. It provides a convenient tomato base for industrial food formulations.",
     specs: {
-      brix: "10.0° – 12.0° (Single Strength) | 60.0° – 65.0° (Concentrate)",
-      acidity: "0.85% – 1.35% (as citric acid anhydrous)",
-      ph: "3.20 – 3.70",
-      ratio: "Brix / Acid Ratio: 10.0 – 14.5",
-      color: "Vibrant deep citrus orange (USDA Grade A equivalent)",
-      flavor: "Sweet, lively, pleasantly tangy with fresh citrus aroma",
-      packaging: "215 kg net in Aseptic Bag in Drum / 250 kg Frozen Drum",
-      shelfLife: "18 months frozen at -18°C / 12 months chilled",
-      season: "December – March",
-      applications: "Carbonated Citrus Drinks, 100% Breakfast Juices, Flavored Beers & Hard Seltzers, Confectionery"
-    },
-    microbiological: {
-      tpc: "< 50 CFU / g",
-      yeastMould: "< 20 CFU / g",
-      coliforms: "Negative / g",
-      pathogens: "Absent"
-    }
-  },
-  {
-    id: "apple-puree",
-    name: "Golden & Red Apple Puree (De-seeded)",
-    botanical: "Malus domestica Borkh.",
-    category: "temperate",
-    badge: "Pure Base",
-    tagline: "Natural, smooth, unflavored apple puree for multi-fruit juice bases and infant nutrition.",
-    image: "/images/apple-pulp.jpg",
-    pulpImage: "/images/fresh-apple.jpg",
-    overview: "Formulated from selected mountain-grown Golden Delicious and Kala Kulu apples. Rapid thermal enzymatic deactivation prevents browning, creating an ultra-clean, neutral fruit base favored by multinational juice manufacturers as a natural sweetener.",
-    specs: {
-      brix: "10.0° – 12.5° (Single Strength)",
-      acidity: "0.25% – 0.50% (as malic acid)",
-      ph: "3.60 – 4.00",
-      bostwick: "6.0 – 10.0 cm / 30 sec at 20°C",
-      color: "Uniform creamy pale amber, free of oxidation",
-      flavor: "Delicate fresh sweet apple, zero caramelized notes",
-      packaging: "215 kg net Aseptic Drum / 20 kg Bag-in-Box",
+      typicalBrix: "28–30 °Brix (Cold Break / Hot Break)",
+      statedBrix: "28–36 °Brix",
+      acidity: "1.50% – 2.50% (as citric acid)",
+      ph: "4.00 – 4.40",
+      bostwick: "4.0 – 8.0 cm / 30 sec at 20°C",
+      color: "Rich deep scarlet red (USDA Grade A equivalent)",
+      flavor: "Clean, savory, concentrated tomato flavor without burnt or off notes",
+      packaging: "215 kg Aseptic Bag in Steel Drum / 20 kg Bag-in-Box",
       shelfLife: "24 months ambient in unopened aseptic packaging",
-      season: "August – October",
-      applications: "Infant Purees & Baby Food, Multi-Fruit Juice Blending, Fruit Fillings, Cider Bases"
+      season: "Year-Round Supply",
+      applications: "Industrial sauces, ketchup, canned preparations, soups, and ready-to-eat foods"
     },
     microbiological: {
       tpc: "< 10 CFU / g",
@@ -180,55 +246,27 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
   {
-    id: "strawberry-puree",
-    name: "Fresh Strawberry Puree (Seeded & De-seeded)",
-    botanical: "Fragaria x ananassa",
-    category: "temperate",
-    badge: "Vibrant Color",
-    tagline: "Deep crimson berry puree with intact natural seeds or micro-filtered for silkiness.",
-    image: "/images/fresh-strawberry.jpg",
-    pulpImage: "/images/strawberry-pulp.jpg",
-    overview: "Freshly harvested strawberries processed within hours of picking to lock in brilliant anthocyanin red pigments and delicate summer berry top-notes. Available seeded for premium artisan preserves or de-seeded for smooth dairy beverages.",
+    id: "other-fruits",
+    name: "Other Fruit Pulp Range (Peach, Falsa & Strawberry)",
+    botanical: "Prunus persica / Grewia asiatica / Fragaria × ananassa",
+    category: "other",
+    badge: "Seasonal Processing",
+    tagline: "Identified in company profile; technical specifications furnished upon commercial inquiry.",
+    image: "/images/fruit-pulp-portfolio-banner.jpg",
+    pulpImage: "/images/strawberry-splash-banner.jpg",
+    overview: "The company profile also identifies peach, falsa and strawberry among its fruit processing and product range. Detailed product specifications and descriptions for these products are furnished with approved technical specifications upon commercial contract agreement.",
     specs: {
-      brix: "7.0° – 9.5° (Single Strength)",
-      acidity: "0.80% – 1.30% (as citric acid)",
-      ph: "3.40 – 3.80",
-      bostwick: "9.0 – 14.0 cm / 30 sec at 20°C",
-      color: "Vivid ruby-red, 100% natural without artificial dye",
-      flavor: "Tart, sweet, aromatic fresh garden strawberry",
-      packaging: "190 kg Aseptic Drum / 18 kg Frozen Pails",
-      shelfLife: "18 months frozen at -18°C / 12 months ambient aseptic",
-      season: "February – April",
-      applications: "Artisan Dairy Ice Creams, Premium Yogurts, Strawberry Nectars, Cocktails & Syrups"
-    },
-    microbiological: {
-      tpc: "< 20 CFU / g",
-      yeastMould: "< 10 CFU / g",
-      coliforms: "Negative / g",
-      pathogens: "Absent"
-    }
-  },
-  {
-    id: "red-carrot-puree",
-    name: "Fresh Red Carrot Puree (High Beta-Carotene)",
-    botanical: "Daucus carota subsp. sativus",
-    category: "vegetable",
-    badge: "Functional Base",
-    tagline: "Earthy, naturally sweet vegetable puree engineered for functional wellness drinks and soups.",
-    image: "/images/carrot-pulp.jpg",
-    pulpImage: "/images/carrot-pulp.jpg",
-    overview: "Sourced from fertile Indus alluvium soils, winter carrots are washed, blanched, and micro-milled to release maximum bioavailable carotenoids. Excellent natural color booster and vitamin-rich foundation for wellness beverage blends.",
-    specs: {
-      brix: "7.0° – 9.0°",
-      acidity: "0.15% – 0.35% (as lactic/citric)",
-      ph: "5.20 – 5.80",
-      bostwick: "6.0 – 9.0 cm / 30 sec at 20°C",
-      color: "Intense uniform scarlet-orange",
-      flavor: "Clean, naturally sweet, fresh garden carrot",
-      packaging: "215 kg Aseptic Drum / 20 kg Bag-in-Box",
-      shelfLife: "24 months ambient aseptic",
-      season: "November – February",
-      applications: "Vegetable & Fruit Juice Medleys (ABC Juices), Functional Nutrition Drinks, Baby Food, Soups"
+      typicalBrix: "Varietal Standard (8° – 14° °Bx)",
+      statedBrix: "Per Approved Technical Data Sheet",
+      acidity: "Per varietal specification",
+      ph: "3.40 – 3.90",
+      bostwick: "6.0 – 12.0 cm / 30 sec",
+      color: "Characteristic natural fruit coloration",
+      flavor: "Fresh, unadulterated fruit profile without synthetic additives",
+      packaging: "215 kg Aseptic Drum / 18 kg Frozen Pails",
+      shelfLife: "24 months ambient (aseptic) / 24 months frozen (-18°C)",
+      season: "Seasonal Harvest Windows (Pre-Order)",
+      applications: "Beverages, artisan ice creams, fruit preparations, preserves, and confectionery"
     },
     microbiological: {
       tpc: "< 10 CFU / g",
@@ -247,12 +285,12 @@ export interface SeasonalityItem {
 }
 
 export const RB_SEASONALITY: SeasonalityItem[] = [
-  { crop: "Pakistani Kinnow Mandarin", active: [1, 2, 3, 12], peak: [1, 2], status: "Active Processing Campaign" },
-  { crop: "Fresh Strawberry", active: [2, 3, 4], peak: [3], status: "Pre-Harvest Booking" },
-  { crop: "Sindhri Mango", active: [5, 6, 7], peak: [6], status: "Forward Contract Booking" },
-  { crop: "Chaunsa Mango (Supreme)", active: [6, 7, 8], peak: [7], status: "High Demand / Reserve Early" },
-  { crop: "Anwar Ratool Mango", active: [6, 7], peak: [7], status: "Forward Booking" },
-  { crop: "Golden & Red Apple", active: [8, 9, 10], peak: [9], status: "Late Summer Harvest" },
-  { crop: "White & Pink Guava", active: [9, 10, 11, 12, 1], peak: [10, 11], status: "Biannual Crop" },
-  { crop: "Indus Red Carrot", active: [11, 12, 1, 2], peak: [12, 1], status: "Winter Crop" }
+  { crop: "Desi Mango Pulp", active: [5, 6, 7], peak: [6], status: "Active Harvest Campaign" },
+  { crop: "Dussehri Mango Pulp", active: [6, 7], peak: [6, 7], status: "Peak Allocation Booking" },
+  { crop: "Anwar Ratool Mango Pulp", active: [6, 7, 8], peak: [7], status: "Forward Contract Booking" },
+  { crop: "Chaunsa Mango Pulp (Flagship)", active: [6, 7, 8], peak: [7, 8], status: "High Demand / Reserve Early" },
+  { crop: "Langra Mango Pulp", active: [7, 8], peak: [7], status: "Varietal Allocation" },
+  { crop: "White Guava Pulp", active: [9, 10, 11, 12, 1], peak: [10, 11], status: "Aseptic Campaign Active" },
+  { crop: "Tomato Paste (Concentrate)", active: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], peak: [2, 3, 4], status: "Year-Round Supply" },
+  { crop: "Other Fruit Range (Peach, Falsa, Strawberry)", active: [2, 3, 4, 5], peak: [3, 4], status: "Pre-Harvest Booking" }
 ];

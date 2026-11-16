@@ -147,7 +147,7 @@ export default function Hero() {
         >
           <div className="hero-image-stack">
             <img
-              src="/images/cutted-mango.jpg"
+              src="/images/mango-pulp-fresh.jpg"
               alt="Pakistani Chaunsa Mango Processing"
               className="hero-primary-img"
             />
