@@ -1,28 +1,25 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-interface HeroProps {
-  onOpenQuote: () => void;
-}
+export default function Hero() {
+  const heroCardRef = useRef<HTMLDivElement>(null);
+  const [counts, setCounts] = useState({ capacity: 0, drums: 0, micro: 0 });
 
-export default function Hero({ onOpenQuote }: HeroProps) {
-  const tiltCardRef = useRef<HTMLDivElement>(null);
-
+  // 3D Parallax Tilt
   useEffect(() => {
-    const card = tiltCardRef.current;
-    if (!card) return;
+    const card = heroCardRef.current;
+    if (!card || window.innerWidth < 1024) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -6;
-      const rotateY = ((x - centerX) / centerX) * 6;
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+      const rotX = -(y / rect.height) * 10;
+      const rotY = (x / rect.width) * 10;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.02, 1.02, 1.02)`;
     };
 
     const handleMouseLeave = () => {
@@ -38,129 +35,153 @@ export default function Hero({ onOpenQuote }: HeroProps) {
     };
   }, []);
 
+  // Metric Counter Animation
+  useEffect(() => {
+    const duration = 1800;
+    const startTime = performance.now();
+
+    const update = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 4);
+
+      setCounts({
+        capacity: Math.floor(easeOut * 35000),
+        drums: Math.floor(easeOut * 215),
+        micro: Math.floor(easeOut * 100)
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+
+    requestAnimationFrame(update);
+  }, []);
+
   return (
-    <section className="hero-section" id="hero">
-      <div className="container">
-        <div className="hero-grid">
-          {/* Left Column: Value Proposition & Procurement CTAs */}
-          <div className="hero-content">
-            <div className="hero-badge-pill">
-              <span className="hero-badge-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </span>
-              <span>ASEPTIC &amp; FROZEN PUREE LINE &bull; SHORKOT, PUNJAB</span>
-            </div>
+    <section className="hero-section">
+      {/* Ambient Floating Light Orbs */}
+      <div className="ambient-glow-orb ambient-orb-1" aria-hidden="true"></div>
+      <div className="ambient-glow-orb ambient-orb-2" aria-hidden="true"></div>
 
-            <h1 className="hero-headline">
-              Nature’s Purest Harvest, Engineered for{' '}
-              <span className="text-gradient-gold">Global Aseptic Standards.</span>
-            </h1>
-
-            <p className="hero-subtext">
-              <strong>R&amp;B Foods (Pvt.) Ltd</strong> operates Pakistan’s benchmark industrial processing facility equipped with genuine <strong>BERTUZZI (Italy)</strong> continuous lines. We supply world-class Chaunsa mango, pink guava, and citrus purees to the globe’s premier beverage and dairy conglomerates.
-            </p>
-
-            <div className="hero-cta-group">
-              <a href="#products" className="btn btn-primary btn-large">
-                <span>Explore Puree Catalog</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <button
-                type="button"
-                className="btn btn-outline btn-large"
-                onClick={onOpenQuote}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                </svg>
-                <span>Request Commercial Sample Kit</span>
-              </button>
-            </div>
-
-            <div className="hero-trust-row">
-              <div className="trust-item">
-                <span className="trust-check">&check;</span>
-                <span>FSSC 22000 &amp; ISO 9001 Certified</span>
-              </div>
-              <div className="trust-item">
-                <span className="trust-check">&check;</span>
-                <span>100% Halal &amp; Kosher Compliant</span>
-              </div>
-              <div className="trust-item">
-                <span className="trust-check">&check;</span>
-                <span>Zero Artificial Preservatives</span>
-              </div>
-            </div>
+      <div className="container hero-grid">
+        <div className="hero-content reveal is-visible">
+          <div className="provenance-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            Aseptic &amp; Frozen Puree Line &bull; Shorkot, Punjab
           </div>
 
-          {/* Right Column: Visual Machinery & Puree Showcase with Parallax Tilt */}
-          <div className="hero-visual-wrapper">
-            <div className="hero-image-card" ref={tiltCardRef}>
-              <div className="hero-img-container">
-                <img
-                  src="/images/cutted-mango.jpg"
-                  alt="Fresh Chaunsa Mango ready for processing"
-                  className="hero-main-img"
-                  width="700"
-                  height="520"
-                />
-                <div className="hero-img-overlay"></div>
-              </div>
+          <h1 className="hero-title">
+            Nature’s Purest Harvest, Engineered for <em>Global Aseptic Standards.</em>
+          </h1>
 
-              {/* Floating Analytical Spec Tag */}
-              <div className="hero-floating-tag tag-top">
-                <div className="floating-tag-pulse"></div>
-                <div className="floating-tag-text">
-                  <span className="tag-label">Peak Brix Chaunsa</span>
-                  <span className="tag-val">28&deg; &ndash; 30&deg; Concentrated</span>
-                </div>
-              </div>
+          <p className="hero-lead">
+            R&amp;B Foods (Pvt.) Ltd operates Pakistan’s benchmark industrial processing facility equipped with genuine <strong>BERTUZZI (Italy)</strong> continuous lines. We supply world-class Chaunsa mango, pink guava, and citrus purees to the globe&apos;s premier beverage and dairy conglomerates.
+          </p>
 
-              {/* Bertuzzi Docked Technical Badge */}
-              <div className="hero-docked-card">
-                <div className="docked-icon-wrap">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                  </svg>
-                </div>
-                <div className="docked-content">
-                  <span className="docked-title">BERTUZZI (Milan, Italy)</span>
-                  <span className="docked-sub">Continuous Aseptic Cold Line &bull; 100% In-line Quality Control</span>
-                </div>
-              </div>
+          <div className="hero-cta-group">
+            <a
+              href="#rfq-calculator"
+              className="btn btn-gold"
+              style={{ padding: '0.95rem 1.85rem', fontSize: '1rem' }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+              Request B2B Pricing &amp; Sample Drums
+            </a>
+            <a
+              href="#purees"
+              className="btn btn-secondary"
+              style={{ padding: '0.95rem 1.6rem', fontSize: '1rem' }}
+            >
+              Explore Puree Specs
+            </a>
+          </div>
+
+          {/* Live Animated Metric Counters */}
+          <div className="hero-metrics-bar">
+            <div className="metric-item">
+              <span className="metric-val">
+                {counts.capacity.toLocaleString()}
+                <small>MT</small>
+              </span>
+              <span className="metric-label">Annual Capacity</span>
+            </div>
+            <div className="metric-item">
+              <span className="metric-val">
+                BERTUZZI
+                <small style={{ fontSize: '0.75rem', color: 'var(--color-gold-500)', marginLeft: '3px' }}>
+                  ITALY
+                </small>
+              </span>
+              <span className="metric-label">Continuous Line</span>
+            </div>
+            <div className="metric-item">
+              <span className="metric-val">
+                {counts.drums}
+                <small>KG</small>
+              </span>
+              <span className="metric-label">Aseptic Steel Drums</span>
+            </div>
+            <div className="metric-item">
+              <span className="metric-val">
+                {counts.micro}
+                <small>%</small>
+              </span>
+              <span className="metric-label">Zero-Defect Micro QA</span>
             </div>
           </div>
         </div>
 
-        {/* Rapid Technical Metrics Counter Banner */}
-        <div className="hero-metrics-bar">
-          <div className="metric-cell">
-            <span className="metric-number">35,000</span>
-            <span className="metric-unit">MT / Season</span>
-            <span className="metric-label">Total Processing Capacity</span>
+        {/* Hero Visual Card with Levitating Badges */}
+        <div
+          className="hero-visual-card reveal reveal-scale is-visible"
+          id="hero-card"
+          ref={heroCardRef}
+        >
+          <div className="hero-image-stack">
+            <img
+              src="/images/cutted-mango.jpg"
+              alt="Pakistani Chaunsa Mango Processing"
+              className="hero-primary-img"
+            />
+
+            {/* Floating Badge 1: Top Right (Levitating) */}
+            <div className="hero-floating-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Peak Brix Chaunsa 28&deg;&ndash;30&deg;</span>
+            </div>
+
+            {/* Floating Badge 2: Top Left (Levitating Opposite) */}
+            <div className="hero-floating-badge-bottom">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>BERTUZZI Continuous Line</span>
+            </div>
           </div>
-          <div className="metric-cell">
-            <span className="metric-number">215</span>
-            <span className="metric-unit">KG Net</span>
-            <span className="metric-label">Aseptic Drums / Cold Chain</span>
-          </div>
-          <div className="metric-cell">
-            <span className="metric-number">100%</span>
-            <span className="metric-unit">Italian Line</span>
-            <span className="metric-label">Bertuzzi Continuous Machinery</span>
-          </div>
-          <div className="metric-cell">
-            <span className="metric-number">14+</span>
-            <span className="metric-unit">Global Ports</span>
-            <span className="metric-label">FOB Karachi &amp; Direct CIF Deliveries</span>
+
+          <div className="hero-docked-card">
+            <div className="drum-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <line x1="3" y1="16" x2="21" y2="16"></line>
+              </svg>
+            </div>
+            <div className="hero-docked-text">
+              <h5>Continuous Flash Sterilization</h5>
+              <p>Sealed in 4-layer aseptic foil drums under laminar air cleanroom conditions.</p>
+            </div>
           </div>
         </div>
       </div>

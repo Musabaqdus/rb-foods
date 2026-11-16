@@ -4,129 +4,136 @@ import React, { useState } from 'react';
 import { RB_PRODUCTS, Product } from '../data/products';
 
 interface ProductCatalogProps {
-  onSelectProduct: (product: Product) => void;
-  onRequestQuoteWithProduct: (productName: string) => void;
+  onOpenSpec: (product: Product) => void;
+  onSelectRfq: (productName: string) => void;
 }
 
-export default function ProductCatalog({ onSelectProduct, onRequestQuoteWithProduct }: ProductCatalogProps) {
+export default function ProductCatalog({ onOpenSpec, onSelectRfq }: ProductCatalogProps) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const filteredProducts = activeCategory === 'all'
+  const filtered = activeCategory === 'all'
     ? RB_PRODUCTS
-    : RB_PRODUCTS.filter((p) => {
-        if (activeCategory === 'mango') return p.category === 'mango';
-        if (activeCategory === 'guava') return p.category === 'guava';
-        if (activeCategory === 'citrus') return p.category === 'citrus';
-        if (activeCategory === 'others') return p.category === 'temperate' || p.category === 'vegetable';
-        return true;
-      });
+    : RB_PRODUCTS.filter(p => p.category === activeCategory);
 
   return (
-    <section className="catalog-section" id="products">
+    <section className="section" id="purees">
       <div className="container">
-        <div className="section-header-centered">
-          <span className="section-pill">PREMIUM AGRO-INDUSTRIAL CATALOG</span>
-          <h2 className="section-title">
-            Export-Grade Fruit Purees &amp; Concentrates
-          </h2>
-          <p className="section-subtitle">
-            Processed from tree-ripened Pakistani fruits under strict continuous aseptic flash-sterilization. Tailored for commercial beverage, dairy, ice cream, baby food, and confectionery compounding.
+        <div className="section-header text-center reveal is-visible">
+          <span className="section-kicker">Industrial Specification Portfolio</span>
+          <h2 className="section-title">Aseptic &amp; Frozen Fruit Purees</h2>
+          <p className="section-desc">
+            Refined from Pakistan&apos;s prime agricultural heartland without artificial coloring, flavorings, or chemical preservatives. Packed in export-ready 215 kg aseptic steel drums and frozen bulk packaging.
           </p>
         </div>
 
-        {/* Filter Navigation Tabs */}
-        <div className="catalog-filter-bar">
+        {/* Filter Tabs with Smooth Animation */}
+        <div className="product-tabs-wrapper reveal is-visible">
           <button
             type="button"
-            className={`filter-btn ${activeCategory === 'all' ? 'active' : ''}`}
+            className={`tab-btn ${activeCategory === 'all' ? 'active' : ''}`}
             onClick={() => setActiveCategory('all')}
           >
-            All Products (7)
+            All Purees
           </button>
           <button
             type="button"
-            className={`filter-btn ${activeCategory === 'mango' ? 'active' : ''}`}
+            className={`tab-btn ${activeCategory === 'mango' ? 'active' : ''}`}
             onClick={() => setActiveCategory('mango')}
           >
-            Mango Purees (2)
+            Mango Specialties (Chaunsa / Sindhri)
           </button>
           <button
             type="button"
-            className={`filter-btn ${activeCategory === 'guava' ? 'active' : ''}`}
+            className={`tab-btn ${activeCategory === 'guava' ? 'active' : ''}`}
             onClick={() => setActiveCategory('guava')}
           >
-            Pink &amp; White Guava (1)
+            Pink &amp; White Guava
           </button>
           <button
             type="button"
-            className={`filter-btn ${activeCategory === 'citrus' ? 'active' : ''}`}
+            className={`tab-btn ${activeCategory === 'citrus' ? 'active' : ''}`}
             onClick={() => setActiveCategory('citrus')}
           >
-            Kinnow Mandarin Citrus (1)
+            Indus Kinnow &amp; Mandarin
           </button>
           <button
             type="button"
-            className={`filter-btn ${activeCategory === 'others' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('others')}
+            className={`tab-btn ${activeCategory === 'temperate' ? 'active' : ''}`}
+            onClick={() => setActiveCategory('temperate')}
           >
-            Temperate &amp; Vegetables (3)
+            Apple &amp; Berries
+          </button>
+          <button
+            type="button"
+            className={`tab-btn ${activeCategory === 'vegetable' ? 'active' : ''}`}
+            onClick={() => setActiveCategory('vegetable')}
+          >
+            Vegetable Purees
           </button>
         </div>
 
-        {/* Product Cards Grid */}
-        <div className="catalog-grid">
-          {filteredProducts.map((prod) => (
-            <article className="product-card" key={prod.id}>
-              <div className="product-media-wrap">
-                <img
-                  src={prod.image}
-                  alt={prod.name}
-                  className="product-card-img"
-                  loading="lazy"
-                />
-                <span className="product-badge">{prod.badge}</span>
-                <span className="product-harvest-badge">{prod.specs.season.split('(')[0].trim()}</span>
+        {/* Products Grid */}
+        <div className="products-grid" id="products-grid-container">
+          {filtered.map((product) => (
+            <article className="product-card reveal reveal-scale is-visible" key={product.id}>
+              <div className="product-card-img-wrap">
+                <img src={product.image} alt={product.name} loading="lazy" />
+                <span className="product-card-badge">{product.badge}</span>
               </div>
-
               <div className="product-card-body">
-                <span className="product-botanical-tag">{prod.botanical}</span>
-                <h3 className="product-title">{prod.name}</h3>
-                <p className="product-tagline">{prod.tagline}</p>
+                <span className="product-card-botanical">{product.botanical}</span>
+                <h3 className="product-card-title">{product.name}</h3>
+                <p className="product-card-tagline">{product.tagline}</p>
 
-                {/* Analytical Specs Quick Pill Summary */}
-                <div className="product-spec-pills">
-                  <div className="spec-pill">
-                    <span className="spec-pill-name">Brix:</span>
-                    <span className="spec-pill-val">{prod.specs.brix.split('|')[0].trim()}</span>
+                <div className="spec-quick-bar">
+                  <div className="spec-mini-item">
+                    <span className="spec-mini-label">BRIX</span>
+                    <span className="spec-mini-val">{product.specs.brix.split('|')[0].trim()}</span>
                   </div>
-                  <div className="spec-pill">
-                    <span className="spec-pill-name">Acidity:</span>
-                    <span className="spec-pill-val">{prod.specs.acidity.split('(')[0].trim()}</span>
+                  <div className="spec-mini-item">
+                    <span className="spec-mini-label">PACKAGING</span>
+                    <span className="spec-mini-val">215 kg Aseptic</span>
                   </div>
-                  <div className="spec-pill">
-                    <span className="spec-pill-name">pH:</span>
-                    <span className="spec-pill-val">{prod.specs.ph}</span>
+                  <div className="spec-mini-item">
+                    <span className="spec-mini-label">pH RANGE</span>
+                    <span className="spec-mini-val">{product.specs.ph}</span>
                   </div>
-                  <div className="spec-pill">
-                    <span className="spec-pill-name">Pack:</span>
-                    <span className="spec-pill-val">215kg Drum</span>
+                  <div className="spec-mini-item">
+                    <span className="spec-mini-label">SHELF LIFE</span>
+                    <span className="spec-mini-val">24 Months</span>
                   </div>
                 </div>
 
-                <div className="product-card-actions">
+                <div className="product-card-footer">
                   <button
                     type="button"
-                    className="btn btn-outline btn-card"
-                    onClick={() => onSelectProduct(prod)}
+                    className="btn-spec-view"
+                    onClick={() => onOpenSpec(product)}
                   >
-                    View Lab Specs
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{ display: 'inline', verticalAlign: '-2px', marginRight: '4px' }}
+                    >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                    Technical Specs
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary btn-card"
-                    onClick={() => onRequestQuoteWithProduct(prod.name)}
+                    className="btn-sample-req"
+                    onClick={() => onSelectRfq(product.name)}
                   >
-                    Request Quote
+                    Sample RFQ
                   </button>
                 </div>
               </div>

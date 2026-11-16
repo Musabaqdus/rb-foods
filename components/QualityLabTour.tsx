@@ -1,119 +1,117 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 export default function QualityLabTour() {
-  const [activeVideo, setActiveVideo] = useState<'lab' | 'facility'>('lab');
+  const [currentVideo, setCurrentVideo] = useState({
+    src: '/video/lab-tour.mp4',
+    title: 'In-House QA & Microbiological Testing Lab'
+  });
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleTabChange = (src: string, title: string) => {
+    setCurrentVideo({ src, title });
+    if (videoRef.current) {
+      videoRef.current.src = src;
+      videoRef.current.load();
+      videoRef.current.play().catch(() => {});
+    }
+  };
 
   return (
-    <section className="lab-section" id="quality-lab">
+    <section className="section" id="laboratory">
       <div className="container">
-        <div className="section-header-centered">
-          <span className="section-pill">QA/QC ANALYTICAL ASSURANCE</span>
-          <h2 className="section-title">
-            In-House Analytical Laboratory &amp; Production Facility Tour
-          </h2>
-          <p className="section-subtitle">
-            Every batch undergoes stringent analytical and microbiological testing in our climate-controlled laboratory before export release. Watch our laboratory and production facility in action.
+        <div className="section-header reveal is-visible">
+          <span className="section-kicker">Zero-Defect Quality Mandate</span>
+          <h2 className="section-title">Certified In-House QA / QC Testing Lab</h2>
+          <p className="section-desc">
+            Every drum that leaves Shorkot is backed by our comprehensive analytical and microbiological Certificate of Analysis (COA). We test incoming fruit, in-line process streams, and final packed product.
           </p>
         </div>
 
         <div className="lab-grid">
-          {/* Left Column: Interactive Video Player with Switcher */}
-          <div className="lab-video-wrapper">
-            <div className="video-switcher-tabs">
-              <button
-                type="button"
-                className={`video-tab-btn ${activeVideo === 'lab' ? 'active' : ''}`}
-                onClick={() => setActiveVideo('lab')}
+          {/* Interactive Video Player for QA Lab */}
+          <div className="lab-video-container reveal reveal-left is-visible delay-100">
+            <div className="video-player-wrapper">
+              <video
+                ref={videoRef}
+                id="lab-video-player"
+                controls
+                poster="/images/plant-processing-line.jpeg"
+                src={currentVideo.src}
               >
-                Analytical QA Lab Tour
-              </button>
-              <button
-                type="button"
-                className={`video-tab-btn ${activeVideo === 'facility' ? 'active' : ''}`}
-                onClick={() => setActiveVideo('facility')}
-              >
-                Bertuzzi Production Hall
-              </button>
+                Your browser does not support the video tag.
+              </video>
             </div>
 
-            <div className="video-player-container">
-              {activeVideo === 'lab' ? (
-                <video
-                  key="video-lab"
-                  className="facility-video-element"
-                  controls
-                  playsInline
-                  poster="/images/lab-testing.jpg"
+            <div className="video-controls-bar">
+              <div className="video-label-info">
+                <span className="status-dot-pulse" style={{ background: '#E58C05' }}></span>
+                <span id="video-current-title">{currentVideo.title}</span>
+              </div>
+              <div className="video-selector-tabs">
+                <button
+                  type="button"
+                  className={`video-tab-btn ${currentVideo.src.includes('lab-tour') ? 'active' : ''}`}
+                  onClick={() => handleTabChange('/video/lab-tour.mp4', 'In-House QA & Microbiological Testing Lab')}
                 >
-                  <source src="/video/lab-tour.mp4" type="video/mp4" />
-                  Your browser does not support HTML5 video streaming.
-                </video>
-              ) : (
-                <video
-                  key="video-facility"
-                  className="facility-video-element"
-                  controls
-                  playsInline
-                  poster="/images/packaging-drums.jpg"
+                  Lab Tour
+                </button>
+                <button
+                  type="button"
+                  className={`video-tab-btn ${currentVideo.src.includes('facility') ? 'active' : ''}`}
+                  onClick={() => handleTabChange('/video/facility-overview.mp4', 'Bertuzzi Continuous Processing Line')}
                 >
-                  <source src="/video/facility-overview.mp4" type="video/mp4" />
-                  Your browser does not support HTML5 video streaming.
-                </video>
-              )}
+                  Factory Floor
+                </button>
+              </div>
             </div>
-            <p className="video-caption-note">
-              &bull; Official R&amp;B Foods Plant Footage &bull; Shorkot Industrial Estate &bull; Pakistan
-            </p>
           </div>
 
-          {/* Right Column: Testing Protocols & Standards */}
-          <div className="lab-specs-column">
-            <h3 className="lab-headline">Comprehensive Batch Clearance Protocol</h3>
-            <p className="lab-subtext">
-              Zero tolerance for deviation. We provide full Certificate of Analysis (COA) with each export container conforming to AIJN (European Fruit Juice Association) Code of Practice and FDA standards.
+          {/* Testing Parameters */}
+          <div className="lab-details-col reveal reveal-right is-visible delay-200">
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', color: 'var(--color-primary-900)', marginBottom: '1rem' }}>
+              Rigorous Multi-Tier Inspection Protocols
+            </h3>
+            <p style={{ color: 'var(--color-charcoal-700)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+              Our laboratory is staffed by veteran food technologists with decades of multinational experience. Samples from every production batch undergo 7-day sterile incubation before commercial release.
             </p>
 
-            <div className="lab-protocol-list">
-              <div className="protocol-card">
-                <div className="protocol-badge">01</div>
-                <div>
-                  <h4 className="protocol-name">Refractometric &amp; Physical Analysis</h4>
-                  <p className="protocol-desc">
-                    Digital temperature-compensated refractometers calibrate Brix (&deg;Bx), Bostwick consistometer measures millimetric flow rate at 20&deg;C, and spectrophotometers log Color Index.
-                  </p>
-                </div>
+            <div className="lab-parameters-grid">
+              <div className="param-card">
+                <h5>Refractometric Brix &amp; Ratio</h5>
+                <p>Digital temperature-compensated refractometry accurate to &plusmn;0.1&deg; Brix.</p>
               </div>
 
-              <div className="protocol-card">
-                <div className="protocol-badge">02</div>
-                <div>
-                  <h4 className="protocol-name">Microbiological Sterility Plating</h4>
-                  <p className="protocol-desc">
-                    Laminar airflow hood plating screens for TPC, Yeast, Mould, Coliforms, and pathogenic bacteria (Salmonella, E. coli, Listeria) with mandatory 7-day incubation holds.
-                  </p>
-                </div>
+              <div className="param-card">
+                <h5>Bostwick Viscometry</h5>
+                <p>Precise measurement of puree pulp flow rate and consistency (cm/30s at 20&deg;C).</p>
               </div>
 
-              <div className="protocol-card">
-                <div className="protocol-badge">03</div>
-                <div>
-                  <h4 className="protocol-name">Residue &amp; Heavy Metals Screening</h4>
-                  <p className="protocol-desc">
-                    Gas chromatography (GC-MS) and liquid chromatography (LC-MS) screening verify compliance with strict EU MRLs (Maximum Residue Limits) and US FDA agrochemical thresholds.
-                  </p>
-                </div>
+              <div className="param-card">
+                <h5>Microbiological Plating</h5>
+                <p>Total Plate Count &lt;10 cfu/g, zero yeast, zero mold, pathogens negative.</p>
+              </div>
+
+              <div className="param-card">
+                <h5>Spectrophotometric Color</h5>
+                <p>Standardized HunterLab colorimetry ensuring uniform brand color matching.</p>
               </div>
             </div>
 
-            <div className="cert-badges-grid">
-              <div className="cert-pill">FSSC 22000 v5.1</div>
-              <div className="cert-pill">ISO 9001:2015</div>
-              <div className="cert-pill">HACCP Codex</div>
-              <div className="cert-pill">Halal Certified</div>
-              <div className="cert-pill">Kosher Certified</div>
-              <div className="cert-pill">FDA Registered</div>
+            <div className="cert-badges-row">
+              <div className="cert-badge-item">
+                <img src="/logos/haccp.jpg" alt="HACCP Certified" />
+                <span>HACCP Certified</span>
+              </div>
+              <div className="cert-badge-item">
+                <img src="/logos/cert.png" alt="Food Safety Certification" />
+                <span>ISO 22000 Aligned</span>
+              </div>
+              <div className="cert-badge-item">
+                <span style={{ color: '#059669', fontSize: '1.1rem', fontWeight: 800 }}>حلال</span>
+                <span>100% Halal Certified</span>
+              </div>
             </div>
           </div>
         </div>

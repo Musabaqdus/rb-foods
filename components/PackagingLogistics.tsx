@@ -4,118 +4,82 @@ import React from 'react';
 
 export default function PackagingLogistics() {
   return (
-    <section className="packaging-section" id="packaging">
+    <section className="section section-alt" id="packaging">
       <div className="container">
-        <div className="section-header-centered">
-          <span className="section-pill">EXPORT LOGISTICS &amp; PACKAGING</span>
-          <h2 className="section-title">
-            Industrial Packaging Engineered for Ocean Transit
-          </h2>
-          <p className="section-subtitle">
-            Hermetically sealed aseptic packaging ensures up to 24 months of ambient shelf life without chemical preservatives. Shipped from Karachi Port under strict maritime load securing standards.
+        <div className="section-header text-center reveal is-visible">
+          <span className="section-kicker">Global Shipping Specifications</span>
+          <h2 className="section-title">Engineered for Cold-Chain &amp; Global Transit</h2>
+          <p className="section-desc">
+            R&amp;B Foods handles containerized shipments from Karachi Port (KICT / QICT / SAPT) to major global ports across the Middle East, Europe, North America, and the Asia-Pacific.
           </p>
         </div>
 
         <div className="packaging-grid">
-          {/* Packaging Format 1: 215kg Aseptic Steel Drum */}
-          <div className="packaging-card">
-            <div className="packaging-header">
-              <span className="pack-badge">Standard Export Unit</span>
-              <h3 className="pack-title">215 KG Aseptic Steel Drum</h3>
-              <p className="pack-sub">Multilayer Aseptic Bag-in-Drum System</p>
+          {/* Packaging Card 1 */}
+          <div className="packaging-card reveal is-visible delay-100">
+            <div className="pack-header">
+              <div className="pack-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+              </div>
+              <span className="pack-tag">Industry Benchmark</span>
             </div>
-            <ul className="pack-specs-list">
-              <li>
-                <strong>Internal Liner:</strong> Irradiated multi-layer aluminum-barrier aseptic bag with 2-inch hermetic fill valve.
-              </li>
-              <li>
-                <strong>Outer Drum:</strong> High-gauge cold-rolled steel, internally lined with food-grade epoxy lacquer; external dark green industrial protective enamel.
-              </li>
-              <li>
-                <strong>Net Weight per Drum:</strong> 215.0 kg &plusmn; 1.0 kg (Gross ~235 kg).
-              </li>
-              <li>
-                <strong>Tamper Security:</strong> Serialized security barcode band and tamper-evident cap lock.
-              </li>
-              <li>
-                <strong>Ambient Shelf Life:</strong> 24 months stored below 25&deg;C in clean, dry ambient conditions.
-              </li>
-            </ul>
+            <h3 className="pack-title">215 kg Aseptic Steel Drum</h3>
+            <p className="pack-desc">
+              4-layer metallized polyester/aluminum barrier bag inside a food-grade epoxy-lacquered steel drum. Nitrogen flushed with tamper-evident seal.
+            </p>
+            <div className="pack-specs-list">
+              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">215 kg &plusmn; 0.5 kg</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Gross Weight:</span><span className="pack-spec-val">~233 kg per drum</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; FCL Stuffing:</span><span className="pack-spec-val">80 Drums (17.20 MT Net)</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Ambient Shelf Life:</span><span className="pack-spec-val">24 Months (&lt; 25&deg;C)</span></div>
+            </div>
           </div>
 
-          {/* Packaging Format 2: 20' FCL Maritime Container Payload */}
-          <div className="packaging-card highlighted-pack">
-            <div className="packaging-header">
-              <span className="pack-badge">Full Container Load (FCL)</span>
-              <h3 className="pack-title">20-Foot Dry Marine Container</h3>
-              <p className="pack-sub">Standard 20' FCL Ocean Freight Logistics</p>
+          {/* Packaging Card 2 */}
+          <div className="packaging-card reveal is-visible delay-200">
+            <div className="pack-header">
+              <div className="pack-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                </svg>
+              </div>
+              <span className="pack-tag">Artisan &amp; Foodservice</span>
             </div>
-            <ul className="pack-specs-list">
-              <li>
-                <strong>Container Loading:</strong> 80 Drums per 20' Dry Container (20 heat-treated wooden pallets &times; 4 drums per pallet).
-              </li>
-              <li>
-                <strong>Total Net Cargo Weight:</strong> 17,200 KG (17.20 Metric Tons).
-              </li>
-              <li>
-                <strong>Total Gross Weight:</strong> Approx. 18,800 KG (including drums, pallets &amp; dunnage).
-              </li>
-              <li>
-                <strong>Cargo Securing:</strong> Heavy-duty composite cargo strapping, air dunnage bags, and moisture-absorbing silica gel poles.
-              </li>
-              <li>
-                <strong>Port of Loading:</strong> Karachi Port (QICT / KICT / SAPT terminals).
-              </li>
-            </ul>
+            <h3 className="pack-title">20 kg Bag-in-Box (BIB)</h3>
+            <p className="pack-desc">
+              Aseptic barrier bag inside high-burst corrugated carton. Ideal for craft dairies, artisan ice cream producers, and culinary foodservice.
+            </p>
+            <div className="pack-specs-list">
+              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">20 kg</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; FCL Stuffing:</span><span className="pack-spec-val">1,000 Cartons (20.0 MT Net)</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Palletization:</span><span className="pack-spec-val">50 Boxes per Pallet</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Handling:</span><span className="pack-spec-val">Easy Pour / Dispenser Valve</span></div>
+            </div>
           </div>
 
-          {/* Packaging Format 3: Frozen Puree & Bag-in-Box */}
-          <div className="packaging-card">
-            <div className="packaging-header">
-              <span className="pack-badge">Specialty &amp; Cold Chain</span>
-              <h3 className="pack-title">Frozen Pails &amp; 20kg Bag-in-Box</h3>
-              <p className="pack-sub">For R&amp;D, Foodservice &amp; Frozen Berry Purees</p>
+          {/* Packaging Card 3 */}
+          <div className="packaging-card reveal is-visible delay-300">
+            <div className="pack-header">
+              <div className="pack-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 14 14"></polyline>
+                </svg>
+              </div>
+              <span className="pack-tag">Cold Storage Puree</span>
             </div>
-            <ul className="pack-specs-list">
-              <li>
-                <strong>Frozen Puree Pails:</strong> 18 kg food-grade tamper-evident HDPE pails with airtight gasket lids.
-              </li>
-              <li>
-                <strong>Bag-in-Box (BIB):</strong> 20 kg aseptic EVOH multi-barrier bag in 5-ply heavy corrugated export carton.
-              </li>
-              <li>
-                <strong>Cold Chain Refrigerated FCL:</strong> 40' High-Cube Reefer container maintained at continuous -18&deg;C with digital datalogger.
-              </li>
-              <li>
-                <strong>Target Usage:</strong> Artisan gelato producers, boutique bakeries, craft breweries, and industrial recipe pilot trials.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Global Transit Time Indicators */}
-        <div className="transit-banner">
-          <h4 className="transit-title">Direct Ocean Transit Schedules from Karachi Port (FOB / CIF / CFR):</h4>
-          <div className="transit-grid">
-            <div className="transit-item">
-              <span className="transit-port">Jebel Ali (UAE)</span>
-              <span className="transit-days">3 &ndash; 5 Days</span>
-            </div>
-            <div className="transit-item">
-              <span className="transit-port">Rotterdam / Antwerp</span>
-              <span className="transit-days">20 &ndash; 24 Days</span>
-            </div>
-            <div className="transit-item">
-              <span className="transit-port">Singapore / Port Klang</span>
-              <span className="transit-days">10 &ndash; 14 Days</span>
-            </div>
-            <div className="transit-item">
-              <span className="transit-port">Qingdao / Shanghai</span>
-              <span className="transit-days">16 &ndash; 20 Days</span>
-            </div>
-            <div className="transit-item">
-              <span className="transit-port">Dammam / Jeddah</span>
-              <span className="transit-days">6 &ndash; 9 Days</span>
+            <h3 className="pack-title">Frozen Puree (-18&deg;C Pails)</h3>
+            <p className="pack-desc">
+              Unpasteurized or gently pasteurized blast-frozen fruit puree retaining the exact raw aroma of freshly picked orchard fruit.
+            </p>
+            <div className="pack-specs-list">
+              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">18 kg Food-Grade Pail</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Temperature:</span><span className="pack-spec-val">-18&deg;C Constant Reefer</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; Reefer Stuffing:</span><span className="pack-spec-val">~16.0 to 18.0 Metric Tons</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Best Suited:</span><span className="pack-spec-val">Gelato, Sorbets &amp; Breweries</span></div>
             </div>
           </div>
         </div>

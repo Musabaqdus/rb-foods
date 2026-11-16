@@ -5,10 +5,9 @@ import React, { useEffect } from 'react';
 interface MobileDrawerProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenQuote: () => void;
 }
 
-export default function MobileDrawer({ isOpen, onClose, onOpenQuote }: MobileDrawerProps) {
+export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -20,102 +19,101 @@ export default function MobileDrawer({ isOpen, onClose, onOpenQuote }: MobileDra
     };
   }, [isOpen]);
 
-  const handleLinkClick = () => {
-    onClose();
-  };
-
-  const handleQuoteClick = () => {
-    onClose();
-    onOpenQuote();
-  };
-
   return (
     <>
+      {/* Background Dimmer Backdrop */}
       <div
-        className={`mobile-backdrop ${isOpen ? 'active' : ''}`}
-        id="mobileBackdrop"
+        className={`nav-drawer-backdrop ${isOpen ? 'active' : ''}`}
+        id="nav-drawer-backdrop"
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className={`mobile-nav-drawer ${isOpen ? 'active' : ''}`} id="mobileDrawer">
-        <div className="mobile-drawer-header">
-          <div className="brand">
-            <div className="brand-logo-wrap">
-              <img
-                src="/logos/rb-logo.jpg"
-                alt="R&B Foods Emblem"
-                className="brand-logo-img"
-                width="36"
-                height="36"
-              />
-            </div>
+
+      {/* Slide-over Drawer Pane */}
+      <aside
+        className={`nav-drawer ${isOpen ? 'active' : ''}`}
+        id="nav-drawer"
+        aria-label="Mobile Navigation"
+      >
+        <div className="drawer-header">
+          <div className="brand-wrapper">
+            <img
+              src="/logos/rb-foods-logo.jpg"
+              alt="R&B Foods"
+              className="brand-logo-img"
+            />
             <div className="brand-text">
-              <span className="brand-name">R&amp;B Foods</span>
-              <span className="brand-sub">EXPORT DESK</span>
+              <span className="brand-name">R&amp;B <span>Foods</span></span>
+              <span className="brand-sub">Fruit Purees</span>
             </div>
           </div>
           <button
             type="button"
-            className="mobile-close-btn"
-            id="mobileCloseBtn"
-            aria-label="Close menu"
+            className="modal-close-btn"
             onClick={onClose}
+            style={{ color: 'var(--color-primary-900)', fontSize: '1.8rem' }}
+            aria-label="Close menu"
           >
             &times;
           </button>
         </div>
 
-        <nav className="mobile-nav-links">
-          <a href="#products" className="mobile-nav-link" onClick={handleLinkClick}>
-            Fruit Purees Catalog
+        <nav className="drawer-links-list">
+          <a href="#purees" className="drawer-link" onClick={onClose}>
+            <span>Fruit Purees Catalog</span>
+            <span>&rarr;</span>
           </a>
-          <a href="#processing" className="mobile-nav-link" onClick={handleLinkClick}>
-            BERTUZZI Italy Facility
+          <a href="#engineering" className="drawer-link" onClick={onClose}>
+            <span>Bertuzzi Italian Plant</span>
+            <span>&rarr;</span>
           </a>
-          <a href="#quality-lab" className="mobile-nav-link" onClick={handleLinkClick}>
-            QA &amp; Lab Standards
+          <a href="#laboratory" className="drawer-link" onClick={onClose}>
+            <span>QA &amp; Laboratory Tour</span>
+            <span>&rarr;</span>
           </a>
-          <a href="#seasonality" className="mobile-nav-link" onClick={handleLinkClick}>
-            Harvest &amp; Seasonality Matrix
+          <a href="#seasonality" className="drawer-link" onClick={onClose}>
+            <span>Crop Harvest Matrix</span>
+            <span>&rarr;</span>
           </a>
-          <a href="#packaging" className="mobile-nav-link" onClick={handleLinkClick}>
-            Export Packaging &amp; Logistics
+          <a href="#packaging" className="drawer-link" onClick={onClose}>
+            <span>Export &amp; Packaging</span>
+            <span>&rarr;</span>
           </a>
-          <a href="#leadership" className="mobile-nav-link" onClick={handleLinkClick}>
-            Governance &amp; Chairman Pledge
+          <a href="#leadership" className="drawer-link" onClick={onClose}>
+            <span>Executive Governance</span>
+            <span>&rarr;</span>
           </a>
         </nav>
 
-        <div className="mobile-drawer-footer">
+        <div className="drawer-actions">
           <a
             href="/docs/company-profile.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-outline"
-            style={{ width: '100%', justifyContent: 'center', marginBottom: '0.75rem' }}
+            className="btn btn-secondary"
+            style={{ width: '100%', fontSize: '0.875rem' }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
             Download Company Profile (PDF)
           </a>
-          <button
-            type="button"
-            className="btn btn-primary"
-            style={{ width: '100%', justifyContent: 'center' }}
-            onClick={handleQuoteClick}
+          <a
+            href="#rfq-calculator"
+            className="btn btn-gold"
+            onClick={onClose}
+            style={{ width: '100%', fontSize: '0.875rem' }}
           >
-            Request Instant B2B Quotation
-          </button>
-          <div style={{ marginTop: '1.25rem', fontSize: '0.8rem', color: 'var(--color-charcoal-700)', lineHeight: '1.6' }}>
-            <p><strong>Plant:</strong> Shorkot, Jhang, Punjab, Pakistan</p>
-            <p><strong>Hotline:</strong> +92 47 5510000</p>
-            <p><strong>Email:</strong> export@rbfoods.com.pk</p>
+            Request B2B Quote &amp; Samples
+          </a>
+          <div style={{ fontSize: '0.75rem', color: 'var(--color-charcoal-600)', textAlign: 'center', marginTop: '0.5rem' }}>
+            Plant Hotline: +92 47 5510000<br />
+            Shorkot, Punjab, Pakistan
           </div>
         </div>
-      </div>
+      </aside>
     </>
   );
 }

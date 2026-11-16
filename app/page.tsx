@@ -20,59 +20,52 @@ import { Product } from '../data/products';
 
 export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [selectedModalProduct, setSelectedModalProduct] = useState<Product | null>(null);
-  const [rfqProduct, setRfqProduct] = useState<string>('Chaunsa Mango Puree (Aseptic & Frozen)');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [rfqInitialProduct, setRfqInitialProduct] = useState<string>('Chaunsa Mango Puree (Aseptic & Frozen)');
 
-  const scrollToRFQ = () => {
-    const el = document.getElementById('rfq-calculator');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+  const handleOpenSpec = (product: Product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleCloseSpec = () => {
+    setSelectedProduct(null);
+  };
+
+  const handleSelectRfq = (productName: string) => {
+    setRfqInitialProduct(productName);
+    const rfqEl = document.getElementById('rfq-calculator');
+    if (rfqEl) {
+      rfqEl.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleSelectProduct = (product: Product) => {
-    setSelectedModalProduct(product);
-  };
-
-  const handleRequestQuoteWithProduct = (productName: string) => {
-    setRfqProduct(productName);
-    scrollToRFQ();
   };
 
   return (
     <>
       <TopProcurementBar />
-      <Navbar
-        onOpenDrawer={() => setIsDrawerOpen(true)}
-        onOpenQuote={scrollToRFQ}
-      />
-      <MobileDrawer
-        isOpen={isDrawerOpen}
-        onClose={() => setIsDrawerOpen(false)}
-        onOpenQuote={scrollToRFQ}
-      />
+      <Navbar onOpenDrawer={() => setIsDrawerOpen(true)} />
+      <MobileDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
 
       <main>
-        <Hero onOpenQuote={scrollToRFQ} />
+        <Hero />
         <ClientMarquee />
         <ProductCatalog
-          onSelectProduct={handleSelectProduct}
-          onRequestQuoteWithProduct={handleRequestQuoteWithProduct}
+          onOpenSpec={handleOpenSpec}
+          onSelectRfq={handleSelectRfq}
         />
         <BertuzziTech />
-        <QualityLabTour />
         <SeasonalityMatrix />
+        <QualityLabTour />
         <PackagingLogistics />
-        <RFQCalculator initialProduct={rfqProduct} key={rfqProduct} />
+        <RFQCalculator initialProduct={rfqInitialProduct} key={rfqInitialProduct} />
         <ChairmanPledge />
       </main>
 
       <Footer />
 
       <ProductModal
-        product={selectedModalProduct}
-        onClose={() => setSelectedModalProduct(null)}
-        onRequestSample={handleRequestQuoteWithProduct}
+        product={selectedProduct}
+        onClose={handleCloseSpec}
+        onRequestSample={handleSelectRfq}
       />
 
       <WhatsAppFloating />
