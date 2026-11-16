@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface NavbarProps {
   onOpenDrawer: () => void;
@@ -20,7 +21,7 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`} id="site-header">
       <div className="container nav-container">
-        <a href="#" className="brand-wrapper">
+        <Link href="/" className="brand-wrapper">
           <img
             src="/logos/rb-foods-logo.jpg"
             alt="R&B Foods Logo"
@@ -30,20 +31,20 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
             <span className="brand-name">R&amp;B <span>Foods</span></span>
             <span className="brand-sub">Fruit Purees &amp; Concentrates</span>
           </div>
-        </a>
+        </Link>
 
-        {/* Desktop Nav Links (Adaptive & Never Overflowing) */}
+        {/* Desktop Nav Links (Clean Multi-Page Hierarchy) */}
         <nav className="nav-links">
-          <a href="#purees" className="nav-link">Purees</a>
-          <a href="#engineering" className="nav-link">Facility</a>
-          <a href="#laboratory" className="nav-link">Lab &amp; QA</a>
-          <a href="#seasonality" className="nav-link">Harvest</a>
-          <a href="#packaging" className="nav-link">Packaging</a>
-          <a href="#leadership" className="nav-link">About</a>
+          <Link href="/purees" className="nav-link">Purees</Link>
+          <Link href="/facility" className="nav-link">Facility</Link>
+          <Link href="/quality" className="nav-link">Lab &amp; QA</Link>
+          <Link href="/harvest" className="nav-link">Harvest</Link>
+          <Link href="/packaging" className="nav-link">Packaging</Link>
+          <Link href="/about" className="nav-link">About</Link>
         </nav>
 
         <div className="nav-actions">
-          {/* Re-designed Single-Line Luxury Brochure Button */}
+          {/* Luxury Company Profile PDF */}
           <a
             href="/docs/company-profile.pdf"
             target="_blank"
@@ -60,13 +61,13 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
             <span className="pdf-pill">PDF</span>
           </a>
 
-          {/* Re-designed Primary Request Quote Action */}
-          <a href="#rfq-calculator" className="btn-nav-quote">
+          {/* Primary Request Quote Action */}
+          <Link href="/rfq" className="btn-nav-quote">
             <span>Request Quote</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
-          </a>
+          </Link>
 
           {/* Sleek Hamburger Drawer Toggle (Activates on smaller screens) */}
           <button

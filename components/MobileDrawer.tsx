@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface MobileDrawerProps {
 }
 
 export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
+  // Prevent body scroll when drawer is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -36,7 +38,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         aria-label="Mobile Navigation"
       >
         <div className="drawer-header">
-          <div className="brand-wrapper">
+          <Link href="/" className="brand-wrapper" onClick={onClose}>
             <img
               src="/logos/rb-foods-logo.jpg"
               alt="R&B Foods"
@@ -46,7 +48,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <span className="brand-name">R&amp;B <span>Foods</span></span>
               <span className="brand-sub">Fruit Purees</span>
             </div>
-          </div>
+          </Link>
           <button
             type="button"
             className="modal-close-btn"
@@ -59,30 +61,30 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         </div>
 
         <nav className="drawer-links-list">
-          <a href="#purees" className="drawer-link" onClick={onClose}>
+          <Link href="/purees" className="drawer-link" onClick={onClose}>
             <span>Fruit Purees Catalog</span>
             <span>&rarr;</span>
-          </a>
-          <a href="#engineering" className="drawer-link" onClick={onClose}>
+          </Link>
+          <Link href="/facility" className="drawer-link" onClick={onClose}>
             <span>Bertuzzi Italian Plant</span>
             <span>&rarr;</span>
-          </a>
-          <a href="#laboratory" className="drawer-link" onClick={onClose}>
+          </Link>
+          <Link href="/quality" className="drawer-link" onClick={onClose}>
             <span>QA &amp; Laboratory Tour</span>
             <span>&rarr;</span>
-          </a>
-          <a href="#seasonality" className="drawer-link" onClick={onClose}>
+          </Link>
+          <Link href="/harvest" className="drawer-link" onClick={onClose}>
             <span>Crop Harvest Matrix</span>
             <span>&rarr;</span>
-          </a>
-          <a href="#packaging" className="drawer-link" onClick={onClose}>
+          </Link>
+          <Link href="/packaging" className="drawer-link" onClick={onClose}>
             <span>Export &amp; Packaging</span>
             <span>&rarr;</span>
-          </a>
-          <a href="#leadership" className="drawer-link" onClick={onClose}>
+          </Link>
+          <Link href="/about" className="drawer-link" onClick={onClose}>
             <span>Executive Governance</span>
             <span>&rarr;</span>
-          </a>
+          </Link>
         </nav>
 
         <div className="drawer-actions">
@@ -100,14 +102,14 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             </svg>
             Download Company Profile (PDF)
           </a>
-          <a
-            href="#rfq-calculator"
+          <Link
+            href="/rfq"
             className="btn btn-gold"
             onClick={onClose}
             style={{ width: '100%', fontSize: '0.875rem' }}
           >
             Request B2B Quote &amp; Samples
-          </a>
+          </Link>
           <div style={{ fontSize: '0.75rem', color: 'var(--color-charcoal-600)', textAlign: 'center', marginTop: '0.5rem', lineHeight: 1.6 }}>
             Plant Tel: <a href="tel:+923145264429" style={{ color: 'inherit' }}>0314 5264429</a> &bull; WhatsApp: <a href="https://wa.me/923343734786" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gold-700)', fontWeight: 600 }}>+92 334 3734786</a><br />
             Shorkot, Punjab, Pakistan
