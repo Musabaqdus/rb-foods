@@ -162,25 +162,6 @@ export default function ProductCatalog({ onOpenSpec, onSelectRfq }: ProductCatal
                 <h3 className="product-card-title">{product.name}</h3>
                 <p className="product-card-tagline">{product.overview}</p>
 
-                <div className="spec-quick-bar">
-                  <div className="spec-mini-item">
-                    <span className="spec-mini-label">TYPICAL BRIX</span>
-                    <span className="spec-mini-val">{product.specs.typicalBrix}</span>
-                  </div>
-                  <div className="spec-mini-item">
-                    <span className="spec-mini-label">STATED BRIX</span>
-                    <span className="spec-mini-val">{product.specs.statedBrix}</span>
-                  </div>
-                  <div className="spec-mini-item">
-                    <span className="spec-mini-label">PACKAGING</span>
-                    <span className="spec-mini-val">210 kg Aseptic</span>
-                  </div>
-                  <div className="spec-mini-item">
-                    <span className="spec-mini-label">SHELF LIFE</span>
-                    <span className="spec-mini-val">{product.specs.shelfLife.split(' ')[0]} {product.specs.shelfLife.split(' ')[1] || 'Months'}</span>
-                  </div>
-                </div>
-
                 <div className="product-card-footer">
                   <button
                     type="button"
