@@ -19,10 +19,6 @@ export interface ProductSpecs {
 export interface MicrobiologicalSpecs {
   tpc: string;
   yeastMould: string;
-  coliforms?: string;
-  pathogens?: string;
-  alicyclobacillus?: string;
-  enterobacteriaceae?: string;
   howardMold?: string;
 }
 
@@ -41,7 +37,7 @@ export interface Product {
 }
 
 export const RB_PRODUCTS: Product[] = [
-  // 1. Chaunsa Mango Pulp (IMS RBF PC02)
+  // 1. Chaunsa Mango Pulp
   {
     id: "chaunsa-mango",
     name: "Chaunsa Mango Pulp",
@@ -75,7 +71,7 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
 
-  // 2. Desi Mango Pulp (IMS RBF PC01)
+  // 2. Desi Mango Pulp
   {
     id: "desi-mango",
     name: "Desi Mango Pulp",
@@ -109,7 +105,7 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
 
-  // 3. Dusehri Mango Pulp (IMS RBF PC03)
+  // 3. Dusehri Mango Pulp
   {
     id: "dusehri-mango",
     name: "Dusehri Mango Pulp",
@@ -143,7 +139,7 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
 
-  // 4. Langra Mango Pulp (IMS RBF PC04)
+  // 4. Langra Mango Pulp
   {
     id: "langra-mango",
     name: "Langra Mango Pulp",
@@ -177,7 +173,7 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
 
-  // 5. Anwar Ratool Mango Pulp (IMS RBF PC05)
+  // 5. Anwar Ratool Mango Pulp
   {
     id: "ratool-mango",
     name: "Anwar Ratool Mango Pulp",
@@ -377,12 +373,11 @@ export const RB_PRODUCTS: Product[] = [
     },
     microbiological: {
       tpc: "< 10 CFU/g",
-      yeastMould: "Negative",
-      alicyclobacillus: "Nil"
+      yeastMould: "Negative"
     }
   },
 
-  // 11. Peach Puree Aseptic (IMS/RBF/SS14)
+  // 11. Peach Puree Aseptic
   {
     id: "peach-puree",
     name: "Peach Puree Aseptic",
@@ -446,8 +441,7 @@ export const RB_PRODUCTS: Product[] = [
     },
     microbiological: {
       tpc: "< 50 CFU/g",
-      yeastMould: "Negative",
-      enterobacteriaceae: "Negative"
+      yeastMould: "Negative"
     }
   },
 
@@ -481,8 +475,7 @@ export const RB_PRODUCTS: Product[] = [
     },
     microbiological: {
       tpc: "< 10 cfu/g",
-      yeastMould: "< 10 cfu/g",
-      enterobacteriaceae: "Nil"
+      yeastMould: "< 10 cfu/g"
     }
   },
 
@@ -555,7 +548,7 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
 
-  // 16. Falsa Puree Aseptic (IMS/RBF/SS15)
+  // 16. Falsa Puree Aseptic
   {
     id: "falsa-puree",
     name: "Falsa Puree Aseptic",

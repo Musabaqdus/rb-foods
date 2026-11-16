@@ -72,9 +72,6 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
             <table className="spec-sheet-table">
               <tbody>
                 <tr><th>Refractometric Brix (&deg;Bx)</th><td><strong>{product.specs.typicalBrix}</strong></td></tr>
-                {product.specs.statedBrix && product.specs.statedBrix !== product.specs.typicalBrix && (
-                  <tr><th>Stated Brix Range (&deg;Bx)</th><td>{product.specs.statedBrix}</td></tr>
-                )}
                 <tr><th>Total Titratable Acidity</th><td>{product.specs.acidity}</td></tr>
                 <tr><th>pH Level</th><td>{product.specs.ph}</td></tr>
                 <tr><th>Consistency &amp; Texture</th><td>{product.specs.consistency || product.specs.bostwick}</td></tr>
@@ -82,49 +79,35 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
                 <tr><th>Aroma &amp; Flavor Profile</th><td>{product.specs.flavor}</td></tr>
                 <tr><th>Ascorbic Acid (Vitamin C)</th><td>{product.specs.ascorbicAcid}</td></tr>
                 <tr><th>Ingredients, Additives &amp; GMO Status</th><td>{product.specs.nonGmo}</td></tr>
-                <tr><th>Primary Industrial Applications</th><td>{product.specs.applications}</td></tr>
+                <tr><th>Intended Industrial Applications</th><td>{product.specs.applications}</td></tr>
               </tbody>
             </table>
           </div>
 
           <h5 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-primary-800)', borderBottom: '2px solid var(--color-cream-300)', paddingBottom: '0.4rem', marginTop: '2rem' }}>
-            2. Microbiological Standard &amp; Commercial Sterility
+            2. Microbiological Standard
           </h5>
           <div className="spec-table-responsive-wrapper">
             <table className="spec-sheet-table">
               <tbody>
                 <tr><th>Total Aerobic Count / TPC</th><td>{product.microbiological.tpc}</td></tr>
                 <tr><th>Yeast &amp; Mould Count</th><td>{product.microbiological.yeastMould}</td></tr>
-                {product.microbiological.alicyclobacillus && (
-                  <tr><th>Alicyclobacillus</th><td>{product.microbiological.alicyclobacillus}</td></tr>
-                )}
-                {product.microbiological.enterobacteriaceae && (
-                  <tr><th>Enterobacteriaceae</th><td>{product.microbiological.enterobacteriaceae}</td></tr>
-                )}
                 {product.microbiological.howardMold && (
                   <tr><th>Howard Mold Count</th><td>{product.microbiological.howardMold}</td></tr>
-                )}
-                {product.microbiological.coliforms && product.microbiological.coliforms !== '-' && (
-                  <tr><th>Coliforms</th><td>{product.microbiological.coliforms}</td></tr>
-                )}
-                {product.microbiological.pathogens && product.microbiological.pathogens !== '-' && (
-                  <tr><th>Pathogens (Salmonella / E. Coli)</th><td>{product.microbiological.pathogens}</td></tr>
                 )}
               </tbody>
             </table>
           </div>
 
           <h5 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-primary-800)', borderBottom: '2px solid var(--color-cream-300)', paddingBottom: '0.4rem', marginTop: '2rem' }}>
-            3. Packaging, Storage &amp; Export Logistics
+            3. Packaging &amp; Storage Conditions
           </h5>
           <div className="spec-table-responsive-wrapper">
             <table className="spec-sheet-table">
               <tbody>
-                <tr><th>Standard Export Packaging</th><td>{product.specs.packaging}</td></tr>
+                <tr><th>Standard Packaging</th><td>{product.specs.packaging}</td></tr>
                 <tr><th>Storage Temperature</th><td>{product.specs.storageTemp}</td></tr>
                 <tr><th>Shelf Life</th><td>{product.specs.shelfLife}</td></tr>
-                <tr><th>Container Stuffing</th><td>80 Drums per 20ft FCL (16.80 Metric Tons Net)</td></tr>
-                <tr><th>Manufacturing Origin</th><td>R&amp;B Foods Plant, Shorkot, Punjab, Pakistan (BERTUZZI Italy Line)</td></tr>
               </tbody>
             </table>
           </div>

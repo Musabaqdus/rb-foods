@@ -84,17 +84,15 @@ export const FULL_COVER_SLIDES = [
 
 export default function HeroFullCover() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [counts, setCounts] = useState({ capacity: 0, drums: 0, micro: 0 });
 
-  // Auto-cycle through slides every 5 seconds
+  // Auto-cycle through slides every 5.5 seconds smoothly without pause on hover
   useEffect(() => {
-    if (isPaused) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % FULL_COVER_SLIDES.length);
-    }, 5000);
+    }, 5500);
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, []);
 
   // Metric Counter Animation
   useEffect(() => {
@@ -126,8 +124,6 @@ export default function HeroFullCover() {
   return (
     <section
       className="hero-fullcover-section"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       aria-label="R&B Foods Hero Showcase"
     >
       {/* Background Image Slides with Smooth Cross-Fade */}
@@ -193,7 +189,7 @@ export default function HeroFullCover() {
           <div className="hero-fullcover-tabs-header">
             <span className="hero-fullcover-tabs-title">EXPLORE CROP PORTFOLIO</span>
             <span className="hero-fullcover-tabs-timer">
-              {isPaused ? '⏸ Slideshow Paused' : '⏱ Auto-transitions every 5s'}
+              ⏱ Auto-transitions every 5s
             </span>
           </div>
           <div className="hero-fullcover-tabs-strip">
@@ -201,10 +197,7 @@ export default function HeroFullCover() {
               <button
                 key={s.id}
                 type="button"
-                onClick={() => {
-                  setCurrentSlide(idx);
-                  setIsPaused(true);
-                }}
+                onClick={() => setCurrentSlide(idx)}
                 className={`hero-fullcover-tab-btn ${idx === currentSlide ? 'is-active' : ''}`}
               >
                 <span className="tab-indicator-bullet"></span>
