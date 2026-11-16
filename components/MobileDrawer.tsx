@@ -109,7 +109,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             Request B2B Quote &amp; Samples
           </a>
           <div style={{ fontSize: '0.75rem', color: 'var(--color-charcoal-600)', textAlign: 'center', marginTop: '0.5rem' }}>
-            Plant Hotline: +92 47 5510000<br />
+            Plant Hotline: <a href="tel:+923145264429" style={{ color: 'inherit' }}>0314 5264429</a><br />
             Shorkot, Punjab, Pakistan
           </div>
         </div>

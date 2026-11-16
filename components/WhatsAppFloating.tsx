@@ -26,7 +26,7 @@ export default function WhatsAppFloating() {
         </button>
       </div>
       <a
-        href="https://wa.me/923000000000?text=Hello%20R%26B%20Foods%20Export%20Desk%2C%20I%20would%20like%20to%20inquire%20about%20your%20fruit%20purees"
+        href="https://wa.me/923145264429?text=Hello%20R%26B%20Foods%20Export%20Desk%2C%20I%20would%20like%20to%20inquire%20about%20your%20fruit%20purees"
         target="_blank"
         rel="noopener noreferrer"
         className="floating-whatsapp"

@@ -290,7 +290,7 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
 
             <div className="summary-actions">
               <a
-                href={`https://wa.me/923000000000?text=${waMsg}`}
+                href={`https://wa.me/923145264429?text=${waMsg}`}
                 id="btn-wa-inquiry"
                 target="_blank"
                 rel="noopener noreferrer"

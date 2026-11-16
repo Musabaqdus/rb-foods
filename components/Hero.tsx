@@ -94,39 +94,38 @@ export default function Hero() {
   const currentVisual = VISUAL_TABS[activeTab];
 
   return (
-    <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section className="hero-section">
       {/* Ambient Tropical Atmospheric Glow */}
       <div className="ambient-glow-orb ambient-orb-1" aria-hidden="true"></div>
       <div className="ambient-glow-orb ambient-orb-2" aria-hidden="true"></div>
 
       <div className="container">
         {/* Main Hero Split Grid */}
-        <div className="hero-grid" style={{ alignItems: 'center' }}>
+        <div className="hero-grid">
           {/* Left Column: Core Value Proposition */}
           <div className="hero-content reveal is-visible">
-            <div className="provenance-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.85rem' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <div className="provenance-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ flexShrink: 0 }}>
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
               <span>BERTUZZI CONTINUOUS LINE &bull; SHORKOT, PUNJAB &bull; 100% NON-GMO</span>
             </div>
 
-            <h1 className="hero-title" style={{ marginTop: '0.25rem', lineHeight: 1.12, letterSpacing: '-0.025em' }}>
+            <h1 className="hero-title">
               Leading Manufacturers &amp; Exporters of{' '}
               <em style={{ color: 'var(--color-gold-500)', fontStyle: 'italic' }}>
                 Fruit &amp; Vegetable Pulps.
               </em>
             </h1>
 
-            <p className="hero-lead" style={{ marginTop: '0.85rem', fontSize: '1.05rem', lineHeight: 1.65 }}>
+            <p className="hero-lead">
               R&amp;B Foods (Pvt.) Ltd. operates Pakistan’s premier industrial aseptic processing facility in Shorkot, Punjab. Equipped with genuine <strong>BERTUZZI (Milan, Italy)</strong> continuous lines, delivering single-strength and concentrated fruit purees in 210kg aseptic steel drums to multinational beverage, dairy, and confectionery brands.
             </p>
 
-            <div className="hero-cta-group" style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+            <div className="hero-cta-group">
               <a
                 href="#rfq-calculator"
-                className="btn btn-gold"
-                style={{ padding: '0.95rem 1.85rem', fontSize: '1rem', boxShadow: '0 8px 24px rgba(217, 119, 6, 0.35)' }}
+                className="btn btn-gold hero-btn-primary"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M21 16V8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -137,15 +136,14 @@ export default function Hero() {
               </a>
               <a
                 href="#purees"
-                className="btn btn-secondary"
-                style={{ padding: '0.95rem 1.6rem', fontSize: '1rem' }}
+                className="btn btn-secondary hero-btn-secondary"
               >
                 Explore 10+ Fruit Purees
               </a>
             </div>
 
             {/* Live Animated Metric Counters */}
-            <div className="hero-metrics-bar" style={{ marginTop: '2rem' }}>
+            <div className="hero-metrics-bar">
               <div className="metric-item">
                 <span className="metric-val">
                   {counts.capacity.toLocaleString()}
@@ -187,16 +185,7 @@ export default function Hero() {
             onMouseLeave={() => setIsPaused(false)}
           >
             {/* Visual Selector Tabs with Live Active Indicator */}
-            <div
-              style={{
-                display: 'flex',
-                gap: '0.35rem',
-                overflowX: 'auto',
-                paddingBottom: '0.6rem',
-                marginBottom: '0.5rem',
-                borderBottom: '1px solid rgba(0,0,0,0.06)'
-              }}
-            >
+            <div className="hero-tabs-strip">
               {VISUAL_TABS.map((tab, idx) => (
                 <button
                   key={tab.id}
@@ -205,18 +194,7 @@ export default function Hero() {
                     setActiveTab(idx);
                     setIsPaused(true);
                   }}
-                  style={{
-                    padding: '0.35rem 0.65rem',
-                    fontSize: '0.75rem',
-                    fontWeight: activeTab === idx ? 700 : 500,
-                    borderRadius: '6px',
-                    border: activeTab === idx ? '1px solid var(--color-gold-500)' : '1px solid rgba(0,0,0,0.08)',
-                    background: activeTab === idx ? 'var(--color-gold-50)' : '#FFF',
-                    color: activeTab === idx ? 'var(--color-amber-800)' : 'var(--color-charcoal-700)',
-                    cursor: 'pointer',
-                    whiteSpace: 'nowrap',
-                    transition: 'all 0.25s ease'
-                  }}
+                  className={`hero-tab-pill ${activeTab === idx ? 'is-active' : ''}`}
                 >
                   {tab.label}
                 </button>
