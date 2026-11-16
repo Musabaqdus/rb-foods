@@ -16,6 +16,7 @@ rbfoodslogo2000x600pxl/
 # Raw video large binary dumps
 *.bin
 *.mkv
+Video.mp4
 R&B Foods/*.ts
 
 # Dependencies

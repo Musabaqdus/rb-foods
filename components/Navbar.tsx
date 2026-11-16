@@ -24,12 +24,12 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
         <Link href="/" className="brand-wrapper">
           <img
             src="/logos/rb-foods-logo.jpg"
-            alt="R&B Foods Logo"
+            alt="R&B Foods (Pvt.) Ltd. Logo"
             className="brand-logo-img"
           />
           <div className="brand-text">
-            <span className="brand-name">R&amp;B <span>Foods</span></span>
-            <span className="brand-sub">Fruit Purees &amp; Concentrates</span>
+            <span className="brand-name">R&amp;B FOODS <span>(PVT.) LTD.</span></span>
+            <span className="brand-sub">Fruit Purees &amp; Concentrates &bull; Shorkot</span>
           </div>
         </Link>
 

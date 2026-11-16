@@ -29,13 +29,14 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">Puree Portfolio</h4>
             <ul className="footer-links-list">
-              <li><a href="#purees">Chaunsa Mango Puree</a></li>
-              <li><a href="#purees">Sindhri Mango Puree</a></li>
-              <li><a href="#purees">Pink Guava Puree</a></li>
-              <li><a href="#purees">White Guava Puree</a></li>
-              <li><a href="#purees">Indus Kinnow Concentrate</a></li>
-              <li><a href="#purees">Indus Red Carrot Puree</a></li>
-              <li><a href="#purees">Fresh Strawberry Puree</a></li>
+              <li><a href="/purees">Chaunsa Mango Pulp</a></li>
+              <li><a href="/purees">Chaunsa Concentrate (28-30° Brix)</a></li>
+              <li><a href="/purees">White Guava Pulp</a></li>
+              <li><a href="/purees">Sindhri &amp; Desi Mango Pulp</a></li>
+              <li><a href="/purees">Peach Puree &amp; Concentrate</a></li>
+              <li><a href="/purees">Falsa Puree Aseptic</a></li>
+              <li><a href="/purees">Fresh Strawberry Puree</a></li>
+              <li><a href="/purees">Tomato Paste (28-30° Brix)</a></li>
             </ul>
           </div>
 

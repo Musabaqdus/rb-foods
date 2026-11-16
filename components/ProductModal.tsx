@@ -95,6 +95,15 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
               <tbody>
                 <tr><th>Total Aerobic Count / TPC</th><td>{product.microbiological.tpc}</td></tr>
                 <tr><th>Yeast &amp; Mould Count</th><td>{product.microbiological.yeastMould}</td></tr>
+                {product.microbiological.alicyclobacillus && (
+                  <tr><th>Alicyclobacillus</th><td>{product.microbiological.alicyclobacillus}</td></tr>
+                )}
+                {product.microbiological.enterobacteriaceae && (
+                  <tr><th>Enterobacteriaceae</th><td>{product.microbiological.enterobacteriaceae}</td></tr>
+                )}
+                {product.microbiological.howardMold && (
+                  <tr><th>Howard Mold Count</th><td>{product.microbiological.howardMold}</td></tr>
+                )}
                 {product.microbiological.coliforms && product.microbiological.coliforms !== '-' && (
                   <tr><th>Coliforms</th><td>{product.microbiological.coliforms}</td></tr>
                 )}

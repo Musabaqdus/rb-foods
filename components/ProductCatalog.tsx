@@ -97,7 +97,19 @@ export default function ProductCatalog({ onOpenSpec, onSelectRfq }: ProductCatal
 
   const filtered = activeCategory === 'all'
     ? RB_PRODUCTS
-    : RB_PRODUCTS.filter(p => p.category === activeCategory);
+    : activeCategory === 'mango'
+    ? RB_PRODUCTS.filter(p => p.category === 'mango')
+    : activeCategory === 'concentrate'
+    ? RB_PRODUCTS.filter(p => p.category === 'concentrate')
+    : activeCategory === 'guava'
+    ? RB_PRODUCTS.filter(p => p.category === 'guava')
+    : activeCategory === 'tomato'
+    ? RB_PRODUCTS.filter(p => p.category === 'tomato')
+    : RB_PRODUCTS.filter(p => p.category === 'tropical');
+
+  const mangoCount = RB_PRODUCTS.filter(p => p.category === 'mango').length;
+  const concentrateCount = RB_PRODUCTS.filter(p => p.category === 'concentrate').length;
+  const otherCount = RB_PRODUCTS.filter(p => p.category === 'tropical').length;
 
   return (
     <section className="section" id="purees">
@@ -106,12 +118,12 @@ export default function ProductCatalog({ onOpenSpec, onSelectRfq }: ProductCatal
           <span className="section-kicker">Industrial Specification Portfolio</span>
           <h2 className="section-title">Aseptic Fruit Pulps &amp; Concentrates</h2>
           <p className="section-desc">
-            R&amp;B Foods (Pvt.) Ltd. manufactures premium single-strength and concentrated fruit pulps from mature Pakistani crops. Packed in export-ready 210 kg aseptic steel drums and specialized bulk formats.
+            R&amp;B Foods (Pvt.) Ltd. manufactures premium single-strength and concentrated fruit pulps from mature Pakistani crops. Packed in export-ready 200kg, 210kg and 220kg aseptic steel drums and specialized bulk formats.
           </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="product-tabs-wrapper reveal is-visible">
+        <div className="product-tabs-wrapper reveal is-visible" style={{ flexWrap: 'wrap', justifyContent: 'center' }}>
           <button
             type="button"
             className={`tab-btn ${activeCategory === 'all' ? 'active' : ''}`}
@@ -124,28 +136,35 @@ export default function ProductCatalog({ onOpenSpec, onSelectRfq }: ProductCatal
             className={`tab-btn ${activeCategory === 'mango' ? 'active' : ''}`}
             onClick={() => setActiveCategory('mango')}
           >
-            Mango Varieties (5)
+            Mango Pulps ({mangoCount})
+          </button>
+          <button
+            type="button"
+            className={`tab-btn ${activeCategory === 'concentrate' ? 'active' : ''}`}
+            onClick={() => setActiveCategory('concentrate')}
+          >
+            Fruit Concentrates ({concentrateCount})
           </button>
           <button
             type="button"
             className={`tab-btn ${activeCategory === 'guava' ? 'active' : ''}`}
             onClick={() => setActiveCategory('guava')}
           >
-            White Guava Pulp
+            Guava Pulp
           </button>
           <button
             type="button"
             className={`tab-btn ${activeCategory === 'tomato' ? 'active' : ''}`}
             onClick={() => setActiveCategory('tomato')}
           >
-            Tomato Paste
+            Tomato Paste (28-30° Brix)
           </button>
           <button
             type="button"
-            className={`tab-btn ${activeCategory === 'other' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('other')}
+            className={`tab-btn ${activeCategory === 'tropical' ? 'active' : ''}`}
+            onClick={() => setActiveCategory('tropical')}
           >
-            Other Fruit Pulps (Peach, Falsa, Strawberry)
+            Other Purees ({otherCount})
           </button>
         </div>
 

@@ -3,12 +3,12 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'R&B Foods (Pvt.) Ltd | Industrial Fruit Purees & Aseptic Concentrates',
-  description: 'Pakistan’s premier agro-industrial fruit processing facility in Shorkot, Punjab. Operating genuine BERTUZZI (Milan, Italy) continuous aseptic lines for Chaunsa mango, pink guava, and citrus purees for global B2B beverage & dairy manufacturers.',
+  description: 'Pakistan’s premier agro-industrial fruit processing facility in Shorkot, Punjab. Operating genuine BERTUZZI (Milan, Italy) continuous aseptic lines for Chaunsa mango, guava, peach, and tropical purees for global B2B beverage & dairy manufacturers.',
   keywords: [
     'Chaunsa Mango Puree',
     'Aseptic Mango Pulp Pakistan',
     'Guava Puree Supplier',
-    'Kinnow Mandarin Concentrate',
+    'Mango Concentrate 28-30 Brix',
     'Bertuzzi Italy Line',
     'FSSC 22000 Puree Exporter',
     'R&B Foods Shorkot',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'R&B Foods (Pvt.) Ltd | Industrial Fruit Purees & Aseptic Concentrates',
-    description: 'Genuine BERTUZZI (Italy) aseptic processing line in Shorkot, Punjab. World-class Chaunsa mango, guava, and citrus purees for global procurement.',
+    description: 'Genuine BERTUZZI (Italy) aseptic processing line in Shorkot, Punjab. World-class Chaunsa mango, guava, peach, and tropical purees for global procurement.',
     type: 'website',
     locale: 'en_US',
     siteName: 'R&B Foods'

@@ -15,7 +15,7 @@ export default function TopProcurementBar() {
           <div className="ticker-track-container">
             <div className="ticker-track">
               <span className="ticker-item">
-                <strong>Kinnow Mandarin Extraction:</strong> Active Processing at Shorkot Plant (250 MT/Day Intake)
+                <strong>White Guava &amp; Mango Campaigns:</strong> Active Single-Strength &amp; Concentrate Processing at Shorkot Plant
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
@@ -37,7 +37,7 @@ export default function TopProcurementBar() {
 
               {/* Duplicate items for seamless infinite scroll */}
               <span className="ticker-item">
-                <strong>Kinnow Mandarin Extraction:</strong> Active Processing at Shorkot Plant (250 MT/Day Intake)
+                <strong>White Guava &amp; Mango Campaigns:</strong> Active Single-Strength &amp; Concentrate Processing at Shorkot Plant
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
@@ -68,11 +68,11 @@ export default function TopProcurementBar() {
             </svg>
             export@rbfoods.com.pk
           </a>
-          <a href="tel:+923145264429" className="top-bar-link">
+          <a href="https://wa.me/923343734786" target="_blank" rel="noopener noreferrer" className="top-bar-link">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            0314 5264429
+            +92 334 3734786
           </a>
           <span className="top-bar-link" style={{ color: 'var(--color-gold-400)', fontWeight: 600 }}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

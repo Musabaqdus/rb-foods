@@ -108,22 +108,17 @@ export default function BertuzziTech() {
             {/* Media Presentation Frame */}
             <div className="tech-media-wrap" style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.25)', background: '#000' }}>
               {activeMedia === 'video' ? (
-                <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
-                  <iframe
-                    src="https://www.youtube-nocookie.com/embed/-ns-_nH1ec8?rel=0&modestbranding=1"
-                    title="R&B Foods Pvt Ltd Shorkot Pulp Plant"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      border: 'none',
-                      display: 'block'
-                    }}
-                  />
+                <div style={{ position: 'relative', width: '100%', background: '#000' }}>
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster="/images/plant-processing-line.jpeg"
+                    style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '520px' }}
+                  >
+                    <source src="/video/plant-tour.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               ) : (
                 <div style={{ position: 'relative' }}>
@@ -131,7 +126,7 @@ export default function BertuzziTech() {
                     src="/images/bertuzzi-mango-processing.jpg"
                     alt="BERTUZZI Italy Continuous Processing Equipment at R&B Foods Plant"
                     style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block', minHeight: '340px' }}
-                  />
+                  ></img>
                   <div style={{
                     position: 'absolute',
                     bottom: 0,
@@ -167,16 +162,11 @@ export default function BertuzziTech() {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span className="status-dot-pulse" style={{ background: '#10B981', width: '8px', height: '8px', borderRadius: '50%' }}></span>
-                <span><strong>R&amp;B Foods (Pvt.) Ltd.</strong> &bull; Shorkot Plant Floor Video</span>
+                <span><strong>R&amp;B Foods (Pvt.) Ltd.</strong> &bull; Authentic Shorkot Plant Floor Video</span>
               </div>
-              <a
-                href="https://www.youtube.com/watch?v=-ns-_nH1ec8"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: 'var(--color-gold-400)', textDecoration: 'underline', fontSize: '0.75rem' }}
-              >
-                Open on YouTube &rarr;
-              </a>
+              <span style={{ color: 'var(--color-gold-400)', fontSize: '0.75rem', fontWeight: 600 }}>
+                Direct Continuous Line &bull; 1080p HD
+              </span>
             </div>
           </div>
 

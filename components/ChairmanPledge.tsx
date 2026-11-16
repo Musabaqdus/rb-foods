@@ -9,73 +9,114 @@ export default function ChairmanPledge() {
         {/* Section Header */}
         <div className="section-header reveal is-visible" style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <span className="section-kicker">Executive Governance &amp; Standards</span>
-          <h2 className="section-title">Leadership Commitment &amp; Food Safety Governance</h2>
+          <h2 className="section-title">Leadership Commitment &amp; Corporate Governance</h2>
           <p className="section-desc" style={{ margin: '0 auto', maxWidth: '720px' }}>
-            Operating with unwavering integrity, technical rigor, and industrial discipline to supply certified fruit pulps to discerning global brands.
+            R&amp;B Foods (Pvt.) Ltd. operates under the direct stewardship of Chairman Syed Basit Sultan Bukhari and CEO Muhammad Rafique, upholding industrial rigor, Italian engineering standards, and authentic grower integrity.
           </p>
         </div>
 
-        {/* Directors & Leadership Card */}
-        <div className="leadership-card reveal is-visible" style={{ marginBottom: '3rem' }}>
-          <div className="leader-portrait-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem', width: '100%' }}>
-              <div style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.1)' }}>
-                <img
-                  src="/images/001.jpg"
-                  alt="Muhammad Rafique - Chief Executive Officer (CEO), R&B Foods (Pvt.) Ltd"
-                  style={{ width: '100%', height: '240px', objectFit: 'cover', display: 'block' }}
-                />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(15,23,19,0.92))', padding: '0.75rem', color: '#fff', textAlign: 'center' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, display: 'block' }}>Muhammad Rafique</span>
-                  <span style={{ fontSize: '0.72rem', color: '#FCD34D' }}>Chief Executive Officer (CEO)</span>
-                </div>
-              </div>
-              <div style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.1)' }}>
+        {/* Chairman & CEO Dual Leadership Showcase */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))', gap: '2rem', marginBottom: '3rem' }}>
+          {/* 1. Chairman Card */}
+          <div style={{
+            background: '#FFFFFF',
+            borderRadius: 'var(--radius-lg)',
+            border: '1px solid var(--color-cream-300)',
+            padding: '2rem',
+            boxShadow: 'var(--shadow-md)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
                 <img
                   src="/images/002.jpg"
-                  alt="Director - R&B Foods (Pvt.) Ltd"
-                  style={{ width: '100%', height: '240px', objectFit: 'cover', display: 'block' }}
+                  alt="Syed Basit Sultan Bukhari - Chairman, R&B Foods (Pvt.) Ltd"
+                  style={{ width: '90px', height: '110px', objectFit: 'cover', borderRadius: 'var(--radius-md)', border: '2px solid var(--color-gold-500)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
                 />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(15,23,19,0.92))', padding: '0.75rem', color: '#fff', textAlign: 'center' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, display: 'block' }}>Board of Directors</span>
-                  <span style={{ fontSize: '0.72rem', color: '#FCD34D' }}>Executive Directorate</span>
+                <div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-gold-700)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block' }}>
+                    EXECUTIVE LEADERSHIP
+                  </span>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.45rem', color: 'var(--color-primary-900)', margin: '0.2rem 0' }}>
+                    Syed Basit Sultan Bukhari
+                  </h3>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-charcoal-600)' }}>
+                    Chairman &bull; R&amp;B Foods (Pvt.) Ltd.
+                  </div>
                 </div>
               </div>
+
+              <div className="leader-quote-mark" style={{ fontSize: '2rem', lineHeight: 1, color: 'var(--color-gold-500)', marginBottom: '0.5rem' }}>&ldquo;</div>
+              <blockquote style={{ fontStyle: 'italic', color: 'var(--color-charcoal-700)', fontSize: '0.92rem', lineHeight: 1.65, margin: '0 0 1.25rem' }}>
+                I am proud to introduce R&amp;B Foods (Pvt.) Ltd., registered in Shorkot, Punjab, as a leading fruit pulp processor and exporter. Backed by our own fruit supply facility and genuine imported continuous machinery from <strong>BERTUZZI Italy</strong>, our plant produces world-class Chaunsa, Ratool, Langra, Dusehri, and Desi mango purees alongside Guava, Peach, Strawberry, and Apple. I personally guarantee the quality of our purees and our commitment to transparent, reliable service.
+              </blockquote>
             </div>
-            <span style={{ fontSize: '0.75rem', color: 'var(--color-charcoal-500)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-              Executive Board &bull; Shorkot Industrial Plant
-            </span>
+
+            <div style={{ borderTop: '1px solid var(--color-cream-300)', paddingTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.82rem', color: 'var(--color-charcoal-600)' }}>
+              <span>Executive Authorization</span>
+              <a href="mailto:chairman@rbfoods.com.pk" style={{ color: 'var(--color-gold-700)', fontWeight: 600, textDecoration: 'underline' }}>
+                chairman@rbfoods.com.pk
+              </a>
+            </div>
           </div>
 
-          <div className="leader-content">
-            <div className="leader-quote-mark">&ldquo;</div>
-            <blockquote className="leader-quote-text" style={{ fontSize: '1.1rem', lineHeight: 1.65, color: 'var(--color-primary-950)', marginBottom: '1.5rem' }}>
-              To us, &lsquo;Excellence&rsquo; means not only being the very best at what we do, but also holding ourselves to the highest ethical standards in how we do things. We earn the trust of our customers and global partners by continuously demonstrating that we are worthy of their confidence. Every decision we make must answer one simple standard: <em>&lsquo;Are we doing the right thing in the right way?&rsquo;</em>
-            </blockquote>
+          {/* 2. CEO Card */}
+          <div style={{
+            background: '#FFFFFF',
+            borderRadius: 'var(--radius-lg)',
+            border: '1px solid var(--color-cream-300)',
+            padding: '2rem',
+            boxShadow: 'var(--shadow-md)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+                <img
+                  src="/images/001.jpg"
+                  alt="Muhammad Rafique - Chief Executive Officer, R&B Foods (Pvt.) Ltd"
+                  style={{ width: '90px', height: '110px', objectFit: 'cover', borderRadius: 'var(--radius-md)', border: '2px solid var(--color-gold-500)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                />
+                <div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-gold-700)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block' }}>
+                    OPERATIONAL MANDATE
+                  </span>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.45rem', color: 'var(--color-primary-900)', margin: '0.2rem 0' }}>
+                    Muhammad Rafique
+                  </h3>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-charcoal-600)' }}>
+                    Chief Executive Officer (CEO) &bull; R&amp;B Foods (Pvt.) Ltd.
+                  </div>
+                </div>
+              </div>
 
-            <div className="leader-credentials">
-              <span className="leader-name" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-primary-900)' }}>Muhammad Rafique</span>
-              <span className="leader-role" style={{ color: 'var(--color-amber-700)', fontWeight: 600 }}>Chief Executive Officer (CEO) &bull; R&amp;B Foods (Pvt.) Ltd</span>
-              <p className="leader-contact-line" style={{ marginTop: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem' }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                Executive Desk:{' '}
-                <a href="mailto:ceo@rbfoods.com.pk" style={{ color: 'var(--color-emerald-700)', textDecoration: 'underline' }}>ceo@rbfoods.com.pk</a>
-              </p>
+              <div className="leader-quote-mark" style={{ fontSize: '2rem', lineHeight: 1, color: 'var(--color-gold-500)', marginBottom: '0.5rem' }}>&ldquo;</div>
+              <blockquote style={{ fontStyle: 'italic', color: 'var(--color-charcoal-700)', fontSize: '0.92rem', lineHeight: 1.65, margin: '0 0 1.25rem' }}>
+                To us, &lsquo;Excellence&rsquo; means not only being the very best at what we do but also holding ourselves to the highest ethical standards in how we do things. We earn the trust of our customers, employees, local communities and global partners by continuously demonstrating that we are worthy of their confidence. Every decision we make must answer one simple standard: <em>&lsquo;Are we doing the right thing in the right way?&rsquo;</em>
+              </blockquote>
+            </div>
+
+            <div style={{ borderTop: '1px solid var(--color-cream-300)', paddingTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.82rem', color: 'var(--color-charcoal-600)' }}>
+              <span>Operational Directorate</span>
+              <a href="mailto:ceo@rbfoods.com.pk" style={{ color: 'var(--color-gold-700)', fontWeight: 600, textDecoration: 'underline' }}>
+                ceo@rbfoods.com.pk
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Official Client Food Safety & Halal Policy (Bilingual English & Urdu) */}
+        {/* Official Client Food Safety & Halal Policy */}
         <div style={{
           background: 'linear-gradient(135deg, #07261A 0%, #0F3D2E 100%)',
           borderRadius: '1.25rem',
           padding: 'clamp(2rem, 4vw, 3rem)',
           color: '#FFFFFF',
           border: '1px solid rgba(16, 185, 129, 0.3)',
-          boxShadow: '0 20px 40px -15px rgba(7, 38, 26, 0.4)'
+          boxShadow: '0 20px 40px -15px rgba(7, 38, 26, 0.4)',
+          marginBottom: '2.5rem'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
             <span style={{
@@ -97,30 +138,33 @@ export default function ChairmanPledge() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'center' }}>
-            {/* English Mandate */}
-            <div style={{ borderRight: '1px solid rgba(255,255,255,0.12)', paddingRight: '1.5rem' }}>
-              <h4 style={{ fontSize: '1.1rem', color: '#6EE7B7', marginBottom: '0.75rem', fontWeight: 700 }}>
-                Corporate Food Safety &amp; Halal Commitment
-              </h4>
-              <p style={{ fontSize: '1rem', lineHeight: 1.7, color: '#E2E8F0', fontStyle: 'italic' }}>
-                &ldquo;R&amp;B Foods (Pvt.) Ltd. is committed to maintaining the highest Food Safety &amp; Halal Standards. We ensure that food products are processed hygienically that are safe for human consumption.&rdquo;
+            <div>
+              <p style={{ fontSize: '0.98rem', lineHeight: 1.7, color: 'var(--color-cream-100)', marginBottom: '1.25rem' }}>
+                R&amp;B Foods (Pvt.) Ltd. is dedicated to manufacturing safe, authentic, and Halal-certified fruit purees. Through continuous temperature kinetics, in-line CCP validation, and strict HACCP compliance, we ensure absolute commercial sterility and international food safety integrity.
               </p>
-              <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#94A3B8' }}>
-                Official Corporate Governance &bull; Chief Executive Authorization
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a
+                  href="/docs/company-profile.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-gold"
+                  style={{ padding: '0.75rem 1.4rem' }}
+                >
+                  Download Corporate Profile (PDF)
+                </a>
               </div>
             </div>
 
-            {/* Urdu Mandate */}
-            <div dir="rtl" style={{ textAlign: 'right', paddingLeft: '1.5rem' }}>
-              <h4 style={{ fontSize: '1.15rem', color: '#FCD34D', marginBottom: '0.75rem', fontWeight: 700, fontFamily: 'serif' }}>
-                فوڈ سیفٹی اور حلال پالیسی
-              </h4>
-              <p style={{ fontSize: '1.08rem', lineHeight: 1.9, color: '#F1F5F9', fontFamily: 'serif' }}>
-                &rdquo;آر اینڈ بی فوڈز پرائیویٹ لمیٹڈ فوڈ سیفٹی اور حلال کے اعلیٰ ترین معیارات کو برقرار رکھنے کے لیے پرعزم ہے۔ ہم اس بات کو یقینی بناتے ہیں کہ ہماری مصنوعات حفظان صحت کے اصولوں کے مطابق پروسیس کی جائیں جو انسانی استعمال کے لیے محفوظ ہوں۔&ldquo;
-              </p>
-              <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#94A3B8', fontFamily: 'sans-serif' }}>
-                تصدیق شدہ فوڈ سیفٹی مینجمنٹ سسٹم &bull; شورکوٹ پلانٹ
-              </div>
+            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 'var(--radius-md)', padding: '1.5rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <h5 style={{ color: 'var(--color-gold-400)', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                Integrated Management Standards
+              </h5>
+              <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.85rem', color: 'var(--color-cream-200)', lineHeight: 1.65 }}>
+                <li>100% Non-GMO Fresh Fruits sourced directly from verified orchards</li>
+                <li>Zero artificial colors, artificial preservatives, or synthetic additives</li>
+                <li>HACCP &amp; ISO 22000 aligned microbiological testing protocols</li>
+                <li>Continuous batch audit traceability from harvest intake to export drum</li>
+              </ul>
             </div>
           </div>
         </div>
