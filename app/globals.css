@@ -719,7 +719,7 @@ ul, ol {
 .hero-section {
   position: relative;
   background-color: var(--color-cream-50);
-  padding: clamp(3rem, 5vw, 5rem) 0 4rem;
+  padding: clamp(4.5rem, 6.5vw, 6.5rem) 0 4.5rem;
   overflow: hidden;
   border-bottom: 1px solid rgba(15, 23, 19, 0.06);
 }
@@ -912,39 +912,38 @@ ul, ol {
 
 .hero-floating-badge-bottom {
   position: absolute;
-  top: 1rem;
+  bottom: 1rem;
   left: 1rem;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(19, 62, 44, 0.18);
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-full);
   color: var(--color-primary-900);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  display: flex;
+  display: inline-flex;
+  width: auto;
+  height: auto;
   align-items: center;
-  gap: 0.35rem;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  gap: 0.4rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   animation: float-reverse 5s ease-in-out infinite;
   z-index: 3;
 }
 
 .hero-docked-card {
-  position: absolute;
-  bottom: -1.75rem;
-  left: -1.75rem;
+  margin-top: 1rem;
   background: #FFFFFF;
   border-radius: var(--radius-md);
-  padding: 1.1rem 1.35rem;
-  box-shadow: var(--shadow-lg);
+  padding: 0.85rem 1.15rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   border: 1px solid rgba(15, 23, 19, 0.08);
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  max-width: 310px;
-  animation: float-slow 5s ease-in-out infinite 0.75s;
-  z-index: 4;
+  gap: 0.85rem;
+  width: 100%;
 }
 
 .drum-icon-circle {

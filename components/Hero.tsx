@@ -2,48 +2,60 @@
 
 import React, { useState, useEffect } from 'react';
 
-const HERO_SLIDES = [
+const VISUAL_TABS = [
   {
-    tag: 'FLAGSHIP EXPORT',
-    title: 'Leading Manufacturers & Exporters of Fruit & Vegetable Pulp',
-    lead: 'R&B Foods (Pvt.) Ltd. operates Pakistan’s premier industrial aseptic processing facility in Shorkot, Punjab. Equipped with genuine BERTUZZI (Milan, Italy) continuous lines, supplying single-strength and concentrated fruit pulps to global beverage and dairy leaders.',
-    bannerImg: '/images/fruit-pulp-portfolio-banner.jpg',
-    accentColor: '#F59E0B'
+    id: 'portfolio',
+    label: 'Full Portfolio',
+    image: '/images/banner-fruit-portfolio.jpg',
+    badgeTop: '5 Puree Spectrum • 210 KG Aseptic Drums',
+    badgeBottom: 'BERTUZZI Continuous Line (Milan, Italy)',
+    tagline: 'Leading Manufacturers & Exporters of Fruit & Vegetable Pulps'
   },
   {
-    tag: 'MANGO SPECIALTIES',
-    title: 'Authentic Pakistani Chaunsa, Desi, Langra, Dusehri & Ratool',
-    lead: 'Processed from mature, clean Pakistani mangoes. Undiluted, unevaporated, not from concentrate, and certified NON-GMO. Preserves intense natural aroma and velvety consistency.',
-    bannerImg: '/images/R&B Foods_Main_Banner 2000x600 Mango.jpg',
-    accentColor: '#EAB308'
+    id: 'mango',
+    label: 'Mango Special',
+    image: '/images/banner-mango.jpg',
+    badgeTop: 'Chaunsa 20°–26° • Desi 14°–18° Brix',
+    badgeBottom: '100% Non-GMO • Single Strength Puree',
+    tagline: 'Pakistani Chaunsa, Desi, Langra, Dusehri & Ratool'
   },
   {
-    tag: 'WHITE GUAVA PULP',
-    title: 'Creamy-White Aseptic Guava with Natural Vitamin C',
-    lead: 'Sterilised and packed in 210kg aseptic bags. Renowned for its delicate tropical sweetness, natural pectin viscosity, and zero astringency for premium juice and nectar blending.',
-    bannerImg: '/images/R&B Foods_Main_Banner 2000x600 Guava.jpg',
-    accentColor: '#10B981'
+    id: 'guava',
+    label: 'White Guava',
+    image: '/images/banner-guava.jpg',
+    badgeTop: '7°–13° Brix • Natural Vitamin C',
+    badgeBottom: 'Creamy-White Texture • Zero Defect',
+    tagline: 'Aseptic Sterilized White Guava Puree'
   },
   {
-    tag: 'SUMMER PEACH & BERRIES',
-    title: 'Juicy Summer Peach, Fresh Strawberry & Exotic Falsa Pulp',
-    lead: 'Capturing the unadulterated freshness of orchard-picked fruits. Packed with vibrant natural pigments, volatile fruit esters, and bioavailable vitamins without artificial additives.',
-    bannerImg: '/images/R&B Foods_Main_Banner 2000x600 Strawberry.jpg',
-    accentColor: '#EF4444'
+    id: 'peach',
+    label: 'Summer Peach',
+    image: '/images/banner-peach.jpg',
+    badgeTop: '10°–14° Brix • Natural Carotenoids',
+    badgeBottom: 'Fine Double-Refined Texture',
+    tagline: 'Sun-Ripened Orchard Peach Pulp'
+  },
+  {
+    id: 'strawberry',
+    label: 'Strawberry',
+    image: '/images/banner-strawberry.jpg',
+    badgeTop: '7°–10° Brix • Natural Ruby Pigment',
+    badgeBottom: 'Preservative-Free • Undiluted',
+    tagline: 'Fresh Field Strawberry Puree'
+  },
+  {
+    id: 'falsa',
+    label: 'Exotic Falsa',
+    image: '/images/banner-falsa.jpg',
+    badgeTop: '8°–12° Brix • Deep Royal Purple',
+    badgeBottom: 'High Antioxidant Wild Berry',
+    tagline: 'Pakistani Grewia Asiatica (Falsa) Pulp'
   }
 ];
 
 export default function Hero() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
   const [counts, setCounts] = useState({ capacity: 0, drums: 0, micro: 0 });
-
-  // Auto-advance banner slides every 6 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
 
   // Metric Counter Animation
   useEffect(() => {
@@ -69,11 +81,11 @@ export default function Hero() {
     requestAnimationFrame(update);
   }, []);
 
-  const slide = HERO_SLIDES[activeSlide];
+  const currentVisual = VISUAL_TABS[activeTab];
 
   return (
     <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Dynamic Ambient Tropical Light Orbs */}
+      {/* Ambient Tropical Atmospheric Glow */}
       <div className="ambient-glow-orb ambient-orb-1" aria-hidden="true"></div>
       <div className="ambient-glow-orb ambient-orb-2" aria-hidden="true"></div>
 
@@ -86,30 +98,30 @@ export default function Hero() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
-              <span>{slide.tag} &bull; SHORKOT, PUNJAB &bull; NON-GMO</span>
+              <span>BERTUZZI CONTINUOUS LINE &bull; SHORKOT, PUNJAB &bull; 100% NON-GMO</span>
             </div>
 
-            <h1 className="hero-title" style={{ marginTop: '0.85rem', lineHeight: 1.15 }}>
+            <h1 className="hero-title" style={{ marginTop: '0.5rem', lineHeight: 1.15 }}>
               Leading Manufacturers &amp; Exporters of{' '}
               <em style={{ color: 'var(--color-gold-500)', fontStyle: 'italic' }}>
-                Fruit &amp; Vegetable Pulp.
+                Fruit &amp; Vegetable Pulps.
               </em>
             </h1>
 
-            <p className="hero-lead" style={{ marginTop: '1rem', fontSize: '1.05rem', lineHeight: 1.6 }}>
-              {slide.lead}
+            <p className="hero-lead" style={{ marginTop: '1rem', fontSize: '1.05rem', lineHeight: 1.65 }}>
+              R&amp;B Foods (Pvt.) Ltd. operates Pakistan’s premier industrial aseptic processing facility in Shorkot, Punjab. Equipped with genuine <strong>BERTUZZI (Milan, Italy)</strong> continuous lines, delivering single-strength and concentrated fruit purees in 210kg aseptic steel drums to multinational beverage, dairy, and confectionery brands.
             </p>
 
-            <div className="hero-cta-group" style={{ marginTop: '1.75rem' }}>
+            <div className="hero-cta-group" style={{ marginTop: '1.75rem', display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
               <a
                 href="#rfq-calculator"
                 className="btn btn-gold"
                 style={{ padding: '0.95rem 1.85rem', fontSize: '1rem', boxShadow: '0 8px 24px rgba(217, 119, 6, 0.35)' }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  <path d="M21 16V8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
                 Request Commercial RFQ &amp; Samples
               </a>
@@ -118,146 +130,173 @@ export default function Hero() {
                 className="btn btn-secondary"
                 style={{ padding: '0.95rem 1.6rem', fontSize: '1rem' }}
               >
-                View 10+ Fruit Purees
+                Explore 10+ Fruit Purees
               </a>
             </div>
 
-            {/* Quick Slide Switcher Indicators */}
-            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1.5rem', alignItems: 'center' }}>
-              {HERO_SLIDES.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setActiveSlide(idx)}
-                  style={{
-                    width: activeSlide === idx ? '32px' : '10px',
-                    height: '8px',
-                    borderRadius: '4px',
-                    backgroundColor: activeSlide === idx ? 'var(--color-gold-500)' : 'rgba(0,0,0,0.2)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease'
-                  }}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-
             {/* Live Animated Metric Counters */}
-            <div className="hero-metrics-bar" style={{ marginTop: '2rem' }}>
+            <div className="hero-metrics-bar" style={{ marginTop: '2.25rem' }}>
               <div className="metric-item">
                 <span className="metric-val">
                   {counts.capacity.toLocaleString()}
                   <small>MT</small>
                 </span>
-                <span className="metric-label">Annual Processing Capacity</span>
+                <span className="metric-label">Annual Intake Capacity</span>
               </div>
               <div className="metric-item">
                 <span className="metric-val">
                   BERTUZZI
                   <small style={{ fontSize: '0.75rem', color: 'var(--color-gold-500)', marginLeft: '3px' }}>
-                    MILAN
+                    ITALY
                   </small>
                 </span>
-                <span className="metric-label">Continuous Aseptic Line</span>
+                <span className="metric-label">Continuous Line</span>
               </div>
               <div className="metric-item">
                 <span className="metric-val">
                   {counts.drums}
                   <small>KG</small>
                 </span>
-                <span className="metric-label">Aseptic Conical Drums</span>
+                <span className="metric-label">Aseptic Steel Drums</span>
               </div>
               <div className="metric-item">
                 <span className="metric-val">
                   {counts.micro}
                   <small>%</small>
                 </span>
-                <span className="metric-label">Non-GMO &amp; Halal Certified</span>
+                <span className="metric-label">Halal &amp; Preservative Free</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: High-Impact Visual Showcase */}
+          {/* Right Column: High-Definition Visual Showcase with Variety Tabs */}
           <div className="hero-visual-card reveal reveal-scale is-visible" id="hero-card">
+            {/* Visual Selector Tabs */}
+            <div
+              style={{
+                display: 'flex',
+                gap: '0.35rem',
+                overflowX: 'auto',
+                paddingBottom: '0.65rem',
+                marginBottom: '0.5rem',
+                borderBottom: '1px solid rgba(0,0,0,0.06)'
+              }}
+            >
+              {VISUAL_TABS.map((tab, idx) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(idx)}
+                  style={{
+                    padding: '0.35rem 0.65rem',
+                    fontSize: '0.75rem',
+                    fontWeight: activeTab === idx ? 700 : 500,
+                    borderRadius: '6px',
+                    border: activeTab === idx ? '1px solid var(--color-gold-500)' : '1px solid rgba(0,0,0,0.08)',
+                    background: activeTab === idx ? 'var(--color-gold-50)' : '#FFF',
+                    color: activeTab === idx ? 'var(--color-amber-800)' : 'var(--color-charcoal-700)',
+                    cursor: 'pointer',
+                    whiteSpace: 'nowrap',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Active Visual Container */}
             <div
               className="hero-image-stack"
               style={{
-                borderRadius: 'var(--radius-lg)',
+                borderRadius: 'var(--radius-md)',
                 overflow: 'hidden',
-                boxShadow: '0 20px 50px rgba(0,0,0,0.18)',
-                position: 'relative'
+                boxShadow: '0 12px 36px rgba(0,0,0,0.12)',
+                position: 'relative',
+                aspectRatio: '4 / 3'
               }}
             >
               <img
-                src={slide.bannerImg}
-                alt={slide.title}
+                src={currentVisual.image}
+                alt={currentVisual.tagline}
                 className="hero-primary-img"
                 style={{
                   width: '100%',
-                  height: 'auto',
-                  display: 'block',
-                  transition: 'opacity 0.5s ease',
-                  objectFit: 'cover'
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
                 }}
               />
 
-              {/* Top Floating Badge */}
-              <div className="hero-floating-badge" style={{ top: '16px', right: '16px' }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              {/* Floating Top Badge */}
+              <div className="hero-floating-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <circle cx="12" cy="12" r="10"></circle>
                   <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
-                <span>Chaunsa 20&deg;&ndash;26&deg; &bull; Desi 14&deg;&ndash;18&deg; Brix</span>
+                <span>{currentVisual.badgeTop}</span>
               </div>
 
-              {/* Bottom Floating Badge */}
-              <div className="hero-floating-badge-bottom" style={{ bottom: '16px', left: '16px' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3">
+              {/* Floating Bottom Badge (Auto-sized, never stretched) */}
+              <div className="hero-floating-badge-bottom">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                <span>BERTUZZI Flash Sterilization Line</span>
+                <span>{currentVisual.badgeBottom}</span>
               </div>
             </div>
 
-            {/* Docked Technical Specification Pill */}
-            <div className="hero-docked-card" style={{ marginTop: '1rem' }}>
-              <div className="drum-icon-circle" style={{ background: 'var(--color-primary-900)', color: 'var(--color-gold-400)' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            {/* Docked Technical Specification Footnote */}
+            <div className="hero-docked-card">
+              <div
+                className="drum-icon-circle"
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  background: 'var(--color-primary-900)',
+                  color: 'var(--color-gold-400)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="3" y="4" width="18" height="16" rx="2"></rect>
                   <line x1="3" y1="10" x2="21" y2="10"></line>
                   <line x1="3" y1="16" x2="21" y2="16"></line>
                 </svg>
               </div>
-              <div className="hero-docked-text">
-                <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 700, color: 'var(--color-primary-950)' }}>
+              <div className="hero-docked-text" style={{ flex: 1 }}>
+                <h5 style={{ margin: 0, fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-primary-950)' }}>
                   Continuous Flash Sterilization &bull; 210 KG Aseptic Drums
                 </h5>
-                <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--color-charcoal-600)' }}>
-                  Sealed in 4-layer barrier bags under Class 100 laminar cleanroom conditions. 18-month shelf life.
+                <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--color-charcoal-600)' }}>
+                  Class 100 laminar cleanroom sealed. 18-month shelf life at 4&deg;C &ndash; 8&deg;C.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 5-Fruit Puree Quick Showcase Strip (Mango, Guava, Peach, Strawberry, Falsa) */}
+        {/* 5-Fruit Quick Spectrum Strip (Below Grid) */}
         <div
           style={{
             marginTop: '3.5rem',
-            padding: '1.25rem 1.5rem',
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(254,243,199,0.5) 100%)',
+            padding: '1.25rem 1.75rem',
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(254,243,199,0.55) 100%)',
             borderRadius: 'var(--radius-lg)',
-            border: '1px solid rgba(217, 119, 6, 0.2)',
-            boxShadow: '0 8px 30px rgba(0,0,0,0.06)'
+            border: '1px solid rgba(217, 119, 6, 0.22)',
+            boxShadow: '0 8px 30px rgba(0,0,0,0.05)'
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
-            <span style={{ fontSize: '0.78rem', fontWeight: 800, letterSpacing: '0.08em', color: 'var(--color-primary-950)', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.08em', color: 'var(--color-primary-950)', textTransform: 'uppercase' }}>
               &bull; Official R&amp;B Foods Puree Export Spectrum
             </span>
             <span style={{ fontSize: '0.78rem', color: 'var(--color-charcoal-600)', fontWeight: 600 }}>
-              100% Edible Fruit Pulp &bull; Zero Artificial Color or Flavor &bull; Non-GMO
+              100% Single-Strength &bull; Zero Artificial Color or Flavor &bull; Non-GMO Certified
             </span>
           </div>
 
@@ -268,7 +307,20 @@ export default function Hero() {
               gap: '1rem'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.5rem', background: '#FFF', borderRadius: 'var(--radius-sm)', border: '1px solid #FDE68A' }}>
+            <div
+              onClick={() => setActiveTab(1)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.6rem 0.75rem',
+                background: '#FFF',
+                borderRadius: 'var(--radius-sm)',
+                border: activeTab === 1 ? '2px solid var(--color-gold-500)' : '1px solid #FDE68A',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
               <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: '#F59E0B', flexShrink: 0 }}></span>
               <div>
                 <strong style={{ fontSize: '0.85rem', display: 'block', color: 'var(--color-primary-950)' }}>Mango Pulps</strong>
@@ -276,7 +328,20 @@ export default function Hero() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.5rem', background: '#FFF', borderRadius: 'var(--radius-sm)', border: '1px solid #E2E8F0' }}>
+            <div
+              onClick={() => setActiveTab(2)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.6rem 0.75rem',
+                background: '#FFF',
+                borderRadius: 'var(--radius-sm)',
+                border: activeTab === 2 ? '2px solid var(--color-gold-500)' : '1px solid #E2E8F0',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
               <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: '#F1F5F9', border: '1px solid #CBD5E1', flexShrink: 0 }}></span>
               <div>
                 <strong style={{ fontSize: '0.85rem', display: 'block', color: 'var(--color-primary-950)' }}>White Guava</strong>
@@ -284,7 +349,20 @@ export default function Hero() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.5rem', background: '#FFF', borderRadius: 'var(--radius-sm)', border: '1px solid #FED7AA' }}>
+            <div
+              onClick={() => setActiveTab(3)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.6rem 0.75rem',
+                background: '#FFF',
+                borderRadius: 'var(--radius-sm)',
+                border: activeTab === 3 ? '2px solid var(--color-gold-500)' : '1px solid #FED7AA',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
               <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: '#FB923C', flexShrink: 0 }}></span>
               <div>
                 <strong style={{ fontSize: '0.85rem', display: 'block', color: 'var(--color-primary-950)' }}>Peach Pulp</strong>
@@ -292,7 +370,20 @@ export default function Hero() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.5rem', background: '#FFF', borderRadius: 'var(--radius-sm)', border: '1px solid #FECDD3' }}>
+            <div
+              onClick={() => setActiveTab(4)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.6rem 0.75rem',
+                background: '#FFF',
+                borderRadius: 'var(--radius-sm)',
+                border: activeTab === 4 ? '2px solid var(--color-gold-500)' : '1px solid #FECDD3',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
               <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: '#F43F5E', flexShrink: 0 }}></span>
               <div>
                 <strong style={{ fontSize: '0.85rem', display: 'block', color: 'var(--color-primary-950)' }}>Strawberry</strong>
@@ -300,7 +391,20 @@ export default function Hero() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.5rem', background: '#FFF', borderRadius: 'var(--radius-sm)', border: '1px solid #E9D5FF' }}>
+            <div
+              onClick={() => setActiveTab(5)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.6rem 0.75rem',
+                background: '#FFF',
+                borderRadius: 'var(--radius-sm)',
+                border: activeTab === 5 ? '2px solid var(--color-gold-500)' : '1px solid #E9D5FF',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
               <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: '#9333EA', flexShrink: 0 }}></span>
               <div>
                 <strong style={{ fontSize: '0.85rem', display: 'block', color: 'var(--color-primary-950)' }}>Falsa Pulp</strong>
