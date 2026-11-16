@@ -35,7 +35,7 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
     >
       <div className="modal-card">
         <div className="modal-header">
-          <h3 id="modal-spec-title">Technical Laboratory Data Sheet (IMS Specification)</h3>
+          <h3 id="modal-spec-title">Product Laboratory Specification Sheet</h3>
           <button
             type="button"
             className="modal-close-btn"

@@ -106,7 +106,7 @@ export default function ChairmanPledge() {
                 &ldquo;R&amp;B Foods (Pvt.) Ltd. is committed to maintaining the highest Food Safety &amp; Halal Standards. We ensure that food products are processed hygienically that are safe for human consumption.&rdquo;
               </p>
               <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#94A3B8' }}>
-                Document Ref: <strong>IMS RBF POL-01</strong> &bull; Chief Executive Authorization
+                Official Corporate Governance &bull; Chief Executive Authorization
               </div>
             </div>
 
