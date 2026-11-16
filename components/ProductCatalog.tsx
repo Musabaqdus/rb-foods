@@ -106,7 +106,7 @@ export default function ProductCatalog({ onOpenSpec, onSelectRfq }: ProductCatal
           <span className="section-kicker">Industrial Specification Portfolio</span>
           <h2 className="section-title">Aseptic Fruit Pulps &amp; Concentrates</h2>
           <p className="section-desc">
-            R&amp;B Foods (Pvt.) Ltd. manufactures premium single-strength and concentrated fruit pulps from mature Pakistani crops. Packed in export-ready 215 kg aseptic steel drums and specialized bulk formats.
+            R&amp;B Foods (Pvt.) Ltd. manufactures premium single-strength and concentrated fruit pulps from mature Pakistani crops. Packed in export-ready 210 kg aseptic steel drums and specialized bulk formats.
           </p>
         </div>
 
@@ -173,11 +173,11 @@ export default function ProductCatalog({ onOpenSpec, onSelectRfq }: ProductCatal
                   </div>
                   <div className="spec-mini-item">
                     <span className="spec-mini-label">PACKAGING</span>
-                    <span className="spec-mini-val">215 kg Aseptic</span>
+                    <span className="spec-mini-val">210 kg Aseptic</span>
                   </div>
                   <div className="spec-mini-item">
                     <span className="spec-mini-label">SHELF LIFE</span>
-                    <span className="spec-mini-val">24 Months</span>
+                    <span className="spec-mini-val">{product.specs.shelfLife.split(' ')[0]} {product.specs.shelfLife.split(' ')[1] || 'Months'}</span>
                   </div>
                 </div>
 

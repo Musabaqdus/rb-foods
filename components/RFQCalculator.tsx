@@ -22,7 +22,7 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
   const [rfqRef, setRfqRef] = useState<string>('');
 
   // Calculations
-  let unitWeightKg = 215;
+  let unitWeightKg = 210;
   let tareWeightKg = 18;
   let unitsPerFcl = 80;
 
@@ -47,7 +47,7 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
     `Hello R&B Foods Export Desk, I would like to request an industrial price quotation / sample batch:\n\n` +
     `• Product: ${selectedPuree}\n` +
     `• Required Volume: ${volumeMt} MT\n` +
-    `• Packaging Format: ${packType === 'drum' ? '215 kg Aseptic Drum' : (packType === 'bib' ? '20 kg Bag-in-Box' : '18 kg Frozen Pail')}\n` +
+    `• Packaging Format: ${packType === 'drum' ? '210 kg Aseptic Drum' : (packType === 'bib' ? '20 kg Bag-in-Box' : '18 kg Frozen Pail')}\n` +
     `• Estimated Units: ${totalUnits.toLocaleString()} units (~${fclContainers} FCL)\n` +
     `• Destination Port: ${port}\n\n` +
     `Please share the latest Certificate of Analysis (COA) and CIF/FOB pricing.`
@@ -123,7 +123,7 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
                     value={packType}
                     onChange={(e) => setPackType(e.target.value)}
                   >
-                    <option value="drum">215 kg Aseptic Steel Drum</option>
+                    <option value="drum">210 kg Aseptic Steel Drum</option>
                     <option value="bib">20 kg Bag-in-Box (BIB)</option>
                     <option value="pail">18 kg Frozen Food-Grade Pail</option>
                   </select>

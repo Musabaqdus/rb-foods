@@ -7,6 +7,11 @@ $RECYCLE.BIN/
 
 # Temporary Microsoft Office lock files
 ~$*
+*.zip
+rbfoodsdirectorspictures/
+rbfoodsfruitimages800x600/
+rbfoodslogo/
+rbfoodslogo2000x600pxl/
 
 # Raw video large binary dumps
 *.bin

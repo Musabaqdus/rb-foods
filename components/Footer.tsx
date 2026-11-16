@@ -46,7 +46,7 @@ export default function Footer() {
               <li><a href="#engineering">Bertuzzi Processing Line</a></li>
               <li><a href="#laboratory">In-House QA / QC Lab</a></li>
               <li><a href="#seasonality">Fruit Harvest Calendar</a></li>
-              <li><a href="#packaging">215 kg Steel Drum Specs</a></li>
+              <li><a href="#packaging">210 kg Steel Drum Specs</a></li>
               <li><a href="#leadership">Corporate Governance</a></li>
               <li><a href="/docs/company-profile.pdf" target="_blank" rel="noopener noreferrer">Company Profile (PDF)</a></li>
             </ul>

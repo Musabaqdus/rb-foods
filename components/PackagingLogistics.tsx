@@ -25,15 +25,15 @@ export default function PackagingLogistics() {
               </div>
               <span className="pack-tag">Industry Benchmark</span>
             </div>
-            <h3 className="pack-title">215 kg Aseptic Steel Drum</h3>
+            <h3 className="pack-title">210 kg Aseptic Steel Drum</h3>
             <p className="pack-desc">
-              4-layer metallized polyester/aluminum barrier bag inside a food-grade epoxy-lacquered steel drum. Nitrogen flushed with tamper-evident seal.
+              Food-grade 4-layer aseptic barrier bag hermetically sealed inside conical / PPL steel drums. Nitrogen flushed with tamper-evident security seal.
             </p>
             <div className="pack-specs-list">
-              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">215 kg &plusmn; 0.5 kg</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">Gross Weight:</span><span className="pack-spec-val">~233 kg per drum</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; FCL Stuffing:</span><span className="pack-spec-val">80 Drums (17.20 MT Net)</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">Ambient Shelf Life:</span><span className="pack-spec-val">24 Months (&lt; 25&deg;C)</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">210 kg &plusmn; 0.5 kg</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Gross Weight:</span><span className="pack-spec-val">~228 kg per drum</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; FCL Stuffing:</span><span className="pack-spec-val">80 Drums (16.80 MT Net)</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Storage &amp; Shelf Life:</span><span className="pack-spec-val">18 Months (4&deg;C – 8&deg;C)</span></div>
             </div>
           </div>
 

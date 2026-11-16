@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Bertuzzi Italy Line',
     'FSSC 22000 Puree Exporter',
     'R&B Foods Shorkot',
-    'Industrial Fruit Puree 215kg Drum'
+    'Industrial Fruit Puree 210kg Drum'
   ],
   authors: [{ name: 'R&B Foods (Pvt.) Ltd' }],
   icons: {

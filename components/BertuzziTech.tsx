@@ -43,7 +43,7 @@ export default function BertuzziTech() {
           <div className="process-step-card reveal is-visible delay-500">
             <div className="step-num-pill">05</div>
             <h4 className="step-title">Cleanroom Aseptic Drum Filling</h4>
-            <p className="step-desc">Automatic sterile filling head hermetically clamps 215kg 4-layer barrier bags inside steel drums with zero recontamination.</p>
+            <p className="step-desc">Automatic sterile filling head hermetically clamps 210kg 4-layer barrier bags inside steel drums with zero recontamination.</p>
           </div>
         </div>
 

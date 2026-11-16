@@ -23,7 +23,7 @@ export default function TopProcurementBar() {
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
-                <strong>Aseptic 215kg Drums:</strong> Export Shipments Loading at Karachi Port for Jebel Ali, Rotterdam &amp; Qingdao
+                <strong>Aseptic 210kg Drums:</strong> Export Shipments Loading at Karachi Port for Jebel Ali, Rotterdam &amp; Qingdao
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
@@ -45,7 +45,7 @@ export default function TopProcurementBar() {
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
-                <strong>Aseptic 215kg Drums:</strong> Export Shipments Loading at Karachi Port for Jebel Ali, Rotterdam &amp; Qingdao
+                <strong>Aseptic 210kg Drums:</strong> Export Shipments Loading at Karachi Port for Jebel Ali, Rotterdam &amp; Qingdao
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
