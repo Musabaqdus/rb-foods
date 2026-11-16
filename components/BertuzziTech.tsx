@@ -49,11 +49,28 @@ export default function BertuzziTech() {
 
         {/* Facility & Plant Visual Grid */}
         <div className="tech-showcase-grid reveal is-visible delay-200">
-          <div className="tech-media-wrap">
-            <video controls poster="/images/plant-machinery.jpeg">
-              <source src="/video/facility-overview.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="tech-media-wrap" style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.15)' }}>
+            <img
+              src="/images/bertuzzi-mango-processing.jpg"
+              alt="BERTUZZI Italy Continuous Processing Equipment at R&B Foods Plant"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+            <div style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: 'linear-gradient(transparent, rgba(7, 25, 17, 0.92))',
+              padding: '1.25rem 1.5rem',
+              color: '#FFFFFF'
+            }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-gold-400)', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.25rem' }}>
+                Factory Floor &bull; Shorkot Facility
+              </span>
+              <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: '#FFF' }}>
+                BERTUZZI (Milan, Italy) Continuous Aseptic Extraction &amp; Flash Sterilization Line
+              </h4>
+            </div>
           </div>
 
           <div className="tech-points-list">

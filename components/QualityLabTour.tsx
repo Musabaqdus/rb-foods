@@ -15,28 +15,76 @@ export default function QualityLabTour() {
         </div>
 
         <div className="lab-grid">
-          {/* Facility Processing Video Showcase */}
+          {/* Facility Processing & Lab Testing Showcase */}
           <div className="lab-video-container reveal reveal-left is-visible delay-100">
-            <div className="video-player-wrapper">
-              <video
-                id="lab-video-player"
-                controls
-                playsInline
-                poster="/images/plant-processing-line.jpeg"
-                src="/video/facility-overview.mp4"
-              >
-                Your browser does not support HTML5 video streaming.
-              </video>
+            <div style={{ position: 'relative', overflow: 'hidden', borderRadius: 'var(--radius-lg)', boxShadow: '0 15px 35px rgba(0,0,0,0.12)' }}>
+              <img
+                src="/images/plant-processing-line.jpeg"
+                alt="R&B Foods Continuous Aseptic Processing & Quality Control Station"
+                style={{ width: '100%', height: 'auto', display: 'block', minHeight: '340px', objectFit: 'cover' }}
+              />
+
+              <div style={{
+                position: 'absolute',
+                top: '16px',
+                right: '16px',
+                background: 'rgba(7, 25, 17, 0.9)',
+                backdropFilter: 'blur(8px)',
+                padding: '0.45rem 0.85rem',
+                borderRadius: '9999px',
+                color: '#FFF',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                <span className="status-dot-pulse" style={{ background: '#10B981', width: '8px', height: '8px', borderRadius: '50%' }}></span>
+                <span>In-Line QC Active &bull; Zero Defect</span>
+              </div>
+
+              <div style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                background: 'linear-gradient(transparent, rgba(7, 25, 17, 0.95))',
+                padding: '1.5rem',
+                color: '#FFFFFF'
+              }}>
+                <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--color-gold-400)', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.25rem' }}>
+                  Aseptic Cleanroom &bull; Shorkot Industrial Plant
+                </span>
+                <h4 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 700, color: '#FFF' }}>
+                  Continuous Sampling &amp; Multi-Tier Analytical Verification Station
+                </h4>
+              </div>
             </div>
 
-            <div className="video-controls-bar">
-              <div className="video-label-info">
-                <span className="status-dot-pulse" style={{ background: '#10B981' }}></span>
-                <span id="video-current-title">R&amp;B Foods Continuous Aseptic Facility &bull; Shorkot Plant</span>
+            {/* Industrial Real-Time Quality Monitor Strip */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              background: 'var(--color-primary-950)',
+              padding: '0.85rem 1.25rem',
+              borderRadius: '0 0 var(--radius-md) var(--radius-md)',
+              color: '#FFFFFF',
+              fontSize: '0.8rem',
+              flexWrap: 'wrap',
+              gap: '0.75rem'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span className="status-dot-pulse" style={{ background: '#10B981', width: '7px', height: '7px', borderRadius: '50%' }}></span>
+                <span style={{ color: 'var(--color-cream-200)', fontWeight: 600 }}>COA Audit Compliance: 100% Passed</span>
               </div>
-              <div className="video-selector-tabs">
-                <span style={{ fontSize: '0.78rem', color: 'var(--color-cream-300)', padding: '0.35rem 0.75rem', background: 'rgba(255,255,255,0.08)', borderRadius: 'var(--radius-full)' }}>
-                  Verified Factory Floor
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--color-gold-400)', padding: '0.25rem 0.65rem', background: 'rgba(255,255,255,0.08)', borderRadius: '4px' }}>
+                  Turbidity &lt; 0.5 NTU
+                </span>
+                <span style={{ fontSize: '0.75rem', color: '#6EE7B7', padding: '0.25rem 0.65rem', background: 'rgba(255,255,255,0.08)', borderRadius: '4px' }}>
+                  TPC &lt; 10 CFU/g
                 </span>
               </div>
             </div>
