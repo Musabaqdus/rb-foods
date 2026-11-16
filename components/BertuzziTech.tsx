@@ -1,8 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function BertuzziTech() {
+  const [activeMedia, setActiveMedia] = useState<'video' | 'schematic'>('video');
+
   return (
     <section className="section tech-section" id="engineering">
       <div className="container">
@@ -49,27 +51,132 @@ export default function BertuzziTech() {
 
         {/* Facility & Plant Visual Grid */}
         <div className="tech-showcase-grid reveal is-visible delay-200">
-          <div className="tech-media-wrap" style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.15)' }}>
-            <img
-              src="/images/bertuzzi-mango-processing.jpg"
-              alt="BERTUZZI Italy Continuous Processing Equipment at R&B Foods Plant"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            />
+          <div className="tech-media-col" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            {/* View Mode Toggle Switch */}
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <button
+                type="button"
+                onClick={() => setActiveMedia('video')}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  padding: '0.45rem 0.85rem',
+                  fontSize: '0.8rem',
+                  fontWeight: activeMedia === 'video' ? 700 : 500,
+                  borderRadius: 'var(--radius-sm)',
+                  border: activeMedia === 'video' ? '1px solid var(--color-gold-500)' : '1px solid rgba(255,255,255,0.2)',
+                  background: activeMedia === 'video' ? 'var(--color-gold-500)' : 'rgba(255,255,255,0.08)',
+                  color: activeMedia === 'video' ? '#000' : '#FFF',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Live Plant Video Tour</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveMedia('schematic')}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  padding: '0.45rem 0.85rem',
+                  fontSize: '0.8rem',
+                  fontWeight: activeMedia === 'schematic' ? 700 : 500,
+                  borderRadius: 'var(--radius-sm)',
+                  border: activeMedia === 'schematic' ? '1px solid var(--color-gold-500)' : '1px solid rgba(255,255,255,0.2)',
+                  background: activeMedia === 'schematic' ? 'var(--color-gold-500)' : 'rgba(255,255,255,0.08)',
+                  color: activeMedia === 'schematic' ? '#000' : '#FFF',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <span>BERTUZZI Equipment Schematic</span>
+              </button>
+            </div>
+
+            {/* Media Presentation Frame */}
+            <div className="tech-media-wrap" style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.25)', background: '#000' }}>
+              {activeMedia === 'video' ? (
+                <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/-ns-_nH1ec8?rel=0&modestbranding=1"
+                    title="R&B Foods Pvt Ltd Shorkot Pulp Plant"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      border: 'none',
+                      display: 'block'
+                    }}
+                  />
+                </div>
+              ) : (
+                <div style={{ position: 'relative' }}>
+                  <img
+                    src="/images/bertuzzi-mango-processing.jpg"
+                    alt="BERTUZZI Italy Continuous Processing Equipment at R&B Foods Plant"
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block', minHeight: '340px' }}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(transparent, rgba(7, 25, 17, 0.95))',
+                    padding: '1.25rem 1.5rem',
+                    color: '#FFFFFF'
+                  }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-gold-400)', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.25rem' }}>
+                      Factory Floor &bull; Shorkot Facility
+                    </span>
+                    <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: '#FFF' }}>
+                      BERTUZZI (Milan, Italy) Continuous Aseptic Extraction &amp; Flash Sterilization Line
+                    </h4>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Video Provenance Bar */}
             <div style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: 'linear-gradient(transparent, rgba(7, 25, 17, 0.92))',
-              padding: '1.25rem 1.5rem',
-              color: '#FFFFFF'
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: '0.65rem 0.85rem',
+              background: 'rgba(255,255,255,0.06)',
+              borderRadius: 'var(--radius-sm)',
+              color: 'var(--color-cream-200)',
+              fontSize: '0.8rem',
+              flexWrap: 'wrap',
+              gap: '0.5rem'
             }}>
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-gold-400)', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.25rem' }}>
-                Factory Floor &bull; Shorkot Facility
-              </span>
-              <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: '#FFF' }}>
-                BERTUZZI (Milan, Italy) Continuous Aseptic Extraction &amp; Flash Sterilization Line
-              </h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span className="status-dot-pulse" style={{ background: '#10B981', width: '8px', height: '8px', borderRadius: '50%' }}></span>
+                <span><strong>R&amp;B Foods (Pvt.) Ltd.</strong> &bull; Shorkot Plant Floor Video</span>
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=-ns-_nH1ec8"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--color-gold-400)', textDecoration: 'underline', fontSize: '0.75rem' }}
+              >
+                Open on YouTube &rarr;
+              </a>
             </div>
           </div>
 
