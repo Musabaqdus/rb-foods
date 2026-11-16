@@ -59,7 +59,11 @@ const VISUAL_TABS = [
   }
 ];
 
-export default function Hero() {
+interface HeroProps {
+  onSwitchLayout?: () => void;
+}
+
+export default function Hero({ onSwitchLayout }: HeroProps) {
   const [activeTab, setActiveTab] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [counts, setCounts] = useState({ capacity: 0, drums: 0, micro: 0 });
@@ -119,6 +123,29 @@ export default function Hero() {
       <div className="ambient-glow-orb ambient-orb-2" aria-hidden="true"></div>
 
       <div className="container">
+        {onSwitchLayout && (
+          <div className="hero-layout-switch-bar" style={{ background: '#FFFFFF', border: '1px solid var(--color-cream-300)' }}>
+            <span className="hero-layout-switch-label" style={{ color: 'var(--color-gold-700)' }}>HERO VIEW:</span>
+            <div className="hero-layout-switch-pills">
+              <button
+                type="button"
+                className="hero-layout-pill is-active"
+                style={{ background: 'var(--color-primary-900)', color: '#FFFFFF' }}
+              >
+                🎴 Split Showcase Hero
+              </button>
+              <button
+                type="button"
+                className="hero-layout-pill"
+                onClick={onSwitchLayout}
+                style={{ color: 'var(--color-charcoal-700)' }}
+              >
+                🎬 Full Cover Hero
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Main Hero Split Grid */}
         <div className="hero-grid">
           {/* Left Column: Core Value Proposition */}
