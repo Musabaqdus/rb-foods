@@ -1299,15 +1299,16 @@ ul, ol {
   border: 1px solid rgba(15, 23, 19, 0.08);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg), 0 0 20px rgba(229, 140, 5, 0.12);
-  border-color: rgba(229, 140, 5, 0.35);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px -8px rgba(7, 25, 17, 0.14), 0 0 24px rgba(229, 140, 5, 0.22);
+  border-color: rgba(229, 140, 5, 0.45);
 }
 
 .product-card-img-wrap {
@@ -2825,15 +2826,28 @@ ul, ol {
   background-size: cover;
   background-position: center right;
   opacity: 0;
-  transform: scale(1.03);
-  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 9s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.05);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 0;
+  will-change: transform, opacity;
 }
 
 .hero-fullcover-bg.is-active {
   opacity: 1;
-  transform: scale(1);
   z-index: 1;
+  animation: heroKenBurns 12s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes heroKenBurns {
+  0% {
+    transform: scale(1.07) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.03) translate3d(-12px, -6px, 0);
+  }
+  100% {
+    transform: scale(1.0) translate3d(0, 0, 0);
+  }
 }
 
 .hero-fullcover-overlay {
@@ -2933,12 +2947,28 @@ ul, ol {
 }
 
 .hero-fullcover-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 8px #10B981;
+  box-shadow: 0 0 10px #10B981;
   flex-shrink: 0;
+  animation: heroDotPulse 2s infinite ease-in-out;
+}
+
+@keyframes heroDotPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    transform: scale(1.15);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    transform: scale(1);
+  }
 }
 
 .hero-fullcover-title {

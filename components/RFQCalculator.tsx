@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RB_PRODUCTS } from '../data/products';
 
 interface RFQCalculatorProps {
@@ -11,6 +11,12 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
   const [selectedPuree, setSelectedPuree] = useState<string>(
     initialProduct || 'Chaunsa Mango Puree (Aseptic & Frozen)'
   );
+
+  useEffect(() => {
+    if (initialProduct) {
+      setSelectedPuree(initialProduct);
+    }
+  }, [initialProduct]);
   const [packType, setPackType] = useState<string>('drum');
   const [volumeMt, setVolumeMt] = useState<number>(17);
   const [port, setPort] = useState<string>('Karachi Port (FOB)');
