@@ -44,6 +44,98 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
     intendedUse: product.specs.applications
   };
 
+  const handlePrint = () => {
+    const content = document.getElementById('printable-spec-document');
+    if (!content) {
+      window.print();
+      return;
+    }
+
+    const iframe = document.createElement('iframe');
+    iframe.style.position = 'fixed';
+    iframe.style.right = '0';
+    iframe.style.bottom = '0';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = '0';
+    document.body.appendChild(iframe);
+
+    const doc = iframe.contentWindow?.document;
+    if (!doc) {
+      window.print();
+      return;
+    }
+
+    doc.open();
+    doc.write(`
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <title>${sheet.docTitle} - R&B Foods (Pvt.) Ltd.</title>
+        <style>
+          @page {
+            size: A4 portrait;
+            margin: 10mm 12mm 10mm 12mm;
+          }
+          * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+          body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #FFFFFF;
+            color: #071911;
+            font-size: 10pt;
+            line-height: 1.45;
+          }
+          .printable-sheet {
+            width: 100%;
+            border: 1.5px solid #133826;
+            padding: 16px 20px;
+            background: #FFFFFF;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+          }
+          th, td {
+            border: 1px solid #133826;
+            padding: 5px 8px;
+            font-size: 9pt;
+            text-align: left;
+          }
+          th {
+            background-color: #133826 !important;
+            color: #FFFFFF !important;
+            font-weight: 700;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="printable-sheet">
+          ${content.innerHTML}
+        </div>
+      </body>
+      </html>
+    `);
+    doc.close();
+
+    setTimeout(() => {
+      iframe.contentWindow?.focus();
+      iframe.contentWindow?.print();
+      setTimeout(() => {
+        if (document.body.contains(iframe)) {
+          document.body.removeChild(iframe);
+        }
+      }, 3000);
+    }, 350);
+  };
+
   return (
     <div
       className={`modal-overlay ${product ? 'active' : ''}`}
@@ -56,16 +148,19 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
     >
       <div className="modal-card" style={{ maxWidth: '920px', padding: '0', background: '#FDFBF7' }}>
         {/* Top Control Bar */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '1rem 1.75rem',
-          background: '#071911',
-          color: '#FFFFFF',
-          borderTopLeftRadius: 'var(--radius-lg)',
-          borderTopRightRadius: 'var(--radius-lg)'
-        }}>
+        <div
+          className="no-print"
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '1rem 1.75rem',
+            background: '#071911',
+            color: '#FFFFFF',
+            borderTopLeftRadius: 'var(--radius-lg)',
+            borderTopRightRadius: 'var(--radius-lg)'
+          }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold-400)' }}></span>
             <span style={{ fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--color-gold-300)' }}>
@@ -87,12 +182,16 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
         <div className="modal-body" id="spec-modal-body" style={{ padding: '2rem' }}>
           
           {/* Printable Official Document Wrapper */}
-          <div style={{
-            background: '#FFFFFF',
-            border: '1.5px solid #133826',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
-            padding: '1.75rem'
-          }}>
+          <div
+            id="printable-spec-document"
+            className="printable-spec-sheet"
+            style={{
+              background: '#FFFFFF',
+              border: '1.5px solid #133826',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
+              padding: '1.75rem'
+            }}
+          >
             
             {/* 1. Official Header Box (Table Format matching Shared Docs) */}
             <div style={{
@@ -288,17 +387,20 @@ export default function ProductModal({ product, onClose, onRequestSample }: Prod
           </div>
 
           {/* Action Buttons */}
-          <div style={{
-            marginTop: '1.5rem',
-            display: 'flex',
-            justifyContent: 'flex-end',
-            gap: '1rem',
-            flexWrap: 'wrap'
-          }}>
+          <div
+            className="no-print"
+            style={{
+              marginTop: '1.5rem',
+              display: 'flex',
+              justifyContent: 'flex-end',
+              gap: '1rem',
+              flexWrap: 'wrap'
+            }}
+          >
             <button
               type="button"
               className="btn btn-secondary"
-              onClick={() => window.print()}
+              onClick={handlePrint}
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

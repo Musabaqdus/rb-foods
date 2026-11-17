@@ -3231,3 +3231,104 @@ ul, ol {
     padding: 0.3rem 0.6rem;
   }
 }
+
+/* ==========================================================================
+   OFFICIAL SPEC SHEET PRINT STYLES (CLEAN 1-PAGE A4 EXPORT)
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
+  }
+
+  html, body {
+    background: #FFFFFF !important;
+    color: #071911 !important;
+    overflow: visible !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide entire website structure */
+  body > *:not(#spec-modal),
+  .top-procurement-bar,
+  .top-bar,
+  .navbar,
+  .mobile-drawer,
+  main,
+  footer,
+  .floating-whatsapp-wrap,
+  .no-print,
+  .modal-close-btn,
+  #whatsapp-tooltip {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Reset modal overlay */
+  .modal-overlay {
+    position: static !important;
+    display: block !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    backdrop-filter: none !important;
+    z-index: auto !important;
+  }
+
+  .modal-card {
+    position: static !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .modal-body {
+    padding: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Clean printable specification sheet */
+  .printable-spec-sheet {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 10px 14px !important;
+    border: 1.5px solid #133826 !important;
+    box-shadow: none !important;
+    background: #FFFFFF !important;
+    color: #071911 !important;
+    page-break-inside: auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .printable-spec-sheet table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+
+  .printable-spec-sheet tr {
+    page-break-inside: avoid !important;
+  }
+
+  .printable-spec-sheet th,
+  .printable-spec-sheet td {
+    padding: 4px 8px !important;
+    font-size: 8.5pt !important;
+  }
+}
