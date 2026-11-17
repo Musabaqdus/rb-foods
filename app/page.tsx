@@ -198,19 +198,9 @@ export default function Home() {
                   <source src="/video/plant-tour.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                <div style={{ background: 'rgba(7, 25, 17, 0.92)', padding: '0.85rem 1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(229, 140, 5, 0.25)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#10B981', display: 'inline-block' }}></span>
-                    <span style={{ fontSize: '0.78rem', color: '#FFFFFF', fontWeight: 600 }}>R&amp;B Foods Shorkot Plant Floor Video</span>
-                  </div>
-                  <a
-                    href="https://www.youtube.com/watch?v=-ns-_nH1ec8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: '0.75rem', color: 'var(--color-gold-400)', fontWeight: 700 }}
-                  >
-                    Open on YouTube &rarr;
-                  </a>
+                <div style={{ background: 'rgba(7, 25, 17, 0.92)', padding: '0.85rem 1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem', borderTop: '1px solid rgba(229, 140, 5, 0.25)' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#10B981', display: 'inline-block' }}></span>
+                  <span style={{ fontSize: '0.78rem', color: '#FFFFFF', fontWeight: 600 }}>R&amp;B Foods Shorkot Plant Floor Video</span>
                 </div>
               </div>
 
