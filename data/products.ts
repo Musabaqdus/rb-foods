@@ -22,6 +22,24 @@ export interface MicrobiologicalSpecs {
   howardMold?: string;
 }
 
+
+export interface SpecParameterRow {
+  param: string;
+  standard: string;
+  remarks: string;
+}
+
+export interface OfficialSpecSheet {
+  docTitle: string;
+  description: string;
+  ingredients: string;
+  additives: string;
+  table: SpecParameterRow[];
+  packaging: string;
+  storage: string;
+  intendedUse: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -34,6 +52,7 @@ export interface Product {
   overview: string;
   specs: ProductSpecs;
   microbiological: MicrobiologicalSpecs;
+  specSheet: OfficialSpecSheet;
 }
 
 export const RB_PRODUCTS: Product[] = [
@@ -68,6 +87,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 CFU/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Chaunsa Mango Pulp)",
+          "description": "Chaunsa Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative free made from edible part of ripe, healthy, and clean Chaunsa mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Chaunsa Mango, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "20°- 26° Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.80 – 4.20",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.60 – 0.85%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet mango taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Bright Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Chaunsa Mango pulp is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Chaunsa Mango Pulp is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength pulp in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in mango shake and mango lassi, which is a popular drink all over the world."
     }
   },
 
@@ -102,6 +177,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 CFU/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Desi Mango Pulp)",
+          "description": "Desi Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Mango, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "14°-18° Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.70 – 4.10",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.80 – 1.20%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet mango taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Bright Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200PPM",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Desi Mango pulp is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Desi Mango Pulp is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength pulp in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in mango shake and mango lassi, which is a popular drink all over the world."
     }
   },
 
@@ -136,6 +267,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 CFU/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Dusehri Mango Pulp)",
+          "description": "Dusehri Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative free made from edible part of ripe, healthy, and clean Dusehri mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Dusehri Mango, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "16°-19° Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.8-4.2",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.6-0.85%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet mango taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Ocher Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Dusehri Mango pulp is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Dusehri Mango Pulp is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength pulp in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in mango shake and mango lassi, which is a popular drink all over the world."
     }
   },
 
@@ -170,6 +357,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 CFU/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Langra Mango Pulp)",
+          "description": "Langra Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative free made from edible part of ripe, healthy, and clean Langra mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Langra Mango, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "17°-22°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.80 – 4.20",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.60 – 0.85%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet mango taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Bright Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Langra Mango pulp is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Langra Mango Pulp is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength pulp in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in mango shake and mango lassi, which is a popular drink all over the world."
     }
   },
 
@@ -204,6 +447,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 cfu/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Anwar Ratool Mango Pulp)",
+          "description": "Ratool Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean Ratool mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Ratool Mango, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "18°-24° Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.80 – 4.20",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.60 – 0.85%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet mango taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Bright Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Ratool Mango pulp is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Ratool Mango Pulp is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength pulp in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in mango shake and mango lassi, which is a popular drink all over the world."
     }
   },
 
@@ -238,6 +537,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 cfu/g",
       yeastMould: "< 10 cfu/g"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Sindhri Mango Pulp)",
+          "description": "Sindhri Mango pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean Sindhri mangoes. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Sindhri Mango, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "Min. 14°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.70 – 4.10",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.80 – 1.20%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet mango taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Bright Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Sindhri Mango pulp is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Sindhri Mango Pulp is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength pulp in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in mango shake and mango lassi, which is a popular drink all over the world."
     }
   },
 
@@ -272,6 +627,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 CFU/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Chaunsa Mango Concentrate)",
+          "description": "Chaunsa Mango Concentrate, is made by processing edible part of ripe, healthy, and clean Chaunsa mangoes & then concentrating it to 28-30°Brix by evaporation under vacuum. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Chaunsa Mango, Citric Acid, Ascorbic Acid.",
+          "additives": "The Concentrate does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "28-30°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.50 – 4.20",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.70 – 1.30%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet mango taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Chaunsa Mango concentrate is filled in 220kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "24 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Chaunsa Mango concentrate is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened concentrate in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in mango shake and mango lassi, which is a popular drink all over the world."
     }
   },
 
@@ -306,6 +717,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 cfu/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Desi Mango Concentrate)",
+          "description": "Desi Mango Concentrate, is made by processing edible part of ripe, healthy, and clean Desi mangoes & then concentrating it to 28-30°Brix by evaporation under vacuum. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Desi Mango, Citric Acid, Ascorbic Acid.",
+          "additives": "The Concentrate does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "28-30°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.50 – 4.20",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.70 – 1.30%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet mango taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Desi Mango concentrate is filled in 220kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Desi Mango concentrate is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened concentrate in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in mango shake and mango lassi, which is a popular drink all over the world."
     }
   },
 
@@ -340,6 +807,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 CFU/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Guava Pulp)",
+          "description": "Guava pulp, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made by crushing ripe, healthy, and clean Guavas. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Guava, Citric Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid is added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "07°-12° Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.90 – 4.40",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.30 – 0.70%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet Guava Taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Creamy White",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Guava pulp is filled in 200kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Guava Pulp is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength pulp in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in guava shake and guava lassi, which is a popular drink all over the world."
     }
   },
 
@@ -374,6 +897,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 CFU/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Strawberry Puree Aseptic)",
+          "description": "Strawberry Puree Aseptic, undiluted, unevaporated , unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean strawberries. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Strawberries, Ascorbic Acid.",
+          "additives": "The puree does not contain any preservatives, colors or flavors.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "Min. 6°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.30 – 3.90",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.50 – 1.50%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Typical of strawberry"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Dark Red",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "Smooth pureed fruit",
+                      "remarks": ""
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "< 10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "300-400 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Strawberry Puree is filled in 200kgs aseptic bags in conical/PPL steel drums having polylinear bags in-between.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Strawberry Puree is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength pulp in smaller consumer packs and can be consumed as it is or mixed with milk, cheese & yogurt. It can also be used in strawberry shake and strawberry lassi , which is a popular drink all over the world."
     }
   },
 
@@ -408,6 +987,57 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 cfu/g",
       yeastMould: "< 10 cfu/g"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Peach Puree Aseptic)",
+          "description": "Peach Puree, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean peach fruit. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Peach, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Dry Matter, Soluble (Brix)",
+                      "standard": "Min. 9° Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.40 – 0.75%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.40 – 3.80",
+                      "remarks": ""
+                },
+                {
+                      "param": "Foreign Material",
+                      "standard": "Nil",
+                      "remarks": ""
+                },
+                {
+                      "param": "Color",
+                      "standard": "Bright Brownish-pink",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Peach Puree is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of peach Puree is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength Puree in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in peach shake and peach lassi, which is a popular drink all over the world."
     }
   },
 
@@ -417,9 +1047,9 @@ export const RB_PRODUCTS: Product[] = [
     name: "Peach Concentrate",
     botanical: "Prunus persica (Concentrate)",
     category: "concentrate",
-    badge: "30–32° Brix Concentrate",
+    badge: "30–32° Brix Industrial Concentrate",
     tagline: "Vacuum concentrated to 30-32° Brix from fresh, mature, clean peaches.",
-    image: "/images/PeACH 800x600.jpg",
+    image: "/images/peach-concentrate.jpg",
     pulpImage: "/images/plant-machinery.jpeg",
     overview: "Peach Concentrate, is obtained by processing fresh, mature and clean peaches & then concentrating it to 30-32°Brix by evaporation under vacuum. It is classified as a NON-GMO (genetically modified organism) product.",
     specs: {
@@ -442,6 +1072,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 50 CFU/g",
       yeastMould: "Negative"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Peach Concentrate)",
+          "description": "Peach Concentrate, is obtained by processing fresh, mature and clean peaches & then concentrating it to 30-32°Brix by evaporation under vacuum. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Peaches, Ascorbic Acid.",
+          "additives": "The concentrate does not contain any preservatives, colors or flavors.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "30-32°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.50 – 4.40",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "Min. 0.50%",
+                      "remarks": "As per tartaric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Typical of Peach"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Dark Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency (Bostwick)",
+                      "standard": "5-12 cm/30 sec",
+                      "remarks": ""
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<50 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 200 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Peach Concentrate is filled in 220kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Peach concentrate is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened concentrate in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in Peach shake which is a popular drink all over the world."
     }
   },
 
@@ -476,6 +1162,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 cfu/g",
       yeastMould: "< 10 cfu/g"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Apple Puree)",
+          "description": "Apple Puree, is obtained by processing fresh, mature and clean Apples & then concentrating it to 20-24°Brix by evaporation under vacuum. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Apples, Citric Acid, Ascorbic Acid.",
+          "additives": "The product does not contain any preservatives, colors or flavors.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "20-24°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.50 – 4.30",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.30-0.70%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Typical of Apple"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Intense Yellow",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "Smooth strained apple puree",
+                      "remarks": ""
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Max. 500 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Apple Puree is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Apple Puree is in the production of juices and nectars. It is also used for the production of infants nutritious foods."
     }
   },
 
@@ -511,6 +1253,62 @@ export const RB_PRODUCTS: Product[] = [
       tpc: "< 10 cfu/g",
       yeastMould: "< 10 cfu/g",
       howardMold: "Max. 40%"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Tomato Paste)",
+          "description": "Tomato Paste is made from finest, vine-ripened tomatoes, which are carefully processed to capture the true essence of this beloved fruit then concentrating it to 28-30°Brix by evaporation under vacuum. The result is a rich and full-bodied tomato paste. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% fresh & ripe Tomato.",
+          "additives": "The paste does not contain any preservatives, colors or flavors.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "28-30°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "1.50-2.50%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "pH",
+                      "standard": "4.10 – 4.40",
+                      "remarks": ""
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of ripe tomato",
+                      "remarks": "Free from off-flavors & scorched taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Min. 1.90",
+                      "remarks": "a/b Hunter scale @ 12° Brix"
+                },
+                {
+                      "param": "Consistency (Bostwick)",
+                      "standard": "04-07 cm/30s",
+                      "remarks": "At 12° Brix @ 20°C"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Howard Mold Count",
+                      "standard": "Max. 40%",
+                      "remarks": "Positive fields"
+                }
+          ],
+          "packaging": "Tomato Paste is filled in 220kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "24 months from the date of production stored at ambient temperature.",
+          "intendedUse": "The major use of Tomato paste is in the formation of ketchups. It's used in certain gravy recipes to add a robust tomato flavor and achieve the desired consistency. It is also used to create tangy and flavorful chutneys and dips to accompany various snacks, kebabs, and BBQ products. In any dish where you want to infuse a burst of tomato goodness without the extra liquid content, a small amount of tomato paste can be added to elevate the flavor."
     }
   },
 
@@ -545,6 +1343,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 cfu/g",
       yeastMould: "< 10 cfu/g"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Aseptic Banana Puree)",
+          "description": "Aseptic Banana Puree is an undiluted, unevaporated , unfermented product, not from concentrate and free from added preservatives. It is manufactured from fresh, ripe, sound, and clean bananas. The product is classified as NON-GMO and is produced under controlled hygienic conditions to maintain its natural quality, flavor, and nutritional properties.",
+          "ingredients": "100% Fresh Bananas, Citric Acid, Ascorbic Acid.",
+          "additives": "The puree does not contain any preservatives, colors or flavors.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "Min. 16°Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "4.00 – 5.00",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.15 – 0.65%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of variety",
+                      "remarks": "Sweet, ripe banana flavor"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Light Beige to Yellow",
+                      "remarks": "Typical of processed ripe bananas"
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Smooth, uniform, free-flowing puree"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 500PPM",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Banana Puree is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "Ideal for beverages, nectars, smoothies, dairy products, bakery fillings, and baby foods."
     }
   },
 
@@ -579,6 +1433,62 @@ export const RB_PRODUCTS: Product[] = [
     microbiological: {
       tpc: "< 10 cfu/g",
       yeastMould: "< 10 cfu/g"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Falsa Puree Aseptic)",
+          "description": "Falsa Puree, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean falsa. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Falsa, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Brix",
+                      "standard": "Min. 10 ± 1",
+                      "remarks": ""
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.00 ± 0.1",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "2.00 ± 0.1",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "Flavor & Taste",
+                      "standard": "Characteristic of Fruit",
+                      "remarks": "Sweet Falsa Taste"
+                },
+                {
+                      "param": "Color",
+                      "standard": "Characteristic of Fruit",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency (Bostwick)",
+                      "standard": "-",
+                      "remarks": "Thick & viscous"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "<10 cfu/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Ascorbic Acid",
+                      "standard": "Min. 100 ppm",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Falsa Puree is filled in 200 kgs (four layer) aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of Falsa Puree is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength Puree in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in Falsa shake and Falsa lassi, which is a popular drink all over the world."
     }
   }
 ];
