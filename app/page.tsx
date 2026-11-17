@@ -14,14 +14,11 @@ import WhatsAppFloating from '../components/WhatsAppFloating';
 import ProductModal from '../components/ProductModal';
 import { RB_PRODUCTS, Product } from '../data/products';
 
-// 6 Core Flagship Industrial Products for the High-Converting Midway Showcase
+// 3 Core Flagship Industrial Products for the Homepage Showcase
 const FLAGSHIP_IDS = [
-  'chaunsa-mango-pulp',
+  'chaunsa-mango',
   'white-guava',
-  'peach-puree',
-  'peach-concentrate',
-  'ruby-strawberry',
-  'tomato-paste'
+  'peach-puree'
 ];
 
 export default function Home() {
@@ -31,7 +28,9 @@ export default function Home() {
     'Chaunsa Mango Puree (Aseptic & Frozen)'
   );
 
-  const flagshipProducts = RB_PRODUCTS.filter((p) => FLAGSHIP_IDS.includes(p.id));
+  const flagshipProducts = FLAGSHIP_IDS.map((id) =>
+    RB_PRODUCTS.find((p) => p.id === id)
+  ).filter((p): p is Product => Boolean(p));
 
   const handleOpenSpec = (product: Product) => {
     setSelectedProduct(product);
@@ -66,15 +65,15 @@ export default function Home() {
         {/* 4. Multinational Buyer Marquee */}
         <ClientMarquee />
 
-        {/* 5. Core Industrial Product Portfolio (6 Flagship Animated Cards + Spec Modal + Full Catalog Reference) */}
+        {/* 5. Core Industrial Product Portfolio (3 Flagship Animated Cards: Chaunsa Mango, Guava, Peach + Spec Modal) */}
         <section className="section" id="purees" style={{ backgroundColor: '#FFFFFF', padding: '4.5rem 0 3.5rem' }}>
           <div className="container">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '2.5rem' }}>
               <div>
                 <span className="section-kicker">Core Export Portfolio</span>
-                <h2 className="section-title" style={{ marginBottom: '0.45rem' }}>Flagship Industrial Fruit Purees &amp; Concentrates</h2>
+                <h2 className="section-title" style={{ marginBottom: '0.45rem' }}>Flagship Industrial Fruit Purees</h2>
                 <p className="section-desc" style={{ marginBottom: 0, maxWidth: '720px' }}>
-                  Aseptic single-strength and concentrated fruit purees packed in 210kg steel drums for multinational beverage, dairy, and confectionery manufacturing.
+                  Aseptic single-strength fruit purees packed in 210kg steel drums for multinational beverage, dairy, and confectionery manufacturing.
                 </p>
               </div>
               <Link
@@ -157,7 +156,7 @@ export default function Home() {
                   COMPLETE CERTIFIED RANGE (16 INDUSTRIAL PRODUCTS)
                 </span>
                 <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', margin: '0.25rem 0 0.35rem' }}>
-                  Looking for Sindhri, Dusehri, Langra, Ratool, Apple, Banana, or Falsa Puree?
+                  Looking for Peach Concentrate, Strawberry, Tomato Paste, Sindhri, or Apple Puree?
                 </h3>
                 <p style={{ fontSize: '0.88rem', color: 'var(--color-cream-200)', margin: 0, maxWidth: '680px', lineHeight: 1.5 }}>
                   We also produce single-strength and concentrated purees across 16 Pakistani fruits and vegetables, complete with dedicated applications for juices, dairy, and confectionery.
