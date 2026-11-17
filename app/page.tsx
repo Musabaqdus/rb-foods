@@ -18,7 +18,7 @@ import { RB_PRODUCTS, Product } from '../data/products';
 const FLAGSHIP_IDS = [
   'chaunsa-mango',
   'white-guava',
-  'peach-concentrate'
+  'peach-puree'
 ];
 
 export default function Home() {

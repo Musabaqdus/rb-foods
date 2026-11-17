@@ -956,6 +956,91 @@ export const RB_PRODUCTS: Product[] = [
     }
   },
 
+  // 11. Peach Puree Aseptic
+  {
+    id: "peach-puree",
+    name: "Peach Puree Aseptic",
+    botanical: "Prunus persica",
+    category: "tropical",
+    badge: "Aseptic Single-Strength",
+    tagline: "Undiluted, unevaporated, preservative-free made from ripe, clean peach fruit.",
+    image: "/images/PeACH 800x600.jpg",
+    pulpImage: "/images/plant-machinery.jpeg",
+    overview: "Peach Puree, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean peach fruit. It is classified as a NON-GMO (genetically modified organism) product.",
+    specs: {
+      typicalBrix: "Min. 9° Brix",
+      statedBrix: "Min. 9° Brix",
+      acidity: "0.40 – 0.75%",
+      ph: "3.40 – 3.80",
+      bostwick: "Thick & viscous liquid of creamy texture",
+      color: "Bright Brownish-pink",
+      flavor: "Characteristic of variety (Sweet Peach Taste)",
+      consistency: "Thick & viscous liquid of creamy texture",
+      ascorbicAcid: "Min. 300 ppm",
+      packaging: "Filled in 210 kgs aseptic bags in conical / PPL steel drums",
+      shelfLife: "18 months from date of production",
+      storageTemp: "Recommended temperature (4°C – 8°C)",
+      season: "May – July",
+      applications: "Major use in juices and nectars, ice creams, topping, bakery products, jams, consumer packs, milk cheese yogurt, peach shake and peach lassi",
+      nonGmo: "100% Fresh Peach, Citric Acid, Ascorbic Acid (minimal quantity to adjust pH). No preservatives, colors, or flavors. Classified as NON-GMO."
+    },
+    microbiological: {
+      tpc: "< 10 cfu/g",
+      yeastMould: "< 10 cfu/g"
+    },
+    specSheet: {
+          "docTitle": "Specifications Sheet (Peach Puree Aseptic)",
+          "description": "Peach Puree, undiluted, unevaporated, unfermented, not from concentrate, preservative-free made from edible part of ripe, healthy, and clean peach fruit. It is classified as a NON-GMO (genetically modified organism) product.",
+          "ingredients": "100% Fresh Peach, Citric Acid, Ascorbic Acid.",
+          "additives": "The pulp does not contain any preservatives, colors or flavors. Citric acid and Ascorbic acid are added in a minimal allowable quantity in order to adjust pH of the pulp.",
+          "table": [
+                {
+                      "param": "Dry Matter, Soluble (Brix)",
+                      "standard": "Min. 9° Brix",
+                      "remarks": ""
+                },
+                {
+                      "param": "Acidity",
+                      "standard": "0.40 – 0.75%",
+                      "remarks": "As per citric acid"
+                },
+                {
+                      "param": "pH",
+                      "standard": "3.40 – 3.80",
+                      "remarks": ""
+                },
+                {
+                      "param": "Foreign Material",
+                      "standard": "Nil",
+                      "remarks": ""
+                },
+                {
+                      "param": "Color",
+                      "standard": "Bright Brownish-pink",
+                      "remarks": ""
+                },
+                {
+                      "param": "Consistency",
+                      "standard": "-",
+                      "remarks": "Thick & viscous liquid of creamy texture"
+                },
+                {
+                      "param": "Total Aerobic Count/g",
+                      "standard": "<10 CFU/g",
+                      "remarks": ""
+                },
+                {
+                      "param": "Yeast & mold Count/g",
+                      "standard": "Negative",
+                      "remarks": ""
+                }
+          ],
+          "packaging": "Peach Puree is filled in 210kgs aseptic bags in conical/PPL steel drums.",
+          "storage": "18 months from the date of production stored at recommended temperature (4°C - 8°C).",
+          "intendedUse": "The major use of peach Puree is in the production of juices and nectars. It is also used for the production of ice creams, topping, bakery products and jams. It can be repacked as sweetened or single strength Puree in smaller consumer packs and can be consumed as it is or mixed with milk cheese yogurt. It can also be used in peach shake and peach lassi, which is a popular drink all over the world."
+    }
+  },
+
   // 12. Peach Concentrate (30-32° Brix)
   {
     id: "peach-concentrate",
@@ -964,7 +1049,7 @@ export const RB_PRODUCTS: Product[] = [
     category: "concentrate",
     badge: "30–32° Brix Industrial Concentrate",
     tagline: "Vacuum concentrated to 30-32° Brix from fresh, mature, clean peaches.",
-    image: "/images/PeACH 800x600.jpg",
+    image: "/images/peach-concentrate.jpg",
     pulpImage: "/images/plant-machinery.jpeg",
     overview: "Peach Concentrate, is obtained by processing fresh, mature and clean peaches & then concentrating it to 30-32°Brix by evaporation under vacuum. It is classified as a NON-GMO (genetically modified organism) product.",
     specs: {
