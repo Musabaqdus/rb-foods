@@ -23,12 +23,12 @@ const VISUAL_TABS = [
   },
   {
     id: 'guava',
-    label: 'White Guava',
-    productName: 'Aseptic White Guava Puree & Pulp',
+    label: 'Guava Pulp',
+    productName: 'Guava Pulp Aseptic',
     image: '/images/banner-guava.jpg',
-    badgeTop: '7°–13° Brix • Natural Vitamin C',
-    badgeBottom: 'Creamy-White Texture • Zero Defect',
-    tagline: 'Aseptic Sterilized White Guava Puree'
+    badgeTop: '07°–12° Brix • Natural Vitamin C',
+    badgeBottom: 'Creamy Texture • Zero Defect',
+    tagline: 'Aseptic Sterilized Guava Pulp'
   },
   {
     id: 'peach',
@@ -407,7 +407,7 @@ export default function Hero({ onSwitchLayout }: HeroProps) {
             >
               <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: '#F1F5F9', border: '1px solid #CBD5E1', flexShrink: 0 }}></span>
               <div>
-                <strong style={{ fontSize: '0.85rem', display: 'block', color: 'var(--color-primary-950)' }}>White Guava</strong>
+                <strong style={{ fontSize: '0.85rem', display: 'block', color: 'var(--color-primary-950)' }}>Guava Pulp</strong>
                 <span style={{ fontSize: '0.75rem', color: 'var(--color-charcoal-600)' }}>7&deg; &ndash; 13&deg; Brix &bull; Natural Vit C</span>
               </div>
             </div>
