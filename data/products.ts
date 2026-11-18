@@ -1281,14 +1281,14 @@ export const RB_PRODUCTS: Product[] = [
                       "remarks": "Free from off-flavors & scorched taste"
                 },
                 {
-                      "param": "Color",
+                      "param": "Color (a/b Value)",
                       "standard": "Min. 1.90",
-                      "remarks": "a/b Hunter scale @ 12° Brix"
+                      "remarks": ""
                 },
                 {
-                      "param": "Consistency (Bostwick)",
-                      "standard": "04-07 cm/30s",
-                      "remarks": "At 12° Brix @ 20°C"
+                      "param": "Bostwick at 12° Brix",
+                      "standard": "04 – 07 cm/30s",
+                      "remarks": ""
                 },
                 {
                       "param": "Total Aerobic Count/g",

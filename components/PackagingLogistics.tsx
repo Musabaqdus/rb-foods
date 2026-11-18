@@ -15,7 +15,7 @@ export default function PackagingLogistics() {
         </div>
 
         <div className="packaging-grid">
-          {/* Packaging Card 1 */}
+          {/* Packaging Card 1: 210 kg Aseptic Steel Drum */}
           <div className="packaging-card reveal is-visible delay-100">
             <div className="pack-header">
               <div className="pack-icon-circle">
@@ -23,63 +23,61 @@ export default function PackagingLogistics() {
                   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                 </svg>
               </div>
-              <span className="pack-tag">Industry Benchmark</span>
+              <span className="pack-tag">Single-Strength Purees</span>
             </div>
             <h3 className="pack-title">210 kg Aseptic Steel Drum</h3>
             <p className="pack-desc">
-              Food-grade 4-layer aseptic barrier bag hermetically sealed inside conical / PPL steel drums. Nitrogen flushed with tamper-evident security seal.
+              Food-grade 4-layer aseptic barrier bag hermetically sealed inside conical / PPL steel drums. Nitrogen flushed with tamper-evident security seal. For Chaunsa, Sindhri, Anwar Ratol, Peach, Apple, Apricot, Plum &amp; Banana purees.
             </p>
             <div className="pack-specs-list">
               <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">210 kg &plusmn; 0.5 kg</span></div>
               <div className="pack-spec-row"><span className="pack-spec-label">Gross Weight:</span><span className="pack-spec-val">~228 kg per drum</span></div>
               <div className="pack-spec-row"><span className="pack-spec-label">20&apos; FCL Stuffing:</span><span className="pack-spec-val">80 Drums (16.80 MT Net)</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">Storage &amp; Shelf Life:</span><span className="pack-spec-val">18 Months (4&deg;C – 8&deg;C)</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Storage Temperature:</span><span className="pack-spec-val">4&deg;C – 8&deg;C (18–24 Mos)</span></div>
             </div>
           </div>
 
-          {/* Packaging Card 2 */}
+          {/* Packaging Card 2: 200 kg Aseptic Steel Drum */}
           <div className="packaging-card reveal is-visible delay-200">
             <div className="pack-header">
               <div className="pack-icon-circle">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                 </svg>
               </div>
-              <span className="pack-tag">Artisan &amp; Foodservice</span>
+              <span className="pack-tag">Guava &amp; Strawberry</span>
             </div>
-            <h3 className="pack-title">20 kg Bag-in-Box (BIB)</h3>
+            <h3 className="pack-title">200 kg Aseptic Steel Drum</h3>
             <p className="pack-desc">
-              Aseptic barrier bag inside high-burst corrugated carton. Ideal for craft dairies, artisan ice cream producers, and culinary foodservice.
+              Standardized filling volume specifically calibrated for high-density Guava Pulp Aseptic and fresh Strawberry Puree in food-grade aseptic bags inside conical steel drums.
             </p>
             <div className="pack-specs-list">
-              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">20 kg</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; FCL Stuffing:</span><span className="pack-spec-val">1,000 Cartons (20.0 MT Net)</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">Palletization:</span><span className="pack-spec-val">50 Boxes per Pallet</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">Handling:</span><span className="pack-spec-val">Easy Pour / Dispenser Valve</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">200 kg &plusmn; 0.5 kg</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Gross Weight:</span><span className="pack-spec-val">~218 kg per drum</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; FCL Stuffing:</span><span className="pack-spec-val">80 Drums (16.00 MT Net)</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Storage Temperature:</span><span className="pack-spec-val">4&deg;C – 8&deg;C (18 Mos)</span></div>
             </div>
           </div>
 
-          {/* Packaging Card 3 */}
+          {/* Packaging Card 3: 220 kg Aseptic Steel Drum */}
           <div className="packaging-card reveal is-visible delay-300">
             <div className="pack-header">
               <div className="pack-icon-circle">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 14 14"></polyline>
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                 </svg>
               </div>
-              <span className="pack-tag">Cold Storage Puree</span>
+              <span className="pack-tag">Concentrates &amp; Paste</span>
             </div>
-            <h3 className="pack-title">Frozen Puree (-18&deg;C Pails)</h3>
+            <h3 className="pack-title">220 kg Aseptic Steel Drum</h3>
             <p className="pack-desc">
-              Unpasteurized or gently pasteurized blast-frozen fruit puree retaining the exact raw aroma of freshly picked orchard fruit.
+              High-viscosity barrier packaging for de-aerated vacuum concentrates: Chaunsa Mango Concentrate (28–30&deg; Brix), Peach Concentrate (30–32&deg; Brix), and Tomato Paste (28–30&deg; Brix).
             </p>
             <div className="pack-specs-list">
-              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">18 kg Food-Grade Pail</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">Temperature:</span><span className="pack-spec-val">-18&deg;C Constant Reefer</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; Reefer Stuffing:</span><span className="pack-spec-val">~16.0 to 18.0 Metric Tons</span></div>
-              <div className="pack-spec-row"><span className="pack-spec-label">Best Suited:</span><span className="pack-spec-val">Gelato, Sorbets &amp; Breweries</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Net Weight:</span><span className="pack-spec-val">220 kg &plusmn; 0.5 kg</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Gross Weight:</span><span className="pack-spec-val">~238 kg per drum</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">20&apos; FCL Stuffing:</span><span className="pack-spec-val">80 Drums (17.60 MT Net)</span></div>
+              <div className="pack-spec-row"><span className="pack-spec-label">Storage Temperature:</span><span className="pack-spec-val">4&deg;C – 8&deg;C / Ambient (24 Mos)</span></div>
             </div>
           </div>
         </div>

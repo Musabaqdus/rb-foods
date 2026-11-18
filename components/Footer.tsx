@@ -17,7 +17,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="footer-brand-desc">
-              Pakistan&apos;s benchmark fruit processing enterprise. Manufacturing premium aseptic and frozen Chaunsa mango, guava, citrus, apple, and strawberry purees on imported Bertuzzi (Italy) processing lines.
+              Pakistan&apos;s benchmark fruit processing enterprise. Manufacturing premium aseptic Chaunsa mango pulp, guava pulp, peach, strawberry, and tomato concentrates on imported Bertuzzi (Italy) processing lines.
             </p>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
               <span className="crop-status-tag" style={{ background: 'rgba(255,255,255,0.1)', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}>HACCP Certified</span>
@@ -27,11 +27,11 @@ export default function Footer() {
 
           {/* Col 2: Products */}
           <div className="footer-col">
-            <h4 className="footer-heading">Puree Portfolio</h4>
+            <h4 className="footer-heading">Products Portfolio</h4>
             <ul className="footer-links-list">
               <li><a href="/purees">Chaunsa Mango Pulp</a></li>
               <li><a href="/purees">Chaunsa Concentrate (28-30° Brix)</a></li>
-              <li><a href="/purees">White Guava Pulp</a></li>
+              <li><a href="/purees">Guava Pulp Aseptic</a></li>
               <li><a href="/purees">Sindhri &amp; Desi Mango Pulp</a></li>
               <li><a href="/purees">Peach Puree &amp; Concentrate</a></li>
               <li><a href="/purees">Falsa Puree Aseptic</a></li>

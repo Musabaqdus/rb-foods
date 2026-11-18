@@ -21,7 +21,7 @@ export default function BertuzziTech() {
           <div className="process-step-card reveal is-visible delay-100">
             <div className="step-num-pill">01</div>
             <h4 className="step-title">Three-Tier Washing &amp; Optical Sorting</h4>
-            <p className="step-desc">Immersion sanitization, chlorinated brush spray washing, and continuous manual sorting eliminate substandard fruits before entry.</p>
+            <p className="step-desc">Clean water immersion, high-pressure spray washing, and continuous manual sorting eliminate substandard fruits before entry.</p>
           </div>
 
           <div className="process-step-card reveal is-visible delay-200">
@@ -112,8 +112,8 @@ export default function BertuzziTech() {
                   <video
                     controls
                     playsInline
-                    preload="metadata"
-                    poster="/images/plant-processing-line.jpeg"
+                    preload="none"
+                    poster="/images/video-poster-monogram.jpg"
                     style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '520px' }}
                   >
                     <source src="/video/plant-tour.mp4" type="video/mp4" />

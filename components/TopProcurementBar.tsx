@@ -15,7 +15,7 @@ export default function TopProcurementBar() {
           <div className="ticker-track-container">
             <div className="ticker-track">
               <span className="ticker-item">
-                <strong>White Guava &amp; Mango Campaigns:</strong> Active Single-Strength &amp; Concentrate Processing at Shorkot Plant
+                <strong>Guava Pulp &amp; Mango Campaigns:</strong> Active Single-Strength &amp; Concentrate Processing at Shorkot Plant
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
@@ -27,7 +27,7 @@ export default function TopProcurementBar() {
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
-                <strong>Pink &amp; White Guava:</strong> Industrial Scheduling Active
+                <strong>Guava Pulp Aseptic:</strong> Industrial Scheduling Active
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
@@ -37,7 +37,7 @@ export default function TopProcurementBar() {
 
               {/* Duplicate items for seamless infinite scroll */}
               <span className="ticker-item">
-                <strong>White Guava &amp; Mango Campaigns:</strong> Active Single-Strength &amp; Concentrate Processing at Shorkot Plant
+                <strong>Guava Pulp &amp; Mango Campaigns:</strong> Active Single-Strength &amp; Concentrate Processing at Shorkot Plant
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
@@ -49,7 +49,7 @@ export default function TopProcurementBar() {
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">
-                <strong>Pink &amp; White Guava:</strong> Industrial Scheduling Active
+                <strong>Guava Pulp Aseptic:</strong> Industrial Scheduling Active
               </span>
               <span className="ticker-sep">&bull;</span>
               <span className="ticker-item">

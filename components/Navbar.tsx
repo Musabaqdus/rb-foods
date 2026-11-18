@@ -35,7 +35,7 @@ export default function Navbar({ onOpenDrawer }: NavbarProps) {
 
         {/* Desktop Nav Links (Clean Multi-Page Hierarchy) */}
         <nav className="nav-links">
-          <Link href="/purees" className="nav-link">Purees</Link>
+          <Link href="/purees" className="nav-link">Products</Link>
           <Link href="/facility" className="nav-link">Facility</Link>
           <Link href="/quality" className="nav-link">Lab &amp; QA</Link>
           <Link href="/harvest" className="nav-link">Harvest</Link>

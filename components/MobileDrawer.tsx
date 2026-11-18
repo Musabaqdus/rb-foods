@@ -62,7 +62,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
 
         <nav className="drawer-links-list">
           <Link href="/purees" className="drawer-link" onClick={onClose}>
-            <span>Fruit Purees Catalog</span>
+            <span>Products Catalog</span>
             <span>&rarr;</span>
           </Link>
           <Link href="/facility" className="drawer-link" onClick={onClose}>

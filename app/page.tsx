@@ -18,14 +18,14 @@ import { RB_PRODUCTS, Product } from '../data/products';
 const FLAGSHIP_IDS = [
   'chaunsa-mango',
   'white-guava',
-  'peach-puree'
+  'tomato-paste'
 ];
 
 export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [rfqTargetProduct, setRfqTargetProduct] = useState<string>(
-    'Chaunsa Mango Puree (Aseptic & Frozen)'
+    'Chaunsa Mango Pulp Aseptic'
   );
 
   const flagshipProducts = FLAGSHIP_IDS.map((id) =>
@@ -71,9 +71,9 @@ export default function Home() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '2.5rem' }}>
               <div>
                 <span className="section-kicker">Core Export Portfolio</span>
-                <h2 className="section-title" style={{ marginBottom: '0.45rem' }}>Flagship Industrial Fruit Purees</h2>
+                <h2 className="section-title" style={{ marginBottom: '0.45rem' }}>Flagship Industrial Purees &amp; Concentrates</h2>
                 <p className="section-desc" style={{ marginBottom: 0, maxWidth: '720px' }}>
-                  Aseptic single-strength fruit purees packed in 210kg steel drums for multinational beverage, dairy, and confectionery manufacturing.
+                  Aseptic single-strength fruit purees and high-brix concentrates packed in steel drums for multinational beverage, dairy, culinary, and confectionery manufacturing.
                 </p>
               </div>
               <Link
@@ -191,8 +191,8 @@ export default function Home() {
                 <video
                   controls
                   playsInline
-                  preload="metadata"
-                  poster="/images/plant-processing-line.jpeg"
+                  preload="none"
+                  poster="/images/video-poster-monogram.jpg"
                   style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '440px' }}
                 >
                   <source src="/video/plant-tour.mp4" type="video/mp4" />
@@ -214,7 +214,7 @@ export default function Home() {
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
                       <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--color-gold-500)', color: '#000', fontSize: '0.72rem', fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>1</span>
                       <div style={{ fontSize: '0.85rem', color: 'var(--color-charcoal-700)', lineHeight: 1.45 }}>
-                        <strong style={{ color: 'var(--color-primary-900)' }}>Three-Tier Washing &amp; Sorting:</strong> Sanitization &amp; chlorinated spray eliminating defective fruits.
+                        <strong style={{ color: 'var(--color-primary-900)' }}>Three-Tier Washing &amp; Sorting:</strong> Clean water immersion &amp; high-pressure spray washing eliminating defective fruits.
                       </div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
@@ -238,7 +238,7 @@ export default function Home() {
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
                       <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--color-gold-500)', color: '#000', fontSize: '0.72rem', fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>5</span>
                       <div style={{ fontSize: '0.85rem', color: 'var(--color-charcoal-700)', lineHeight: 1.45 }}>
-                        <strong style={{ color: 'var(--color-primary-900)' }}>Cleanroom Aseptic Drum Filling:</strong> Hermetic filling into 210kg 4-layer barrier bags in steel drums.
+                        <strong style={{ color: 'var(--color-primary-900)' }}>Cleanroom Aseptic Drum Filling:</strong> Hermetic filling into 200kg, 210kg &amp; 220kg 4-layer barrier bags in steel drums.
                       </div>
                     </div>
                   </div>
@@ -398,7 +398,7 @@ export default function Home() {
                       <span style={{ fontSize: '0.75rem', color: 'var(--color-gold-700)', fontWeight: 700 }}>June &ndash; August Peak</span>
                     </div>
                     <div style={{ background: '#FFFFFF', padding: '0.85rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-cream-300)' }}>
-                      <strong style={{ fontSize: '0.85rem', color: 'var(--color-primary-950)', display: 'block' }}>White Guava:</strong>
+                      <strong style={{ fontSize: '0.85rem', color: 'var(--color-primary-950)', display: 'block' }}>Guava Pulp:</strong>
                       <span style={{ fontSize: '0.75rem', color: 'var(--color-gold-700)', fontWeight: 700 }}>September &ndash; January</span>
                     </div>
                     <div style={{ background: '#FFFFFF', padding: '0.85rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-cream-300)' }}>
@@ -441,23 +441,23 @@ export default function Home() {
                     </span>
                   </div>
                   <h3 style={{ fontSize: '1.35rem', color: 'var(--color-primary-950)', fontWeight: 700, marginBottom: '0.75rem' }}>
-                    210 kg Aseptic Steel Drum Packaging
+                    Aseptic Steel Drum Export Standards
                   </h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--color-charcoal-700)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                    Food-grade 4-layer aseptic barrier bag hermetically sealed inside conical steel drums with nitrogen flush and tamper-evident security seal:
+                    Food-grade 4-layer aseptic barrier bags hermetically sealed in conical steel drums with nitrogen flush &amp; tamper-evident seals:
                   </p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', marginBottom: '1.75rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.65rem 0.85rem', background: '#FFFFFF', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', border: '1px solid var(--color-cream-300)' }}>
-                      <span style={{ color: 'var(--color-charcoal-700)', fontWeight: 600 }}>Standard Drum Net Weight:</span>
-                      <strong style={{ color: 'var(--color-primary-950)' }}>210 kg &plusmn; 0.5 kg</strong>
+                      <span style={{ color: 'var(--color-charcoal-700)', fontWeight: 600 }}>Standard Drum Sizes:</span>
+                      <strong style={{ color: 'var(--color-primary-950)' }}>210 kg (Purees) &bull; 200 kg (Guava/Berry) &bull; 220 kg (Paste)</strong>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.65rem 0.85rem', background: '#FFFFFF', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', border: '1px solid var(--color-cream-300)' }}>
                       <span style={{ color: 'var(--color-charcoal-700)', fontWeight: 600 }}>20ft FCL Container Stuffing:</span>
-                      <strong style={{ color: 'var(--color-primary-950)' }}>80 Drums (16.80 MT Net)</strong>
+                      <strong style={{ color: 'var(--color-primary-950)' }}>80 Drums (16.00 – 17.60 MT Net)</strong>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.65rem 0.85rem', background: '#FFFFFF', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', border: '1px solid var(--color-cream-300)' }}>
-                      <span style={{ color: 'var(--color-charcoal-700)', fontWeight: 600 }}>Ambient Shelf Life:</span>
-                      <strong style={{ color: 'var(--color-primary-950)' }}>18 &ndash; 24 Months (4&deg;C &ndash; 8&deg;C recommended)</strong>
+                      <span style={{ color: 'var(--color-charcoal-700)', fontWeight: 600 }}>Storage &amp; Cold-Chain:</span>
+                      <strong style={{ color: 'var(--color-primary-950)' }}>4&deg;C &ndash; 8&deg;C (18 – 24 Months Shelf Life)</strong>
                     </div>
                   </div>
                 </div>

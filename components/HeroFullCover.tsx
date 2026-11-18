@@ -27,14 +27,14 @@ export const FULL_COVER_SLIDES = [
   },
   {
     id: 'guava',
-    fruit: 'White Guava',
-    name: 'Aseptic White Guava Puree & Pulp',
+    fruit: 'Guava Pulp',
+    name: 'Aseptic Guava Puree & Pulp',
     image: '/images/banner-guava.jpg',
-    kicker: 'CREAMY IVORY TEXTURE • HIGH VITAMIN C • SEPT – JAN CROP',
+    kicker: 'CREAMY TEXTURE • HIGH VITAMIN C • SEPT – JAN CROP',
     title: 'Pectin-Rich Tropical Body:',
-    titleHighlight: 'White Guava Puree.',
-    lead: 'Manufactured from selected mature white guavas under continuous flash pasteurization. Natural ivory color, thick velvety body, and sweet aroma ideal for tropical nectar blends, baby food formulations, and strained fruit applications.',
-    specs: 'Typical Brix 7°–13° • Acidity 0.45%–0.75% • Total Plate Count <10 CFU/g'
+    titleHighlight: 'Guava Pulp Aseptic.',
+    lead: 'Manufactured from selected mature ripe guavas under continuous flash pasteurization. Natural creamy color, thick velvety body, and sweet aroma ideal for tropical nectar blends, baby food formulations, and strained fruit applications.',
+    specs: 'Typical Brix 07°–12° • Acidity 0.30%–0.70% • Total Plate Count <10 CFU/g'
   },
   {
     id: 'peach',

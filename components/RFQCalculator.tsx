@@ -9,7 +9,7 @@ interface RFQCalculatorProps {
 
 export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
   const [selectedPuree, setSelectedPuree] = useState<string>(
-    initialProduct || 'Chaunsa Mango Puree (Aseptic & Frozen)'
+    initialProduct || 'Chaunsa Mango Pulp Aseptic'
   );
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
       setSelectedPuree(initialProduct);
     }
   }, [initialProduct]);
-  const [packType, setPackType] = useState<string>('drum');
+  const [packType, setPackType] = useState<string>('drum210');
   const [volumeMt, setVolumeMt] = useState<number>(17);
   const [port, setPort] = useState<string>('Karachi Port (FOB)');
   const [nameCompany, setNameCompany] = useState<string>('');
@@ -27,34 +27,35 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
   const [loading, setLoading] = useState<boolean>(false);
   const [rfqRef, setRfqRef] = useState<string>('');
 
-  // Calculations
+  // Calculations strictly based on R&B Foods Aseptic Drum standards (80 drums / 20' FCL)
   let unitWeightKg = 210;
   let tareWeightKg = 18;
-  let unitsPerFcl = 80;
+  const unitsPerFcl = 80;
+  let packLabel = '210 kg Aseptic Steel Drum (Single-Strength Purees)';
 
-  if (packType === 'bib') {
-    unitWeightKg = 20;
-    tareWeightKg = 1.2;
-    unitsPerFcl = 1000;
-  } else if (packType === 'pail') {
-    unitWeightKg = 18;
-    tareWeightKg = 1.0;
-    unitsPerFcl = 1100;
+  if (packType === 'drum200') {
+    unitWeightKg = 200;
+    tareWeightKg = 18;
+    packLabel = '200 kg Aseptic Steel Drum (Guava Pulp & Strawberry)';
+  } else if (packType === 'drum220') {
+    unitWeightKg = 220;
+    tareWeightKg = 18;
+    packLabel = '220 kg Aseptic Steel Drum (Concentrates & Tomato Paste)';
   }
 
   const totalKg = volumeMt * 1000;
   const totalUnits = Math.ceil(totalKg / unitWeightKg);
   const fclContainers = (totalUnits / unitsPerFcl).toFixed(1);
   const grossWeightMt = ((totalKg + totalUnits * tareWeightKg) / 1000).toFixed(2);
-  const unitLabel = packType === 'drum' ? 'Drums' : packType === 'bib' ? 'Boxes' : 'Pails';
+  const unitLabel = 'Drums';
 
   // WhatsApp Link Message
   const waMsg = encodeURIComponent(
     `Hello R&B Foods Export Desk, I would like to request an industrial price quotation / sample batch:\n\n` +
     `• Product: ${selectedPuree}\n` +
     `• Required Volume: ${volumeMt} MT\n` +
-    `• Packaging Format: ${packType === 'drum' ? '210 kg Aseptic Drum' : (packType === 'bib' ? '20 kg Bag-in-Box' : '18 kg Frozen Pail')}\n` +
-    `• Estimated Units: ${totalUnits.toLocaleString()} units (~${fclContainers} FCL)\n` +
+    `• Packaging Format: ${packLabel}\n` +
+    `• Estimated Units: ${totalUnits.toLocaleString()} drums (~${fclContainers} FCL @ 80 drums/container)\n` +
     `• Destination Port: ${port}\n\n` +
     `Please share the latest Certificate of Analysis (COA) and CIF/FOB pricing.`
   );
@@ -129,9 +130,9 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
                     value={packType}
                     onChange={(e) => setPackType(e.target.value)}
                   >
-                    <option value="drum">210 kg Aseptic Steel Drum</option>
-                    <option value="bib">20 kg Bag-in-Box (BIB)</option>
-                    <option value="pail">18 kg Frozen Food-Grade Pail</option>
+                    <option value="drum210">210 kg Aseptic Steel Drum (Single-Strength Purees)</option>
+                    <option value="drum200">200 kg Aseptic Steel Drum (Guava Pulp &amp; Strawberry)</option>
+                    <option value="drum220">220 kg Aseptic Steel Drum (Concentrates &amp; Tomato Paste)</option>
                   </select>
                 </div>
 

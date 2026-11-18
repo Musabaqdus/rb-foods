@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 function RFQContent() {
   const searchParams = useSearchParams();
-  const initialProduct = searchParams.get('product') || 'Chaunsa Mango Puree (Aseptic & Frozen)';
+  const initialProduct = searchParams.get('product') || 'Chaunsa Mango Pulp Aseptic';
 
   return (
     <main style={{ paddingTop: '1rem' }}>
