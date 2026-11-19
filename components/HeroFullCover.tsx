@@ -176,7 +176,7 @@ export default function HeroFullCover() {
               <span>Request Commercial RFQ &amp; Samples</span>
             </a>
             <a href="#purees" className="btn btn-secondary hero-fullcover-btn-secondary">
-              <span>Explore 10+ Fruit Purees</span>
+              <span>Explore 16 Industrial Products</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
