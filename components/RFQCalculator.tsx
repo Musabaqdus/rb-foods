@@ -308,8 +308,8 @@ export default function RFQCalculator({ initialProduct }: RFQCalculatorProps) {
                 </svg>
                 Chat Directly on WhatsApp with Export Desk
               </a>
-              <p style={{ fontSize: '0.75rem', textAlign: 'center', color: 'var(--color-cream-200)', opacity: 0.8 }}>
-                Direct line to Plant Director in Shorkot, Punjab
+              <p style={{ fontSize: '0.75rem', textAlign: 'center', color: 'var(--color-cream-200)', opacity: 0.9 }}>
+                Direct Export Desk: <a href="mailto:muhammadzeeshanrafiq@gmail.com" style={{ color: 'var(--color-gold-400)', textDecoration: 'underline' }}>muhammadzeeshanrafiq@gmail.com</a> &bull; +92 334 3734786
               </p>
             </div>
           </div>

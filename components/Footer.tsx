@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="brand-wrapper" style={{ marginBottom: '1rem' }}>
               <img src="/logos/rb-foods-logo.jpg" alt="R&B Foods" className="brand-logo-img" />
               <div className="brand-text">
-                <span className="brand-name" style={{ color: '#FFFFFF' }}>R&amp;B <span style={{ color: 'var(--color-gold-400)' }}>Foods</span></span>
+                <span className="brand-name" style={{ color: '#FFFFFF' }}>R&amp;B Foods</span>
                 <span className="brand-sub" style={{ color: 'var(--color-cream-300)' }}>Private Limited</span>
               </div>
             </div>
@@ -74,8 +74,8 @@ export default function Footer() {
               </svg>
               <div>
                 <strong>Export Inquiries:</strong><br />
-                export@rbfoods.com.pk<br />
-                chairman@rbfoods.com.pk
+                <a href="mailto:muhammadzeeshanrafiq@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>muhammadzeeshanrafiq@gmail.com</a><br />
+                <a href="mailto:chairman@rbfoods.com.pk" style={{ color: 'inherit', textDecoration: 'none' }}>chairman@rbfoods.com.pk</a>
               </div>
             </div>
             <div className="footer-contact-item">

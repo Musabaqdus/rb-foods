@@ -410,8 +410,9 @@ ul, ol {
 }
 
 .brand-name span {
-  color: var(--color-gold-600);
+  color: inherit;
   font-weight: 700;
+  opacity: 0.9;
 }
 
 .brand-sub {
@@ -2984,10 +2985,10 @@ ul, ol {
 }
 
 .hero-fullcover-highlight {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--color-gold-400);
-  text-shadow: 0 2px 14px rgba(229, 140, 5, 0.35);
+  font-style: normal;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
 }
 
 .hero-fullcover-lead {

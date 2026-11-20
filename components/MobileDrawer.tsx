@@ -111,6 +111,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             Request B2B Quote &amp; Samples
           </Link>
           <div style={{ fontSize: '0.75rem', color: 'var(--color-charcoal-600)', textAlign: 'center', marginTop: '0.5rem', lineHeight: 1.6 }}>
+            Export Desk: <a href="mailto:muhammadzeeshanrafiq@gmail.com" style={{ color: 'var(--color-primary-900)', fontWeight: 600 }}>muhammadzeeshanrafiq@gmail.com</a><br />
             Plant Tel / WhatsApp: <a href="https://wa.me/923343734786" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gold-700)', fontWeight: 600 }}>+92 334 3734786</a><br />
             Shorkot, Punjab, Pakistan
           </div>

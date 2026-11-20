@@ -98,7 +98,7 @@ const organizationSchema = {
   logo: `${siteUrl}/logos/rb-foods-logo.jpg`,
   description: 'Pakistan’s benchmark agro-industrial fruit processing facility located in Shorkot, Punjab. Operating genuine BERTUZZI S.r.l. (Milan, Italy) continuous aseptic lines producing Chaunsa mango pulp, guava pulp, peach, and tomato concentrates in steel drums for global B2B procurement.',
   telephone: '+92-334-3734786',
-  email: 'exports@rbfoods.com.pk',
+  email: 'muhammadzeeshanrafiq@gmail.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '8-Km Jhang Road',
